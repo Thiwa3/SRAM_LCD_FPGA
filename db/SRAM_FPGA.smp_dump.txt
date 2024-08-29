@@ -1,0 +1,8 @@
+
+State Machine - |top_module|memorycontroller:ctl|state
+Name state.w2 state.w1 state.r2 state.r1 state.idle 
+state.idle 0 0 0 0 0 
+state.r1 0 0 0 1 1 
+state.r2 0 0 1 0 1 
+state.w1 0 1 0 0 1 
+state.w2 1 0 0 0 1 

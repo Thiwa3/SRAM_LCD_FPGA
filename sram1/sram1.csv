@@ -1,0 +1,17 @@
+# system info sram1 on 2024.08.26.13:49:13
+system_info:
+name,value
+DEVICE,EP4CE115F29C7
+DEVICE_FAMILY,Cyclone IV E
+GENERATION_ID,1724651352
+#
+#
+# Files generated for sram1 on 2024.08.26.13:49:13
+files:
+filepath,kind,attributes,module,is_top
+simulation/sram1.vhd,VHDL,,sram1,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+sram1.sram_0,sram1_sram_0
