@@ -1,0 +1,72 @@
+library IEEE; use IEEE.STD_LOGIC_1164.all;
+
+entity sub_module_ram is
+    port (clk, reset: in STD_LOGIC;
+	          -- SYSTEM
+          addr, data_write: in STD_LOGIC_VECTOR(7 downto 0);
+          data_read_r, data_read: out STD_LOGIC_VECTOR(7 downto 0);
+          mem, rw: in STD_LOGIC;
+          ready: out STD_LOGIC;
+          
+          -- SRAM
+          ad: out STD_LOGIC_VECTOR(19 downto 0);
+          dio: inout STD_LOGIC_VECTOR(15 downto 0);
+          we_n, oe_n, ce_n: out STD_LOGIC;
+
+          -- SEGMENT
+          segout: out STD_LOGIC_VECTOR(7*2-1 downto 0)
+    );
+end;
+
+architecture synth of sub_module_ram is   
+    component sram1 is
+        port (
+            data       : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DQ
+            addr       : in   std_logic_vector(19 downto 0);                    -- ADDR
+            lb_n       : in   std_logic;                                        -- LB_N
+            ub_n       : in   std_logic;                                        -- UB_N
+            ce_n       : in   std_logic;                                        -- CE_N
+            oe_n       : in   std_logic;                                        -- OE_N
+            we_n       : in   std_logic                                        -- WE_N
+        );
+    end component;
+
+	component memorycontroller is
+        port (clk, reset: in STD_LOGIC;
+            -- SYSTEM
+            addr, data_write: in STD_LOGIC_VECTOR(7 downto 0);
+            data_read_r, data_read: out STD_LOGIC_VECTOR(7 downto 0);
+            mem, rw: in STD_LOGIC;
+            ready: out STD_LOGIC;
+            
+            -- SRAM
+            ad: out STD_LOGIC_VECTOR(19 downto 0);
+            dio: inout STD_LOGIC_VECTOR(15 downto 0);
+            we_n, oe_n, ce_n: out STD_LOGIC
+        );
+	end component;
+ 
+    component seg7 is 
+        port (I: in STD_LOGIC_VECTOR(3 downto 0);
+            Seg: out STD_LOGIC_VECTOR(6 downto 0));
+    end component;
+	
+	signal data_display : std_logic_vector(7 downto 0);
+    signal lb_n_r, ub_n_r, ce_n_r, oe_n_r, we_n_r : std_logic;
+	signal dio_r : std_logic_vector(15 downto 0);
+	signal ad_r : std_logic_vector(19 downto 0);
+    
+    begin
+        data_display <= data_read_r;
+        lb_n_r <= '0';
+        ub_n_r <= '0';
+        dio <= dio_r;
+        ad <= ad_r;
+        ce_n <= ce_n_r;
+        oe_n <= oe_n_r;
+        we_n <= we_n_r;
+        ram: sram1 port map(dio_r, ad_r, lb_n_r, ub_n_r, ce_n_r, oe_n_r, we_n_r);
+        ctl: memorycontroller port map(clk, reset, addr, data_write, data_read_r, data_read, mem, rw, ready, ad_r, dio_r, we_n_r, oe_n_r, ce_n_r);
+        dp1:seg7 port map(data_display(3 downto 0), segout(6 downto 0));
+        dp2:seg7 port map(data_display(7 downto 4), segout(13 downto 7));
+    end;

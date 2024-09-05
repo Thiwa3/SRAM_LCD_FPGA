@@ -25,7 +25,7 @@ architecture synth of memorycontroller is
 
     begin
         process (clk, reset) begin
-            if (reset = '1') then
+            if (reset = '0') then
                 state <= idle;
                 addr_reg <= (others => '0');
                 data_read_reg <= (others => '0');

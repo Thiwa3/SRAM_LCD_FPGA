@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Aug 29 13:28:34 2024
+Analysis & Synthesis Status : Successful - Thu Sep  5 18:24:17 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : sramdisplay
 Top-level Entity Name : top_module
 Family : Cyclone IV E
-Total logic elements : 47
-    Total combinational functions : 20
-    Dedicated logic registers : 32
-Total registers : 32
-Total pins : 78
+Total logic elements : 213
+    Total combinational functions : 174
+    Dedicated logic registers : 120
+Total registers : 120
+Total pins : 91
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
