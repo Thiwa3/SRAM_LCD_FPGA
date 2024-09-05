@@ -5,6 +5,7 @@ entity sub_module_lcd is
     port(clk, reset_n: in std_logic;
         -- IO
         addr_in, data_in : in std_logic_vector(7 downto 0);
+		  ext : in std_logic;
 
         -- LCD
         dio : inout std_logic_vector(7 downto 0);
@@ -23,6 +24,7 @@ architecture synth of sub_module_lcd is
         port(clk, reset_n: in std_logic;
             -- SYSTEM
             addr, data : in std_logic_vector(7 downto 0);
+				ext : in std_logic;
 
             -- CONTROLLER
             data_write : out std_logic_vector(9 downto 0); -- 1/0 inst/data, read/write
@@ -52,12 +54,13 @@ architecture synth of sub_module_lcd is
     signal busy_tmp, enable_tmp : std_logic;
 
 begin
-        ck1: mod5 generic map (22) port map (clk, reset_n, clk_slow);
+        ck1: mod5 generic map (21) port map (clk, reset_n, clk_slow);
         ul1: userlogic_ad_wr port map (
             clk => clk_slow, 
             reset_n => reset_n,
             addr => addr_in, 
 				data => data_in,
+				ext => ext,
             data_write => data_write,
             send_enable => enable_tmp, 
             busy => busy_tmp, 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sramdisplay
-Thu Sep  5 22:00:09 2024
+Fri Sep  6 01:33:51 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -15,16 +15,17 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |top_module|sub_module_ram:B|memorycontroller:ctl|state
   9. State Machine - |top_module|sub_module_lcd:A|lcdcontrollerslow:lc1|state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:ck1
- 16. Port Connectivity Checks: "sub_module_ram:B"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:ck1
+ 17. Port Connectivity Checks: "sub_module_ram:B"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -51,15 +52,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep  5 22:00:09 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep  6 01:33:51 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; sramdisplay                                    ;
 ; Top-level Entity Name              ; top_module                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 284                                            ;
-;     Total combinational functions  ; 245                                            ;
-;     Dedicated logic registers      ; 120                                            ;
-; Total registers                    ; 120                                            ;
+; Total logic elements               ; 304                                            ;
+;     Total combinational functions  ; 265                                            ;
+;     Dedicated logic registers      ; 121                                            ;
+; Total registers                    ; 121                                            ;
 ; Total pins                         ; 133                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -168,7 +169,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -193,20 +195,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 284          ;
+; Estimated Total logic elements              ; 304          ;
 ;                                             ;              ;
-; Total combinational functions               ; 245          ;
+; Total combinational functions               ; 265          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 131          ;
-;     -- 3 input functions                    ; 49           ;
+;     -- 4 input functions                    ; 169          ;
+;     -- 3 input functions                    ; 31           ;
 ;     -- <=2 input functions                  ; 65           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 194          ;
-;     -- arithmetic mode                      ; 51           ;
+;     -- normal mode                          ; 215          ;
+;     -- arithmetic mode                      ; 50           ;
 ;                                             ;              ;
-; Total registers                             ; 120          ;
-;     -- Dedicated logic registers            ; 120          ;
+; Total registers                             ; 121          ;
+;     -- Dedicated logic registers            ; 121          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 133          ;
@@ -214,9 +216,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; psw[3]~input ;
-; Maximum fan-out                             ; 92           ;
-; Total fan-out                               ; 1456         ;
-; Average fan-out                             ; 2.22         ;
+; Maximum fan-out                             ; 93           ;
+; Total fan-out                               ; 1559         ;
+; Average fan-out                             ; 2.31         ;
 +---------------------------------------------+--------------+
 
 
@@ -225,11 +227,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name       ; Library Name ;
 +-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
-; |top_module                   ; 245 (0)             ; 120 (0)                   ; 0           ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                        ; top_module        ; work         ;
-;    |sub_module_lcd:A|         ; 197 (0)             ; 88 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
-;       |lcdcontrollerslow:lc1| ; 25 (25)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerslow:lc1 ; lcdcontrollerslow ; work         ;
-;       |mod5:ck1|              ; 22 (22)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:ck1              ; mod5              ; work         ;
-;       |userlogic_ad_wr:ul1|   ; 150 (150)           ; 41 (41)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
+; |top_module                   ; 265 (0)             ; 121 (0)                   ; 0           ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                        ; top_module        ; work         ;
+;    |sub_module_lcd:A|         ; 217 (0)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
+;       |lcdcontrollerslow:lc1| ; 30 (30)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerslow:lc1 ; lcdcontrollerslow ; work         ;
+;       |mod5:ck1|              ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:ck1              ; mod5              ; work         ;
+;       |userlogic_ad_wr:ul1|   ; 166 (166)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
 ;    |sub_module_ram:B|         ; 48 (0)              ; 32 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                       ; sub_module_ram    ; work         ;
 ;       |memorycontroller:ctl|  ; 6 (6)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl  ; memorycontroller  ; work         ;
 ;       |seg7:dp11|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp11             ; seg7              ; work         ;
@@ -281,29 +283,37 @@ Encoding Type:  One-Hot
 +-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                ;
-+----------------------------------------------------------+----------------------------------------+
-; Register name                                            ; Reason for Removal                     ;
-+----------------------------------------------------------+----------------------------------------+
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[7,8]     ; Stuck at GND due to stuck port data_in ;
-; sub_module_lcd:A|lcdcontrollerslow:lc1|rw_reg            ; Stuck at GND due to stuck port data_in ;
-; sub_module_lcd:A|lcdcontrollerslow:lc1|data_write_reg[7] ; Stuck at GND due to stuck port data_in ;
-; sub_module_lcd:A|lcdcontrollerslow:lc1|state.start       ; Lost fanout                            ;
-; Total Number of Removed Registers = 5                    ;                                        ;
-+----------------------------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                           ;
++----------------------------------------------------+-------------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                             ; Free of Timing Hazards ;
++----------------------------------------------------+-------------------------------------------------+------------------------+
+; sub_module_lcd:A|lcdcontrollerslow:lc1|rs_buf      ; sub_module_lcd:A|lcdcontrollerslow:lc1|WideOr10 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                                                 ;                        ;
++----------------------------------------------------+-------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                               ;
-+----------------------------------------------------+---------------------------+----------------------------------------------------------+
-; Register name                                      ; Reason for Removal        ; Registers Removed due to This Register                   ;
-+----------------------------------------------------+---------------------------+----------------------------------------------------------+
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[8] ; Stuck at GND              ; sub_module_lcd:A|lcdcontrollerslow:lc1|rw_reg            ;
-;                                                    ; due to stuck port data_in ;                                                          ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[7] ; Stuck at GND              ; sub_module_lcd:A|lcdcontrollerslow:lc1|data_write_reg[7] ;
-;                                                    ; due to stuck port data_in ;                                                          ;
-+----------------------------------------------------+---------------------------+----------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++----------------------------------------------------+----------------------------------------+
+; Register name                                      ; Reason for Removal                     ;
++----------------------------------------------------+----------------------------------------+
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[8] ; Stuck at GND due to stuck port data_in ;
+; sub_module_lcd:A|lcdcontrollerslow:lc1|rw_reg      ; Stuck at GND due to stuck port data_in ;
+; sub_module_lcd:A|lcdcontrollerslow:lc1|state.start ; Lost fanout                            ;
+; Total Number of Removed Registers = 3              ;                                        ;
++----------------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                    ;
++----------------------------------------------------+---------------------------+-----------------------------------------------+
+; Register name                                      ; Reason for Removal        ; Registers Removed due to This Register        ;
++----------------------------------------------------+---------------------------+-----------------------------------------------+
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[8] ; Stuck at GND              ; sub_module_lcd:A|lcdcontrollerslow:lc1|rw_reg ;
+;                                                    ; due to stuck port data_in ;                                               ;
++----------------------------------------------------+---------------------------+-----------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -311,12 +321,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 120   ;
+; Total registers                              ; 121   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 120   ;
+; Number of registers using Asynchronous Clear ; 121   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 66    ;
+; Number of registers using Clock Enable       ; 67    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -328,8 +338,8 @@ Encoding Type:  One-Hot
 +-------------------------------------------------+---------+
 ; sub_module_ram:B|memorycontroller:ctl|we_reg    ; 1       ;
 ; sub_module_ram:B|memorycontroller:ctl|oe_reg    ; 1       ;
-; sub_module_lcd:A|lcdcontrollerslow:lc1|busy_reg ; 3       ;
 ; sub_module_ram:B|memorycontroller:ctl|tri_reg   ; 8       ;
+; sub_module_lcd:A|lcdcontrollerslow:lc1|busy_reg ; 2       ;
 ; Total number of inverted registers = 4          ;         ;
 +-------------------------------------------------+---------+
 
@@ -349,7 +359,7 @@ Encoding Type:  One-Hot
 +----------------+-------+-----------------------------------------------+
 ; Parameter Name ; Value ; Type                                          ;
 +----------------+-------+-----------------------------------------------+
-; n              ; 22    ; Signed Integer                                ;
+; n              ; 21    ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -373,23 +383,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 133                         ;
-; cycloneiii_ff         ; 120                         ;
+; cycloneiii_ff         ; 121                         ;
 ;     CLR               ; 54                          ;
-;     ENA CLR           ; 66                          ;
+;     ENA CLR           ; 67                          ;
 ; cycloneiii_io_obuf    ; 24                          ;
-; cycloneiii_lcell_comb ; 255                         ;
-;     arith             ; 51                          ;
-;         2 data inputs ; 50                          ;
+; cycloneiii_lcell_comb ; 275                         ;
+;     arith             ; 50                          ;
+;         2 data inputs ; 49                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 204                         ;
+;     normal            ; 225                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 12                          ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 48                          ;
-;         4 data inputs ; 131                         ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 169                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 15.00                       ;
-; Average LUT depth     ; 6.73                        ;
+; Max LUT depth         ; 13.10                       ;
+; Average LUT depth     ; 6.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -398,7 +408,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -408,7 +418,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Sep  5 22:00:01 2024
+    Info: Processing started: Fri Sep  6 01:33:27 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SRAM_LCD_FPGA -c sramdisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -431,25 +441,27 @@ Info (12021): Found 2 design units, including 1 entities, in source file mod5.vh
     Info (12022): Found design unit 1: mod5-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd Line: 10
     Info (12023): Found entity 1: mod5 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_lcd.vhd
-    Info (12022): Found design unit 1: sub_module_lcd-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 15
+    Info (12022): Found design unit 1: sub_module_lcd-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 16
     Info (12023): Found entity 1: sub_module_lcd File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_ram.vhd
     Info (12022): Found design unit 1: sub_module_ram-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 22
     Info (12023): Found entity 1: sub_module_ram File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file userlogic_addr.vhd
-    Info (12022): Found design unit 1: userlogic_ad_wr-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 18
+    Info (12022): Found design unit 1: userlogic_ad_wr-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 19
     Info (12023): Found entity 1: userlogic_ad_wr File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 5
 Info (12127): Elaborating entity "top_module" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(63): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 63
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(63): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 63
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
-Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 76
-Info (12128): Elaborating entity "mod5" for hierarchy "sub_module_lcd:A|mod5:ck1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 55
-Info (12128): Elaborating entity "userlogic_ad_wr" for hierarchy "sub_module_lcd:A|userlogic_ad_wr:ul1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 56
-Info (12128): Elaborating entity "lcdcontrollerslow" for hierarchy "sub_module_lcd:A|lcdcontrollerslow:lc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 66
-Warning (10492): VHDL Process Statement warning at lcdcontroller.vhd(130): signal "data_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 130
-Warning (10492): VHDL Process Statement warning at lcdcontroller.vhd(131): signal "data_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 131
-Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 77
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(65): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 65
+Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 79
+Info (12128): Elaborating entity "mod5" for hierarchy "sub_module_lcd:A|mod5:ck1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 57
+Info (12128): Elaborating entity "userlogic_ad_wr" for hierarchy "sub_module_lcd:A|userlogic_ad_wr:ul1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 58
+Info (12128): Elaborating entity "lcdcontrollerslow" for hierarchy "sub_module_lcd:A|lcdcontrollerslow:lc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at lcdcontroller.vhd(136): signal "data_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at lcdcontroller.vhd(137): signal "data_write" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 137
+Warning (10631): VHDL Process Statement warning at lcdcontroller.vhd(105): inferring latch(es) for signal or variable "rs_buf", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 105
+Info (10041): Inferred latch for "rs_buf" at lcdcontroller.vhd(105) File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 105
+Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 80
 Info (12128): Elaborating entity "memorycontroller" for hierarchy "sub_module_ram:B|memorycontroller:ctl" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 64
 Info (12128): Elaborating entity "seg7" for hierarchy "sub_module_ram:B|seg7:dp11" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 65
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -462,6 +474,8 @@ Warning (13032): The following tri-state nodes are fed by constants
     Warning (13033): The pin "dio_sram[13]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
     Warning (13033): The pin "dio_sram[14]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
     Warning (13033): The pin "dio_sram[15]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
+Warning (13012): Latch sub_module_lcd:A|lcdcontrollerslow:lc1|rs_buf has unsafe behavior File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 23
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 13
 Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd Line: 28
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
@@ -472,6 +486,7 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "sub_module_lcd:A|lcdcontrollerslow:lc1|dio[4]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 13
     Warning (13010): Node "sub_module_lcd:A|lcdcontrollerslow:lc1|dio[5]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 13
     Warning (13010): Node "sub_module_lcd:A|lcdcontrollerslow:lc1|dio[6]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 13
+    Warning (13010): Node "sub_module_lcd:A|lcdcontrollerslow:lc1|dio[7]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd Line: 13
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ad_sram[8]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
     Warning (13410): Pin "ad_sram[9]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
@@ -517,19 +532,18 @@ Warning (20013): Ignored 19 assignments for entity "sram1" -- entity does not ex
     Warning (20014): Assignment for entity set_global_assignment -name SLD_INFO "QSYS_NAME sram1 HAS_SOPCINFO 1 GENERATION_ID 1724651355" -entity sram1 -library sram1 was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "tsw[16]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 7
-    Warning (15610): No output dependent on input pin "tsw[17]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 7
     Warning (15610): No output dependent on input pin "psw[1]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 8
-Info (21057): Implemented 453 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 470 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 86 output pins
     Info (21060): Implemented 24 bidirectional pins
-    Info (21061): Implemented 320 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
+    Info (21061): Implemented 337 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
     Info: Peak virtual memory: 4809 megabytes
-    Info: Processing ended: Thu Sep  5 22:00:09 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Processing ended: Fri Sep  6 01:33:51 2024
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:52
 
 

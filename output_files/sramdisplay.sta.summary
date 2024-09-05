@@ -2,100 +2,136 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -7.820
-TNS   : -206.445
+Type  : Slow 1200mV 85C Model Setup 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : -8.692
+TNS   : -233.336
+
+Type  : Slow 1200mV 85C Model Setup 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : -4.213
+TNS   : -4.213
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.003
-TNS   : -43.322
+Slack : -1.863
+TNS   : -41.232
 
-Type  : Slow 1200mV 85C Model Hold 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.387
+Type  : Slow 1200mV 85C Model Hold 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : 0.389
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
 Slack : 0.404
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -0.630
-TNS   : -0.630
+Type  : Slow 1200mV 85C Model Hold 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : 2.802
+TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Removal 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 1.133
+Type  : Slow 1200mV 85C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : -1.888
+TNS   : -1.888
+
+Type  : Slow 1200mV 85C Model Removal 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : 2.197
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -72.390
+TNS   : -71.105
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[21]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[20]'
 Slack : -1.285
-TNS   : -84.810
+TNS   : -87.380
 
-Type  : Slow 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -7.117
-TNS   : -183.420
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : 0.405
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : -7.849
+TNS   : -207.078
+
+Type  : Slow 1200mV 0C Model Setup 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : -3.715
+TNS   : -3.715
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -1.671
-TNS   : -34.095
+Slack : -1.554
+TNS   : -32.518
 
-Type  : Slow 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.340
+Type  : Slow 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.357
+Slack : 0.356
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -0.483
-TNS   : -0.483
+Type  : Slow 1200mV 0C Model Hold 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : 2.607
+TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 1.008
+Type  : Slow 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : -1.553
+TNS   : -1.553
+
+Type  : Slow 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : 1.891
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -72.390
+TNS   : -71.105
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[21]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[20]'
 Slack : -1.285
-TNS   : -84.810
+TNS   : -87.380
 
-Type  : Fast 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -3.268
-TNS   : -71.811
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : 0.438
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : -3.702
+TNS   : -84.584
+
+Type  : Fast 1200mV 0C Model Setup 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : -1.665
+TNS   : -1.665
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.494
-TNS   : -2.414
+Slack : -0.738
+TNS   : -2.085
 
-Type  : Fast 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.174
+Type  : Fast 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : 0.175
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.184
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.206
+Type  : Fast 1200mV 0C Model Hold 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : 1.409
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.568
+Type  : Fast 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : -0.502
+TNS   : -0.502
+
+Type  : Fast 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[20]'
+Slack : 1.169
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -60.472
+TNS   : -59.384
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[21]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[20]'
 Slack : -1.000
-TNS   : -66.000
+TNS   : -68.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
+Slack : 0.399
+TNS   : 0.000
 
 ------------------------------------------------------------

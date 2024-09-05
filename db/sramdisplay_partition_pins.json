@@ -280,6 +280,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "dio_lcd[7]",
+					"strict" : false
+				},
+				{
 					"name" : "tsw[0]",
 					"strict" : false
 				},
@@ -357,6 +361,10 @@
 				},
 				{
 					"name" : "psw[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tsw[17]",
 					"strict" : false
 				}
 			]

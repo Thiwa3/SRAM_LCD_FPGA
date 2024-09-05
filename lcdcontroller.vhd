@@ -50,16 +50,16 @@ architecture synth of lcdcontrollerslow is
 				when start =>
 					nextstate <= power;
 				when power =>
-                    data_write_reg_next <= "00110000"; -- INIT_SEQ 
+                    data_write_reg_next <= "00111000"; -- INIT_SEQ 
                     nextstate <= init1;
 				when init1 =>
-                    data_write_reg_next <= "00110100"; -- 8bit length, 1 line mode, display on
+                    data_write_reg_next <= "00111110"; -- 8bit length, 2 line mode, display on
                     nextstate <= init2;
 				when init2 =>
                     data_write_reg_next <= "00000000"; 
                     nextstate <= init3;
 				when init3 =>
-                    data_write_reg_next <= "00001100"; -- Display on/off control (d on/c off/b off)
+                    data_write_reg_next <= "00001101"; -- Display on/off control (d on/c off/b on)
                     nextstate <= init4;
 				when init4 =>
                     data_write_reg_next <= "00000000";
@@ -80,9 +80,9 @@ architecture synth of lcdcontrollerslow is
                     nextstate <= ready;
 				when ready =>
 					if (send_enable = '1') then
-						data_write_reg_next <= data_write(7 downto 0); -- DATA / INST
+						data_write_reg_next <= data_write(7 downto 0); -- DATA / INST; it works
 						nextstate <= send1;
-                        if (data_write(8) = '1') then
+                        if (data_write(8) = '1') then	-- it works
                             data_read_reg_next <= dio;
                         else
                             data_read_reg_next <= (others => 'Z');
@@ -105,43 +105,46 @@ architecture synth of lcdcontrollerslow is
         process (nextstate, send_enable) begin
             en_buf <= '0';
             rw_buf <= '0';
-            rs_buf <= '0';
             busy_buf <= '1';
-            -- type statetype is (start, power, init1, init2, init3, init4, init5, init6, init7, init8, init9, ready, send1, send2, send3, send4);
             case nextstate is
                 when start =>
                 when power =>
+						rs_buf <= '0';
                 when init1 =>
                     en_buf <= '1';
+						  rs_buf <= '0';
                 when init2 =>
+						  rs_buf <= '0';
                 when init3 =>
                     en_buf <= '1';
                 when init4 =>
+						rs_buf <= '0';
                 when init5 =>
                     en_buf <= '1';
+						rs_buf <= '0';
                 when init6 =>
+						rs_buf <= '0';
                 when init7 =>
                     en_buf <= '1';
+						rs_buf <= '0';
                 when init8 =>
+						rs_buf <= '0';
                 when init9 => 
+						rs_buf <= '0';
                 when ready =>
-                    rs_buf <= '1';
                     if (send_enable = '1') then
-                        rs_buf <= data_write(9);
-                        rw_buf <= data_write(8);
+                        rs_buf <= data_write(9); -- it doesn't recognize rs
+                        rw_buf <= data_write(8); -- should check with simulation
                     else
+								rs_buf <= '1';
                         busy_buf <= '0';
                     end if;
                 when send1 =>
-                    rs_buf <= '1';
                 when send2 =>
                     en_buf <= '1';
-                    rs_buf <= '1';
                 when send3 =>
-                    rs_buf <= '1';
                 when send4 =>
                     busy_buf <= '0';
-                    rs_buf <= '1';
             end case;
         end process;
 

@@ -6,6 +6,7 @@ entity userlogic_ad_wr is
     port(clk, reset_n: in std_logic;
         -- SYSTEM
         addr, data : in std_logic_vector(7 downto 0);
+        ext : in std_logic;
 
         -- CONTROLLER
         data_write : out std_logic_vector(9 downto 0); -- 1/0 inst/data, read/write
@@ -28,7 +29,7 @@ architecture synth of userlogic_ad_wr is
                 send_enable <= '0';
             elsif rising_edge(clk) then
                 if (busy = '0' and send_enable = '0') then
-                    if (count < 16) then
+                    if (count < 21) then
                         count := count + 1;
                         end if;
                     case count is
@@ -62,10 +63,9 @@ architecture synth of userlogic_ad_wr is
                                 data_write <= "100011" & addr(3 downto 0);
                             end if;
                             send_enable <= '1';
-								
 								when 8 =>
-                            data_write <= "1000100000"; -- _
-                            send_enable <= '1';
+									data_write <= "1000100000"; -- SPACE
+									send_enable <= '1';
                         
                         -- SECTION TWO
                         when 9 =>
@@ -96,7 +96,33 @@ architecture synth of userlogic_ad_wr is
                             else
                                 data_write <= "100011" & data(3 downto 0); -- 0 ~ 9
                             end if;
+                            send_enable <= '1';   
+								when 16 =>
+									data_write <= "1000100000"; -- SPACE
+									send_enable <= '1';						
+								when 17 =>
+                            data_write <= "0011000000"; -- CR
                             send_enable <= '1';
+                        
+                        -- SECTION THREE (INT / EXT)
+                        when 18 => 
+                            if (ext = '1') then
+                                data_write <= "1001000101"; -- E
+                            else
+                                data_write <= "1001001001"; -- I
+                            end if;
+                            send_enable <= '1';
+                        when 19 =>
+                            if (ext = '1') then
+                                data_write <= "1001011000"; -- X
+                            else
+                                data_write <= "1001001110"; -- N
+                            end if;
+                            send_enable <= '1';
+                        when 20 =>
+                            data_write <= "1001010100"; -- T
+                            send_enable <= '1';
+               
                         when others => 
                             send_enable <= '0';
                     end case;
