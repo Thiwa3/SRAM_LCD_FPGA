@@ -59,7 +59,7 @@ architecture synth of lcdcontrollerslow is
                     data_write_reg_next <= "00000000"; 
                     nextstate <= init3;
 				when init3 =>
-                    data_write_reg_next <= "00001100"; -- Display on/off control (d on/c off/b off)
+                    data_write_reg_next <= "00001101"; -- Display on/off control (d on/c off/b on)
                     nextstate <= init4;
 				when init4 =>
                     data_write_reg_next <= "00000000";

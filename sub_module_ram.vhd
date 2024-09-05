@@ -14,7 +14,8 @@ entity sub_module_ram is
           we_n, oe_n, ce_n, lb_n, ub_n: out STD_LOGIC;
 
           -- SEGMENT
-          segout: out STD_LOGIC_VECTOR(7*2-1 downto 0)
+          segoutL, segoutM: out STD_LOGIC_VECTOR(7*2-1 downto 0);
+			 segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
     );
 end;
 
@@ -61,6 +62,13 @@ architecture synth of sub_module_ram is
 		  lb_n <= '0';
 		  ub_n <= '0';
         ctl: memorycontroller port map(clk, reset, addr, data_write, data_read_r, data_read, mem, rw, ready, ad, dio, we_n, oe_n, ce_n);
-        dp1:seg7 port map(data_display(3 downto 0), segout(6 downto 0));
-        dp2:seg7 port map(data_display(7 downto 4), segout(13 downto 7));
+		  dp11:seg7 port map(addr(3 downto 0), segoutL(6 downto 0));
+		  dp12:seg7 port map(addr(7 downto 4), segoutL(13 downto 7));
+		  
+		  dp21:seg7 port map(data_write(3 downto 0), segoutM(6 downto 0));
+		  dp22:seg7 port map(data_write(7 downto 4), segoutM(13 downto 7));
+		  
+        dp13:seg7 port map(data_display(3 downto 0), segoutR(6 downto 0));
+        dp23:seg7 port map(data_display(7 downto 4), segoutR(13 downto 7));
+		  segoutR(27 downto 14) <= "10000001000000";
     end;

@@ -1,10 +1,11 @@
 -- vhdl-linter-disable type-resolved
 library IEEE; use IEEE.STD_LOGIC_1164.all;
+use ieee.numeric_std.all;
 
-entity userlogic_addr is
+entity userlogic_ad_wr is
     port(clk, reset_n: in std_logic;
         -- SYSTEM
-        addr : in std_logic_vector(7 downto 0);
+        addr, data : in std_logic_vector(7 downto 0);
 
         -- CONTROLLER
         data_write : out std_logic_vector(9 downto 0); -- 1/0 inst/data, read/write
@@ -14,7 +15,7 @@ entity userlogic_addr is
     );
 end;
 
-architecture synth of userlogic_addr is   
+architecture synth of userlogic_ad_wr is   
     begin
         process (clk, reset_n, busy) is
             variable count : integer := 0;
@@ -27,10 +28,11 @@ architecture synth of userlogic_addr is
                 send_enable <= '0';
             elsif rising_edge(clk) then
                 if (busy = '0' and send_enable = '0') then
-                    if (count < 8) then
+                    if (count < 16) then
                         count := count + 1;
                         end if;
                     case count is
+                        -- SECTION ONE
                         when 1 => 
                             data_write <= "1001000001"; -- A
                             send_enable <= '1';
@@ -44,13 +46,56 @@ architecture synth of userlogic_addr is
                             data_write <= "1001010010"; -- R
                             send_enable <= '1';
                         when 5 => 
-                            data_write <= "1000011010"; -- →
+                            data_write <= "1001111110"; -- →
                             send_enable <= '1';
                         when 6 => 
-                            data_write <= "100011" & addr(7 downto 4);
+                            if (to_integer(unsigned(addr(7 downto 4))) > 9) then
+                                data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(addr(7 downto 4))) - 9, 4));
+                            else
+                                data_write <= "100011" & addr(7 downto 4);
+                            end if;
                             send_enable <= '1';
                         when 7 => 
-                            data_write <= "100011" & addr(3 downto 0);
+                            if (to_integer(unsigned(addr(3 downto 0))) > 9) then
+                                data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(addr(3 downto 0))) - 9, 4));
+                            else
+                                data_write <= "100011" & addr(3 downto 0);
+                            end if;
+                            send_enable <= '1';
+								
+								when 8 =>
+                            data_write <= "1000100000"; -- _
+                            send_enable <= '1';
+                        
+                        -- SECTION TWO
+                        when 9 =>
+                            data_write <= "1001000100"; -- D
+                            send_enable <= '1';
+                        when 10 =>
+                            data_write <= "1001000001"; -- A
+                            send_enable <= '1';
+                        when 11 =>
+                            data_write <= "1001010100"; -- T
+                            send_enable <= '1';
+                        when 12 =>
+                            data_write <= "1001000001"; -- A
+                            send_enable <= '1';
+                        when 13 =>
+                            data_write <= "1001111110"; -- →
+                            send_enable <= '1';
+                        when 14 => 
+                            if (to_integer(unsigned(data(7 downto 4))) > 9) then
+                                data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(data(7 downto 4))) - 9, 4)); -- A ~ F
+                            else
+                                data_write <= "100011" & data(7 downto 4); -- 0 ~ 9
+                            end if;
+                            send_enable <= '1';
+                        when 15 => 
+                            if (to_integer(unsigned(data(3 downto 0))) > 9) then
+                                data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(data(3 downto 0))) - 9, 4)); -- A ~ F
+                            else
+                                data_write <= "100011" & data(3 downto 0); -- 0 ~ 9
+                            end if;
                             send_enable <= '1';
                         when others => 
                             send_enable <= '0';

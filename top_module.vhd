@@ -16,7 +16,9 @@ entity top_module is
         dio_lcd : inout std_logic_vector(7 downto 0);
         en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd : out std_logic;
 
-        segoutR : out std_logic_vector(7*2-1 downto 0)
+		  -- SEGMENTS
+        segoutL, segoutM: out STD_LOGIC_VECTOR(7*2-1 downto 0);
+		  segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
     );
 end;
 
@@ -25,7 +27,7 @@ architecture synth of top_module is
     component sub_module_lcd is
         port(clk, reset_n: in std_logic;
             -- IO
-            addr_in : in std_logic_vector(7 downto 0);
+            addr_in, data_in : in std_logic_vector(7 downto 0);
 
             -- LCD
             dio : inout std_logic_vector(7 downto 0);
@@ -46,8 +48,9 @@ architecture synth of top_module is
             dio: inout STD_LOGIC_VECTOR(15 downto 0);
             we_n, oe_n, ce_n: out STD_LOGIC;
 
-            -- SEGMENT
-            segout: out STD_LOGIC_VECTOR(7*2-1 downto 0)
+			  -- SEGMENTS
+			  segoutL, segoutM: out STD_LOGIC_VECTOR(7*2-1 downto 0);
+			  segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
         );
     end component;
 
@@ -70,8 +73,8 @@ begin
     addr <= tsw(7 downto 0);
     data_write <= tsw(15 downto 8);
 
-    A: sub_module_lcd port map(clk, reset_n, addr, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
-    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, segoutR);
+    A: sub_module_lcd port map(clk, rw, addr, data_write, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
+    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, segoutL, segoutM, segoutR);
 
 	 lb_n_sram <= '0';
 	 ub_n_sram <= '0';

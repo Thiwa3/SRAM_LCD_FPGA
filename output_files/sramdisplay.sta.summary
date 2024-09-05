@@ -3,27 +3,27 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -6.698
-TNS   : -210.850
+Slack : -7.820
+TNS   : -206.445
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.004
-TNS   : -43.554
+Slack : -2.003
+TNS   : -43.322
 
 Type  : Slow 1200mV 85C Model Hold 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.385
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.403
+Slack : 0.404
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -0.834
-TNS   : -0.834
+Slack : -0.630
+TNS   : -0.630
 
 Type  : Slow 1200mV 85C Model Removal 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 1.368
+Slack : 1.133
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -35,27 +35,27 @@ Slack : -1.285
 TNS   : -84.810
 
 Type  : Slow 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -6.060
-TNS   : -187.902
+Slack : -7.117
+TNS   : -183.420
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -1.672
-TNS   : -34.253
+Slack : -1.671
+TNS   : -34.095
 
 Type  : Slow 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.338
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.354
+Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -0.658
-TNS   : -0.658
+Slack : -0.483
+TNS   : -0.483
 
 Type  : Slow 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 1.237
+Slack : 1.008
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -67,32 +67,32 @@ Slack : -1.285
 TNS   : -84.810
 
 Type  : Fast 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : -2.721
-TNS   : -77.050
+Slack : -3.268
+TNS   : -71.811
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.732
-TNS   : -2.471
+Slack : -0.494
+TNS   : -2.414
 
 Type  : Fast 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[21]'
 Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.181
+Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.102
+Slack : 0.206
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[21]'
-Slack : 0.663
+Slack : 0.568
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -60.436
+TNS   : -60.472
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[21]'
 Slack : -1.000
