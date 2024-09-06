@@ -35,10 +35,10 @@ tsw[15] => sub_module_lcd:A.data_in[7]
 tsw[15] => sub_module_ram:B.data_write[7]
 tsw[16] => ~NO_FANOUT~
 tsw[17] => sub_module_lcd:A.ext
+psw[0] => sub_module_lcd:A.reset_n
 psw[0] => sub_module_ram:B.reset
 psw[1] => ~NO_FANOUT~
 psw[2] => sub_module_ram:B.mem
-psw[3] => sub_module_lcd:A.reset_n
 psw[3] => sub_module_ram:B.rw
 ad_sram[0] << sub_module_ram:B.ad[0]
 ad_sram[1] << sub_module_ram:B.ad[1]
@@ -153,9 +153,10 @@ segoutR[27] << sub_module_ram:B.segoutR[27]
 
 
 |top_module|sub_module_lcd:A
+clk => mod5:df1.clk
 clk => userlogic_ad_wr:ul1.clk
 clk => lcdcontrollerfast:lc1.clk
-reset_n => userlogic_ad_wr:ul1.reset_n
+reset_n => mod5:df1.Nreset
 reset_n => lcdcontrollerfast:lc1.reset_n
 addr_in[0] => userlogic_ad_wr:ul1.addr[0]
 addr_in[1] => userlogic_ad_wr:ul1.addr[1]
@@ -187,6 +188,54 @@ rw_l <= lcdcontrollerfast:lc1.lcd_rw
 rs_l <= lcdcontrollerfast:lc1.lcd_rs
 pon_l <= lcdcontrollerfast:lc1.lcd_pon
 blon_l <= lcdcontrollerfast:lc1.lcd_blon
+
+
+|top_module|sub_module_lcd:A|mod5:df1
+clk => q[0].CLK
+clk => q[1].CLK
+clk => q[2].CLK
+clk => q[3].CLK
+clk => q[4].CLK
+clk => q[5].CLK
+clk => q[6].CLK
+clk => q[7].CLK
+clk => q[8].CLK
+clk => q[9].CLK
+clk => q[10].CLK
+clk => q[11].CLK
+clk => q[12].CLK
+clk => q[13].CLK
+clk => q[14].CLK
+clk => q[15].CLK
+clk => q[16].CLK
+clk => q[17].CLK
+clk => q[18].CLK
+clk => q[19].CLK
+clk => q[20].CLK
+clk => q[21].CLK
+Nreset => q[0].ACLR
+Nreset => q[1].ACLR
+Nreset => q[2].ACLR
+Nreset => q[3].ACLR
+Nreset => q[4].ACLR
+Nreset => q[5].ACLR
+Nreset => q[6].ACLR
+Nreset => q[7].ACLR
+Nreset => q[8].ACLR
+Nreset => q[9].ACLR
+Nreset => q[10].ACLR
+Nreset => q[11].ACLR
+Nreset => q[12].ACLR
+Nreset => q[13].ACLR
+Nreset => q[14].ACLR
+Nreset => q[15].ACLR
+Nreset => q[16].ACLR
+Nreset => q[17].ACLR
+Nreset => q[18].ACLR
+Nreset => q[19].ACLR
+Nreset => q[20].ACLR
+Nreset => q[21].ACLR
+Output_clk <= q[21].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1

@@ -1,5 +1,5 @@
 Fitter report for sramdisplay
-Fri Sep  6 23:32:14 2024
+Sat Sep  7 00:21:53 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -67,17 +67,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Sep  6 23:32:14 2024          ;
+; Fitter Status                      ; Successful - Sat Sep  7 00:21:53 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; sramdisplay                                    ;
 ; Top-level Entity Name              ; top_module                                     ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 412 / 114,480 ( < 1 % )                        ;
-;     Total combinational functions  ; 390 / 114,480 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 121 / 114,480 ( < 1 % )                        ;
-; Total registers                    ; 121                                            ;
+; Total logic elements               ; 445 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 418 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 143 / 114,480 ( < 1 % )                        ;
+; Total registers                    ; 143                                            ;
 ; Total pins                         ; 133 / 529 ( 25 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
@@ -154,7 +154,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -169,8 +169,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 813 ) ; 0.00 % ( 0 / 813 )         ; 0.00 % ( 0 / 813 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 813 ) ; 0.00 % ( 0 / 813 )         ; 0.00 % ( 0 / 813 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 863 ) ; 0.00 % ( 0 / 863 )         ; 0.00 % ( 0 / 863 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 863 ) ; 0.00 % ( 0 / 863 )         ; 0.00 % ( 0 / 863 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -193,7 +193,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 803 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 853 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -209,26 +209,26 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 412 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 291                     ;
-;     -- Register only                        ; 22                      ;
-;     -- Combinational with a register        ; 99                      ;
+; Total logic elements                        ; 445 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 302                     ;
+;     -- Register only                        ; 27                      ;
+;     -- Combinational with a register        ; 116                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 230                     ;
-;     -- 3 input functions                    ; 46                      ;
-;     -- <=2 input functions                  ; 114                     ;
-;     -- Register only                        ; 22                      ;
+;     -- 4 input functions                    ; 235                     ;
+;     -- 3 input functions                    ; 48                      ;
+;     -- <=2 input functions                  ; 135                     ;
+;     -- Register only                        ; 27                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 328                     ;
-;     -- arithmetic mode                      ; 62                      ;
+;     -- normal mode                          ; 336                     ;
+;     -- arithmetic mode                      ; 82                      ;
 ;                                             ;                         ;
-; Total registers*                            ; 121 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 121 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 143 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 143 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 35 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 33 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 133 / 529 ( 25 % )      ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -247,11 +247,11 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
 ; Average interconnect usage (total/H/V)      ; 0.4% / 0.5% / 0.3%      ;
-; Peak interconnect usage (total/H/V)         ; 3.6% / 4.0% / 3.1%      ;
-; Maximum fan-out                             ; 121                     ;
-; Highest non-global fan-out                  ; 50                      ;
-; Total fan-out                               ; 1931                    ;
-; Average fan-out                             ; 2.34                    ;
+; Peak interconnect usage (total/H/V)         ; 4.4% / 3.9% / 5.2%      ;
+; Maximum fan-out                             ; 143                     ;
+; Highest non-global fan-out                  ; 58                      ;
+; Total fan-out                               ; 2067                    ;
+; Average fan-out                             ; 2.35                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -264,26 +264,26 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 412 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 291                    ; 0                              ;
-;     -- Register only                        ; 22                     ; 0                              ;
-;     -- Combinational with a register        ; 99                     ; 0                              ;
+; Total logic elements                        ; 445 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 302                    ; 0                              ;
+;     -- Register only                        ; 27                     ; 0                              ;
+;     -- Combinational with a register        ; 116                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 230                    ; 0                              ;
-;     -- 3 input functions                    ; 46                     ; 0                              ;
-;     -- <=2 input functions                  ; 114                    ; 0                              ;
-;     -- Register only                        ; 22                     ; 0                              ;
+;     -- 4 input functions                    ; 235                    ; 0                              ;
+;     -- 3 input functions                    ; 48                     ; 0                              ;
+;     -- <=2 input functions                  ; 135                    ; 0                              ;
+;     -- Register only                        ; 27                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 328                    ; 0                              ;
-;     -- arithmetic mode                      ; 62                     ; 0                              ;
+;     -- normal mode                          ; 336                    ; 0                              ;
+;     -- arithmetic mode                      ; 82                     ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total registers                             ; 121                    ; 0                              ;
-;     -- Dedicated logic registers            ; 121 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 143                    ; 0                              ;
+;     -- Dedicated logic registers            ; 143 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 35 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 33 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 133                    ; 0                              ;
@@ -299,8 +299,8 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 1926                   ; 5                              ;
-;     -- Registered Connections               ; 418                    ; 0                              ;
+;     -- Total Connections                    ; 2062                   ; 5                              ;
+;     -- Registered Connections               ; 484                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 48                     ; 0                              ;
@@ -332,18 +332,18 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; clk     ; Y2    ; 2        ; 0            ; 36           ; 14           ; 121                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; psw[0]  ; R24   ; 5        ; 115          ; 35           ; 21           ; 32                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk     ; Y2    ; 2        ; 0            ; 36           ; 14           ; 143                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; psw[0]  ; R24   ; 5        ; 115          ; 35           ; 21           ; 58                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; psw[1]  ; N21   ; 6        ; 115          ; 42           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; psw[2]  ; M21   ; 6        ; 115          ; 53           ; 14           ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; psw[3]  ; M23   ; 6        ; 115          ; 40           ; 7            ; 50                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; psw[3]  ; M23   ; 6        ; 115          ; 40           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 11                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[10] ; AC24  ; 5        ; 115          ; 4            ; 14           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[11] ; AB24  ; 5        ; 115          ; 5            ; 14           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[12] ; AB23  ; 5        ; 115          ; 7            ; 14           ; 11                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; tsw[13] ; AA24  ; 5        ; 115          ; 9            ; 21           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; tsw[14] ; AA23  ; 5        ; 115          ; 10           ; 7            ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; tsw[15] ; AA22  ; 5        ; 115          ; 6            ; 14           ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; tsw[13] ; AA24  ; 5        ; 115          ; 9            ; 21           ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; tsw[14] ; AA23  ; 5        ; 115          ; 10           ; 7            ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; tsw[15] ; AA22  ; 5        ; 115          ; 6            ; 14           ; 13                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[16] ; Y24   ; 5        ; 115          ; 13           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[17] ; Y23   ; 5        ; 115          ; 14           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[1]  ; AC28  ; 5        ; 115          ; 14           ; 0            ; 12                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -1455,14 +1455,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node    ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                ; Entity Name       ; Library Name ;
 +-------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------+-------------------+--------------+
-; |top_module                   ; 412 (0)     ; 121 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 133  ; 0            ; 291 (0)      ; 22 (0)            ; 99 (0)           ; |top_module                                        ; top_module        ; work         ;
-;    |sub_module_lcd:A|         ; 344 (0)     ; 89 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 255 (0)      ; 2 (0)             ; 87 (0)           ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
-;       |lcdcontrollerfast:lc1| ; 177 (177)   ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 130 (130)    ; 1 (1)             ; 46 (46)          ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1 ; lcdcontrollerfast ; work         ;
-;       |userlogic_ad_wr:ul1|   ; 167 (167)   ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 125 (125)    ; 1 (1)             ; 41 (41)          ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
-;    |sub_module_ram:B|         ; 68 (0)      ; 32 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (0)       ; 20 (0)            ; 12 (0)           ; |top_module|sub_module_ram:B                       ; sub_module_ram    ; work         ;
-;       |memorycontroller:ctl|  ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 20 (20)           ; 12 (12)          ; |top_module|sub_module_ram:B|memorycontroller:ctl  ; memorycontroller  ; work         ;
-;       |seg7:dp11|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 2 (2)            ; |top_module|sub_module_ram:B|seg7:dp11             ; seg7              ; work         ;
-;       |seg7:dp12|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 4 (4)            ; |top_module|sub_module_ram:B|seg7:dp12             ; seg7              ; work         ;
+; |top_module                   ; 445 (0)     ; 143 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 133  ; 0            ; 302 (0)      ; 27 (0)            ; 116 (0)          ; |top_module                                        ; top_module        ; work         ;
+;    |sub_module_lcd:A|         ; 371 (0)     ; 111 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 260 (0)      ; 1 (0)             ; 110 (0)          ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
+;       |lcdcontrollerfast:lc1| ; 176 (176)   ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 129 (129)    ; 0 (0)             ; 47 (47)          ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1 ; lcdcontrollerfast ; work         ;
+;       |mod5:df1|              ; 22 (22)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 22 (22)          ; |top_module|sub_module_lcd:A|mod5:df1              ; mod5              ; work         ;
+;       |userlogic_ad_wr:ul1|   ; 173 (173)   ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 131 (131)    ; 1 (1)             ; 41 (41)          ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
+;    |sub_module_ram:B|         ; 74 (0)      ; 32 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 42 (0)       ; 26 (0)            ; 6 (0)            ; |top_module|sub_module_ram:B                       ; sub_module_ram    ; work         ;
+;       |memorycontroller:ctl|  ; 32 (32)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 26 (26)           ; 6 (6)            ; |top_module|sub_module_ram:B|memorycontroller:ctl  ; memorycontroller  ; work         ;
+;       |seg7:dp11|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|seg7:dp11             ; seg7              ; work         ;
+;       |seg7:dp12|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|seg7:dp12             ; seg7              ; work         ;
 ;       |seg7:dp13|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|seg7:dp13             ; seg7              ; work         ;
 ;       |seg7:dp21|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|seg7:dp21             ; seg7              ; work         ;
 ;       |seg7:dp22|             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|seg7:dp22             ; seg7              ; work         ;
@@ -1564,13 +1565,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; segoutR[25]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; segoutR[26]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; segoutR[27]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; dio_sram[0]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dio_sram[0]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dio_sram[1]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[2]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[3]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[4]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[5]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; dio_sram[6]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; dio_sram[6]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[7]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[8]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; dio_sram[9]  ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
@@ -1588,26 +1589,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dio_lcd[5]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; dio_lcd[6]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; dio_lcd[7]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; tsw[0]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[0]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[1]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[2]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; tsw[2]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; tsw[3]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; tsw[4]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[4]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[5]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[6]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[7]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[8]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[9]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[10]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; tsw[11]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[9]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[10]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; tsw[11]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[12]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[13]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[13]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[14]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; tsw[15]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk          ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; psw[0]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; psw[2]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; psw[3]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; psw[3]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[17]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
 
@@ -1620,21 +1621,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; tsw[16]                                                               ;                   ;         ;
 ; psw[1]                                                                ;                   ;         ;
 ; dio_sram[0]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[0]~feeder  ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[0]~feeder  ; 1                 ; 6       ;
 ; dio_sram[1]                                                           ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[1]~feeder  ; 0                 ; 6       ;
 ; dio_sram[2]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[2]         ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[2]~feeder  ; 0                 ; 6       ;
 ; dio_sram[3]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[3]         ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[3]~feeder  ; 0                 ; 6       ;
 ; dio_sram[4]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[4]         ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[4]~feeder  ; 0                 ; 6       ;
 ; dio_sram[5]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[5]~feeder  ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[5]         ; 0                 ; 6       ;
 ; dio_sram[6]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[6]~feeder  ; 1                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[6]~feeder  ; 0                 ; 6       ;
 ; dio_sram[7]                                                           ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[7]~feeder  ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[7]         ; 0                 ; 6       ;
 ; dio_sram[8]                                                           ;                   ;         ;
 ; dio_sram[9]                                                           ;                   ;         ;
 ; dio_sram[10]                                                          ;                   ;         ;
@@ -1652,17 +1653,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dio_lcd[6]                                                            ;                   ;         ;
 ; dio_lcd[7]                                                            ;                   ;         ;
 ; tsw[0]                                                                ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[0]              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux6~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux5~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux4~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux3~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux2~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux1~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux0~0                              ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~3               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~1               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 1                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[0]              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux6~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux5~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux4~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux3~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux2~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux1~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux0~0                              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~11              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~5               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~3               ; 0                 ; 6       ;
 ; tsw[1]                                                                ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[1]              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp11|Mux6~0                              ; 0                 ; 6       ;
@@ -1673,22 +1674,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp11|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp11|Mux0~0                              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan2~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~1               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~3               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~5               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~3               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~4               ; 0                 ; 6       ;
 ; tsw[2]                                                                ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[2]              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux6~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux5~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux4~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux3~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux2~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux1~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp11|Mux0~0                              ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan2~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~1               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~3               ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux6~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux5~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux4~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux3~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux2~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux1~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp11|Mux0~0                              ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan2~0               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~5               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~3               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~4               ; 1                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[2]~feeder       ; 1                 ; 6       ;
 ; tsw[3]                                                                ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[3]              ; 1                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp11|Mux6~0                              ; 1                 ; 6       ;
@@ -1699,23 +1700,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp11|Mux1~0                              ; 1                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp11|Mux0~0                              ; 1                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan2~0               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~1               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~3               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~5               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~3               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~4               ; 1                 ; 6       ;
 ; tsw[4]                                                                ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[4]              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux6~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux5~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux4~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux3~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux2~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux1~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp12|Mux0~0                              ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~5               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~4               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~7               ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux6~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux5~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux4~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux3~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux2~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux1~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp12|Mux0~0                              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~12              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~8               ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[4]~feeder       ; 0                 ; 6       ;
 ; tsw[5]                                                                ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[5]              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux6~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux5~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux4~0                              ; 0                 ; 6       ;
@@ -1724,11 +1724,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp12|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux0~0                              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan1~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~4               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~7               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~8               ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~6               ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[5]~feeder       ; 0                 ; 6       ;
 ; tsw[6]                                                                ;                   ;         ;
-;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[6]              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux6~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux5~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux4~0                              ; 0                 ; 6       ;
@@ -1737,9 +1737,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp12|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux0~0                              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan1~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~4               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~7               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~8               ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~6               ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[6]~feeder       ; 0                 ; 6       ;
 ; tsw[7]                                                                ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[7]              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux6~0                              ; 0                 ; 6       ;
@@ -1750,8 +1751,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp12|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp12|Mux0~0                              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan1~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~4               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~7               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~8               ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~6               ; 0                 ; 6       ;
 ; tsw[8]                                                                ;                   ;         ;
 ;      - sub_module_ram:B|seg7:dp21|Mux6~0                              ; 0                 ; 6       ;
@@ -1762,10 +1763,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp21|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp21|Mux0~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[0]        ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~2               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~2               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~10              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~2               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 0                 ; 6       ;
 ; tsw[9]                                                                ;                   ;         ;
+;      - sub_module_ram:B|seg7:dp21|Mux6~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux5~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux4~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux3~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux2~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux1~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux0~0                              ; 1                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[1]        ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan4~0               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~2               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~2               ; 1                 ; 6       ;
+; tsw[10]                                                               ;                   ;         ;
+;      - sub_module_ram:B|seg7:dp21|Mux6~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux5~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux4~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux3~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux2~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux1~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp21|Mux0~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[2]        ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan4~0               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~2               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~2               ; 0                 ; 6       ;
+; tsw[11]                                                               ;                   ;         ;
 ;      - sub_module_ram:B|seg7:dp21|Mux6~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp21|Mux5~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp21|Mux4~0                              ; 0                 ; 6       ;
@@ -1774,36 +1801,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp21|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp21|Mux0~0                              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan4~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~2               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~2               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~2               ; 0                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[1]~feeder ; 0                 ; 6       ;
-; tsw[10]                                                               ;                   ;         ;
-;      - sub_module_ram:B|seg7:dp21|Mux6~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux5~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux4~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux3~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux2~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux1~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux0~0                              ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan4~0               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~2               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~2               ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[2]~feeder ; 1                 ; 6       ;
-; tsw[11]                                                               ;                   ;         ;
-;      - sub_module_ram:B|seg7:dp21|Mux6~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux5~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux4~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux3~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux2~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux1~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp21|Mux0~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[3]        ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan4~0               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~0               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~2               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~2               ; 1                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[3]~feeder ; 0                 ; 6       ;
 ; tsw[12]                                                               ;                   ;         ;
 ;      - sub_module_ram:B|seg7:dp22|Mux6~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux5~0                              ; 0                 ; 6       ;
@@ -1812,23 +1813,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp22|Mux2~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux0~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[4]        ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector8~4               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~1              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~3               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[4]~feeder ; 0                 ; 6       ;
 ; tsw[13]                                                               ;                   ;         ;
-;      - sub_module_ram:B|seg7:dp22|Mux6~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp22|Mux5~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp22|Mux4~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp22|Mux3~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp22|Mux2~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp22|Mux1~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|seg7:dp22|Mux0~0                              ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[5]        ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~3               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~5               ; 1                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux6~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux5~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux4~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux3~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux2~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux1~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|seg7:dp22|Mux0~0                              ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[5]        ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~1              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~3               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~3               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0               ; 0                 ; 6       ;
 ; tsw[14]                                                               ;                   ;         ;
 ;      - sub_module_ram:B|seg7:dp22|Mux6~0                              ; 1                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux5~0                              ; 1                 ; 6       ;
@@ -1837,10 +1839,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp22|Mux2~0                              ; 1                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux1~0                              ; 1                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux0~0                              ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~1              ; 1                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~3               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~5               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~3               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0               ; 1                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[6]~feeder ; 1                 ; 6       ;
 ; tsw[15]                                                               ;                   ;         ;
 ;      - sub_module_ram:B|seg7:dp22|Mux6~0                              ; 0                 ; 6       ;
@@ -1850,11 +1853,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|seg7:dp22|Mux2~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux1~0                              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|seg7:dp22|Mux0~0                              ; 0                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[7]        ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~1              ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~3               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~6               ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~5               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~4               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~3               ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0               ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[7]~feeder ; 0                 ; 6       ;
 ; clk                                                                   ;                   ;         ;
 ; psw[0]                                                                ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_read_reg[0]         ; 0                 ; 6       ;
@@ -1873,12 +1877,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[5]              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[6]              ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[7]              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state.init              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state.send              ; 0                 ; 6       ;
+;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state.ready             ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[21]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[20]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[19]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[18]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[17]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[16]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[15]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[14]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[13]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[12]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[11]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[10]                                ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[9]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[8]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[7]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[6]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[5]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[4]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[3]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[2]                                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[1]                                 ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|we_reg                   ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|oe_reg                   ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|state.idle               ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|state.r1                 ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|state.r2                 ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|state.w2                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state~6                 ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[0]        ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|tri_reg                  ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[1]        ; 0                 ; 6       ;
@@ -1889,6 +1918,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[6]        ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[7]        ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|state.w1                 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|mod5:df1|q[0]                                 ; 0                 ; 6       ;
 ; psw[2]                                                                ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|addr_reg[0]~0            ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|nextstate.w1~0           ; 0                 ; 6       ;
@@ -1897,61 +1927,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|memorycontroller:ctl|nextstate.r1~0           ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|tri_buf~0                ; 0                 ; 6       ;
 ; psw[3]                                                                ;                   ;         ;
-;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state.init              ; 1                 ; 6       ;
-;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state.send              ; 1                 ; 6       ;
-;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state.ready             ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|nextstate.w1~0           ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|oe_buf~0                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[9]             ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|nextstate.r1~0           ; 1                 ; 6       ;
-;      - sub_module_lcd:A|lcdcontrollerfast:lc1|state~6                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[0]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[31]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[30]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[29]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[28]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[27]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[26]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[25]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[24]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[23]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[1]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[2]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[3]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[4]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[22]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[21]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[20]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[19]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[18]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[17]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[16]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[15]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[14]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[13]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[12]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[11]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[10]                 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[9]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[8]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[7]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[6]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|count[5]                  ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~1             ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|tri_buf~0                ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[0]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[4]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]             ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[7]             ; 1                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|nextstate.w1~0           ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|oe_buf~0                 ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|nextstate.r1~0           ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|tri_buf~0                ; 0                 ; 6       ;
 ; tsw[17]                                                               ;                   ;         ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector7~6               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~5               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector6~9               ; 1                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector5~7               ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector4~1               ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|Selector4~4               ; 1                 ; 6       ;
 +-----------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1960,16 +1944,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                 ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; clk                                                  ; PIN_Y2             ; 121     ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; psw[0]                                               ; PIN_R24            ; 32      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; psw[3]                                               ; PIN_M23            ; 50      ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[3]~0 ; LCCOMB_X76_Y18_N10 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[9]~0 ; LCCOMB_X82_Y15_N8  ; 41      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~1   ; LCCOMB_X83_Y14_N14 ; 1       ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; sub_module_ram:B|memorycontroller:ctl|addr_reg[0]~0  ; LCCOMB_X81_Y12_N8  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_ram:B|memorycontroller:ctl|nextstate.w1~0 ; LCCOMB_X81_Y12_N22 ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_ram:B|memorycontroller:ctl|state.r2       ; FF_X82_Y13_N21     ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_ram:B|memorycontroller:ctl|tri_reg        ; FF_X81_Y12_N31     ; 8       ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; clk                                                  ; PIN_Y2             ; 143     ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; psw[0]                                               ; PIN_R24            ; 58      ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[3]~0 ; LCCOMB_X72_Y17_N28 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|mod5:df1|q[21]                      ; FF_X80_Y16_N21     ; 43      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[9]~0 ; LCCOMB_X79_Y14_N28 ; 41      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~1   ; LCCOMB_X80_Y13_N14 ; 1       ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; sub_module_ram:B|memorycontroller:ctl|addr_reg[0]~0  ; LCCOMB_X79_Y18_N28 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_ram:B|memorycontroller:ctl|nextstate.w1~0 ; LCCOMB_X79_Y18_N6  ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_ram:B|memorycontroller:ctl|state.r2       ; FF_X79_Y22_N21     ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_ram:B|memorycontroller:ctl|tri_reg        ; FF_X79_Y18_N21     ; 8       ; Output enable             ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1978,7 +1962,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk  ; PIN_Y2   ; 121     ; 9                                    ; Global Clock         ; GCLK4            ; --                        ;
+; clk  ; PIN_Y2   ; 143     ; 32                                   ; Global Clock         ; GCLK4            ; --                        ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1988,157 +1972,159 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
 ; Block interconnects   ; 632 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 99 / 10,120 ( < 1 % )   ;
-; C4 interconnects      ; 376 / 209,544 ( < 1 % ) ;
-; Direct links          ; 162 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 96 / 10,120 ( < 1 % )   ;
+; C4 interconnects      ; 443 / 209,544 ( < 1 % ) ;
+; Direct links          ; 167 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 1 / 20 ( 5 % )          ;
-; Local interconnects   ; 181 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 203 / 9,963 ( 2 % )     ;
-; R4 interconnects      ; 489 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 212 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 192 / 9,963 ( 2 % )     ;
+; R4 interconnects      ; 492 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.77) ; Number of LABs  (Total = 35) ;
+; Number of Logic Elements  (Average = 13.48) ; Number of LABs  (Total = 33) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 2                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 2                            ;
-; 5                                           ; 2                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 2                            ;
-; 8                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 1                            ;
 ; 9                                           ; 1                            ;
 ; 10                                          ; 1                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 1                            ;
+; 11                                          ; 3                            ;
+; 12                                          ; 3                            ;
 ; 13                                          ; 1                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 19                           ;
+; 14                                          ; 1                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 18                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.29) ; Number of LABs  (Total = 35) ;
+; LAB-wide Signals  (Average = 1.30) ; Number of LABs  (Total = 33) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 12                           ;
+; 1 Async. clear                     ; 13                           ;
 ; 1 Clock                            ; 20                           ;
-; 1 Clock enable                     ; 11                           ;
-; 1 Sync. clear                      ; 2                            ;
+; 1 Clock enable                     ; 10                           ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 15.00) ; Number of LABs  (Total = 35) ;
+; Number of Signals Sourced  (Average = 17.55) ; Number of LABs  (Total = 33) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 2                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 3                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 3                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 6                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 3                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 1                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 3                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 3                            ;
 ; 27                                           ; 2                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.57) ; Number of LABs  (Total = 35) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 4                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 2                            ;
-; 7                                               ; 3                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 3                            ;
-; 10                                              ; 5                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 1                            ;
-; 14                                              ; 1                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 4                            ;
-; 17                                              ; 0                            ;
-; 18                                              ; 2                            ;
-; 19                                              ; 1                            ;
-; 20                                              ; 0                            ;
-; 21                                              ; 0                            ;
-; 22                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++--------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 10.73) ; Number of LABs  (Total = 33) ;
++--------------------------------------------------+------------------------------+
+; 0                                                ; 0                            ;
+; 1                                                ; 4                            ;
+; 2                                                ; 0                            ;
+; 3                                                ; 0                            ;
+; 4                                                ; 1                            ;
+; 5                                                ; 0                            ;
+; 6                                                ; 2                            ;
+; 7                                                ; 0                            ;
+; 8                                                ; 2                            ;
+; 9                                                ; 1                            ;
+; 10                                               ; 2                            ;
+; 11                                               ; 4                            ;
+; 12                                               ; 6                            ;
+; 13                                               ; 3                            ;
+; 14                                               ; 1                            ;
+; 15                                               ; 1                            ;
+; 16                                               ; 3                            ;
+; 17                                               ; 1                            ;
+; 18                                               ; 1                            ;
+; 19                                               ; 0                            ;
+; 20                                               ; 0                            ;
+; 21                                               ; 0                            ;
+; 22                                               ; 1                            ;
++--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.71) ; Number of LABs  (Total = 35) ;
+; Number of Distinct Inputs  (Average = 15.85) ; Number of LABs  (Total = 33) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 6                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 2                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 3                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 2                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 2                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 1                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 3                            ;
-; 17                                           ; 4                            ;
+; 17                                           ; 3                            ;
 ; 18                                           ; 2                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 3                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 19                                           ; 3                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 1                            ;
 ; 27                                           ; 1                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
+; 29                                           ; 0                            ;
 ; 30                                           ; 1                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 0                            ;
+; 35                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2418,14 +2404,14 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X81_Y12 to location X91_Y23
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X69_Y12 to location X80_Y23
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.24 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2450,10 +2436,10 @@ Warning (169064): Following 16 pins have no output enable or a GND or VCC output
     Info (169065): Pin dio_lcd[7] has a permanently enabled output enable File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
 Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/output_files/sramdisplay.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5705 megabytes
-    Info: Processing ended: Fri Sep  6 23:32:14 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Peak virtual memory: 5696 megabytes
+    Info: Processing ended: Sat Sep  7 00:21:54 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +----------------------------+

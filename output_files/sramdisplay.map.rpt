@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sramdisplay
-Fri Sep  6 23:32:02 2024
+Sat Sep  7 00:21:39 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -20,10 +20,11 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  12. General Register Statistics
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Port Connectivity Checks: "sub_module_ram:B"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 15. Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:df1
+ 16. Port Connectivity Checks: "sub_module_ram:B"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +51,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep  6 23:32:02 2024          ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep  7 00:21:39 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; sramdisplay                                    ;
 ; Top-level Entity Name              ; top_module                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 417                                            ;
-;     Total combinational functions  ; 390                                            ;
-;     Dedicated logic registers      ; 121                                            ;
-; Total registers                    ; 121                                            ;
+; Total logic elements               ; 445                                            ;
+;     Total combinational functions  ; 418                                            ;
+;     Dedicated logic registers      ; 143                                            ;
+; Total registers                    ; 143                                            ;
 ; Total pins                         ; 133                                            ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -180,6 +181,7 @@ https://fpgasoftware.intel.com/eula.
 ; memcontroller.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd  ;         ;
 ; top_module.vhd                   ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd     ;         ;
 ; lcdcontroller.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd  ;         ;
+; mod5.vhd                         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd           ;         ;
 ; sub_module_lcd.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd ;         ;
 ; sub_module_ram.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd ;         ;
 ; userlogic_addr.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd ;         ;
@@ -191,20 +193,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 417       ;
+; Estimated Total logic elements              ; 445       ;
 ;                                             ;           ;
-; Total combinational functions               ; 390       ;
+; Total combinational functions               ; 418       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 230       ;
-;     -- 3 input functions                    ; 46        ;
-;     -- <=2 input functions                  ; 114       ;
+;     -- 4 input functions                    ; 235       ;
+;     -- 3 input functions                    ; 48        ;
+;     -- <=2 input functions                  ; 135       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 328       ;
-;     -- arithmetic mode                      ; 62        ;
+;     -- normal mode                          ; 336       ;
+;     -- arithmetic mode                      ; 82        ;
 ;                                             ;           ;
-; Total registers                             ; 121       ;
-;     -- Dedicated logic registers            ; 121       ;
+; Total registers                             ; 143       ;
+;     -- Dedicated logic registers            ; 143       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 133       ;
@@ -212,9 +214,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 121       ;
-; Total fan-out                               ; 1911      ;
-; Average fan-out                             ; 2.39      ;
+; Maximum fan-out                             ; 143       ;
+; Total fan-out                               ; 2043      ;
+; Average fan-out                             ; 2.40      ;
 +---------------------------------------------+-----------+
 
 
@@ -223,10 +225,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name       ; Library Name ;
 +-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
-; |top_module                   ; 390 (0)             ; 121 (0)                   ; 0           ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                        ; top_module        ; work         ;
-;    |sub_module_lcd:A|         ; 342 (0)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
+; |top_module                   ; 418 (0)             ; 143 (0)                   ; 0           ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                        ; top_module        ; work         ;
+;    |sub_module_lcd:A|         ; 370 (0)             ; 111 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
 ;       |lcdcontrollerfast:lc1| ; 176 (176)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1 ; lcdcontrollerfast ; work         ;
-;       |userlogic_ad_wr:ul1|   ; 166 (166)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
+;       |mod5:df1|              ; 22 (22)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:df1              ; mod5              ; work         ;
+;       |userlogic_ad_wr:ul1|   ; 172 (172)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
 ;    |sub_module_ram:B|         ; 48 (0)              ; 32 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                       ; sub_module_ram    ; work         ;
 ;       |memorycontroller:ctl|  ; 6 (6)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl  ; memorycontroller  ; work         ;
 ;       |seg7:dp11|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp11             ; seg7              ; work         ;
@@ -292,10 +295,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 121   ;
+; Total registers                              ; 143   ;
 ; Number of registers using Synchronous Clear  ; 3     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 74    ;
+; Number of registers using Asynchronous Clear ; 96    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 73    ;
 ; Number of registers using Preset             ; 0     ;
@@ -325,6 +328,16 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:df1 ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; n              ; 22    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "sub_module_ram:B"                                                                          ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -342,25 +355,26 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 133                         ;
-; cycloneiii_ff         ; 121                         ;
-;     CLR               ; 9                           ;
+; cycloneiii_ff         ; 143                         ;
+;     CLR               ; 31                          ;
 ;     ENA               ; 8                           ;
 ;     ENA CLR           ; 65                          ;
 ;     SCLR              ; 3                           ;
 ;     plain             ; 36                          ;
 ; cycloneiii_io_obuf    ; 24                          ;
-; cycloneiii_lcell_comb ; 400                         ;
-;     arith             ; 62                          ;
-;         2 data inputs ; 62                          ;
-;     normal            ; 338                         ;
+; cycloneiii_lcell_comb ; 428                         ;
+;     arith             ; 82                          ;
+;         2 data inputs ; 81                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 346                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 10                          ;
+;         1 data inputs ; 12                          ;
 ;         2 data inputs ; 50                          ;
-;         3 data inputs ; 46                          ;
-;         4 data inputs ; 230                         ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 235                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.10                       ;
-; Average LUT depth     ; 8.59                        ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 8.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -379,7 +393,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Fri Sep  6 23:31:54 2024
+    Info: Processing started: Sat Sep  7 00:21:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SRAM_LCD_FPGA -c sramdisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -402,8 +416,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file mod5.vh
     Info (12022): Found design unit 1: mod5-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd Line: 10
     Info (12023): Found entity 1: mod5 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_lcd.vhd
-    Info (12022): Found design unit 1: sub_module_lcd-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 16
-    Info (12023): Found entity 1: sub_module_lcd File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 4
+    Info (12022): Found design unit 1: sub_module_lcd-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 17
+    Info (12023): Found entity 1: sub_module_lcd File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_ram.vhd
     Info (12022): Found design unit 1: sub_module_ram-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 22
     Info (12023): Found entity 1: sub_module_ram File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 3
@@ -414,10 +428,11 @@ Info (12127): Elaborating entity "top_module" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
 Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
 Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(65): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 65
-Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 79
-Info (12128): Elaborating entity "userlogic_ad_wr" for hierarchy "sub_module_lcd:A|userlogic_ad_wr:ul1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 50
-Info (12128): Elaborating entity "lcdcontrollerfast" for hierarchy "sub_module_lcd:A|lcdcontrollerfast:lc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 62
-Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 80
+Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 77
+Info (12128): Elaborating entity "mod5" for hierarchy "sub_module_lcd:A|mod5:df1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 60
+Info (12128): Elaborating entity "userlogic_ad_wr" for hierarchy "sub_module_lcd:A|userlogic_ad_wr:ul1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 61
+Info (12128): Elaborating entity "lcdcontrollerfast" for hierarchy "sub_module_lcd:A|lcdcontrollerfast:lc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 73
+Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 78
 Info (12128): Elaborating entity "memorycontroller" for hierarchy "sub_module_ram:B|memorycontroller:ctl" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 64
 Info (12128): Elaborating entity "seg7" for hierarchy "sub_module_ram:B|seg7:dp11" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 65
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
@@ -496,15 +511,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "tsw[16]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 7
     Warning (15610): No output dependent on input pin "psw[1]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 8
-Info (21057): Implemented 582 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 611 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 86 output pins
     Info (21060): Implemented 24 bidirectional pins
-    Info (21061): Implemented 449 logic cells
+    Info (21061): Implemented 478 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 4802 megabytes
-    Info: Processing ended: Fri Sep  6 23:32:02 2024
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Sat Sep  7 00:21:39 2024
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Total CPU time (on all processors): 00:00:18
 
 

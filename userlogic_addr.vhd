@@ -29,97 +29,100 @@ architecture synth of userlogic_ad_wr is
                 send_enable <= '0';
             elsif rising_edge(clk) then
                 if (busy = '0' and send_enable = '0') then
-                    if (count < 21) then
+                    if (count < 22) then
                         count := count + 1;
                         end if;
                     case count is
                         -- SECTION ONE
-                        when 1 => 
-                            data_write <= "1001000001"; -- A
-                            send_enable <= '1';
+								when 1 =>
+									data_write <= "0010000000"; -- clear display
+									send_enable <= '1';
                         when 2 => 
-                            data_write <= "1001000100"; -- D
+                            data_write <= "1001000001"; -- A
                             send_enable <= '1';
                         when 3 => 
                             data_write <= "1001000100"; -- D
                             send_enable <= '1';
                         when 4 => 
-                            data_write <= "1001010010"; -- R
+                            data_write <= "1001000100"; -- D
                             send_enable <= '1';
                         when 5 => 
-                            data_write <= "1001111110"; -- →
+                            data_write <= "1001010010"; -- R
                             send_enable <= '1';
                         when 6 => 
+                            data_write <= "1001111110"; -- →
+                            send_enable <= '1';
+                        when 7 => 
                             if (to_integer(unsigned(addr(7 downto 4))) > 9) then
                                 data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(addr(7 downto 4))) - 9, 4));
                             else
                                 data_write <= "100011" & addr(7 downto 4);
                             end if;
                             send_enable <= '1';
-                        when 7 => 
+                        when 8 => 
                             if (to_integer(unsigned(addr(3 downto 0))) > 9) then
                                 data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(addr(3 downto 0))) - 9, 4));
                             else
                                 data_write <= "100011" & addr(3 downto 0);
                             end if;
                             send_enable <= '1';
-								when 8 =>
+								when 9 =>
 									data_write <= "1000100000"; -- SPACE
 									send_enable <= '1';
                         
                         -- SECTION TWO
-                        when 9 =>
+                        when 10 =>
                             data_write <= "1001000100"; -- D
                             send_enable <= '1';
-                        when 10 =>
-                            data_write <= "1001000001"; -- A
-                            send_enable <= '1';
                         when 11 =>
-                            data_write <= "1001010100"; -- T
+                            data_write <= "1001000001"; -- A
                             send_enable <= '1';
                         when 12 =>
-                            data_write <= "1001000001"; -- A
+                            data_write <= "1001010100"; -- T
                             send_enable <= '1';
                         when 13 =>
+                            data_write <= "1001000001"; -- A
+                            send_enable <= '1';
+                        when 14 =>
                             data_write <= "1001111110"; -- →
                             send_enable <= '1';
-                        when 14 => 
+                        when 15 => 
                             if (to_integer(unsigned(data(7 downto 4))) > 9) then
                                 data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(data(7 downto 4))) - 9, 4)); -- A ~ F
                             else
                                 data_write <= "100011" & data(7 downto 4); -- 0 ~ 9
                             end if;
                             send_enable <= '1';
-                        when 15 => 
+                        when 16 => 
                             if (to_integer(unsigned(data(3 downto 0))) > 9) then
                                 data_write <= "100100" & std_logic_vector(to_unsigned(to_integer(unsigned(data(3 downto 0))) - 9, 4)); -- A ~ F
                             else
                                 data_write <= "100011" & data(3 downto 0); -- 0 ~ 9
                             end if;
                             send_enable <= '1';   
-								when 16 =>
+								when 17 =>
 									data_write <= "1000100000"; -- SPACE
 									send_enable <= '1';						
-								when 17 =>
+								when 18 =>
                             data_write <= "0011000000"; -- CR
                             send_enable <= '1';
                         
                         -- SECTION THREE (INT / EXT)
-                        when 18 => 
+                        when 19 => 
                             if (ext = '1') then
                                 data_write <= "1001000101"; -- E
                             else
                                 data_write <= "1001001001"; -- I
                             end if;
                             send_enable <= '1';
-                        when 19 =>
+                        when 20 =>
                             if (ext = '1') then
                                 data_write <= "1001011000"; -- X
                             else
                                 data_write <= "1001001110"; -- N
                             end if;
                             send_enable <= '1';
-                        when 20 =>
+                        when 21 =>
                             data_write <= "1001010100"; -- T
                             send_enable <= '1';
                
