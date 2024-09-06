@@ -1,160 +1,126 @@
--- vhdl-linter-disable type-resolved
-library IEEE; use IEEE.STD_LOGIC_1164.all;
+-- vhdl-linter-disable type-resolved not-declared
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
 
-entity lcdcontrollerslow is
-	port(clk, reset_n: in std_logic;
-		-- SYSTEM
-		data_write : in std_logic_vector(9 downto 0);
-		data_read : out std_logic_vector(7 downto 0);
-		send_enable : in std_logic;
+entity lcdcontrollerfast is
+	port(
+        clk: in std_logic;
+        reset_n: in std_logic;
+		lcd_enable : in std_logic;
+        lcd_bus: in std_logic_vector(9 downto 0);
 		busy : out std_logic;
-		
-		-- LCD
-		dio : inout std_logic_vector(7 downto 0);
-		en_l, rw_l, rs_l, pon_l, blon_l : out std_logic
+		lcd_en, lcd_rw, lcd_rs : out std_logic;
+		lcd_data : out std_logic_vector(7 downto 0);
+        lcd_pon : out std_logic;
+        lcd_blon : out std_logic
 	);
 end;
 
-architecture synth of lcdcontrollerslow is    
-    type statetype is (start, power, init1, init2, init3, init4, init5, init6, init7, init8, init9, ready, send1, send2, send3, send4);
-    signal state, nextstate: statetype;
-	signal data_write_reg, data_write_reg_next, data_read_reg, data_read_reg_next : std_logic_vector(7 downto 0);
-    signal en_reg, rw_reg, rs_reg, busy_reg : std_logic;
-    signal en_buf, rw_buf, rs_buf, busy_buf : std_logic;
+architecture controller of lcdcontrollerfast is
+    type control is (power, init, ready, send);
+    signal state : control;
+    constant freq : integer := 50;
+begin
+    lcd_pon <= '1';
+    lcd_blon <= '1';
 
+    process(clk)
+        variable count : integer := 0;
     begin
-		process(clk, reset_n) begin
-			if (reset_n = '0') then
-				state <= power;
-				data_write_reg <= (others => '0');
-				data_read_reg <= (others => '0');
-                en_reg <= '0';
-                rw_reg <= '0';
-                rs_reg <= '0';
-                busy_reg <= '1';
-			elsif (rising_edge(clk)) then
-				state <= nextstate;
-				data_write_reg <= data_write_reg_next;
-				data_read_reg <= data_read_reg_next;
-                en_reg <= en_buf;
-                rw_reg <= rw_buf;
-                rs_reg <= rs_buf;
-                busy_reg <= busy_buf;
-			end if;
-		end process;
-		
-		process(all) begin
-			data_write_reg_next <= data_write_reg;
-			data_read_reg_next <= data_read_reg;
-			case state is
-				when start =>
-					nextstate <= power;
-				when power =>
-                    data_write_reg_next <= "00111000"; -- INIT_SEQ 
-                    nextstate <= init1;
-				when init1 =>
-                    data_write_reg_next <= "00111110"; -- 8bit length, 2 line mode, display on
-                    nextstate <= init2;
-				when init2 =>
-                    data_write_reg_next <= "00000000"; 
-                    nextstate <= init3;
-				when init3 =>
-                    data_write_reg_next <= "00001101"; -- Display on/off control (d on/c off/b on)
-                    nextstate <= init4;
-				when init4 =>
-                    data_write_reg_next <= "00000000";
-                    nextstate <= init5;
-				when init5 =>
-                    data_write_reg_next <= "00000001"; -- Clear Display
-                    nextstate <= init6;
-				when init6 =>
-                    data_write_reg_next <= "00000000";
-                    nextstate <= init7;
-				when init7 =>
-                    data_write_reg_next <= "00000110"; -- Entry Mode Set (inc on/sht off)
-                    nextstate <= init8;
-				when init8 =>
-                    data_write_reg_next <= "00000000";
-                    nextstate <= init9;
-                when init9 => 
-                    nextstate <= ready;
-				when ready =>
-					if (send_enable = '1') then
-						data_write_reg_next <= data_write(7 downto 0); -- DATA / INST; it works
-						nextstate <= send1;
-                        if (data_write(8) = '1') then	-- it works
-                            data_read_reg_next <= dio;
-                        else
-                            data_read_reg_next <= (others => 'Z');
-                        end if;
-					else
-						data_write_reg_next <= "00000000";
-						nextstate <= ready;
-					end if;
-				when send1 => 
-                    nextstate <= send2;
-				when send2 => 
-                    nextstate <= send3;
-				when send3 => 
-                    nextstate <= send4;
-				when send4 =>
-                    nextstate <= ready;
-			end case;
-		end process;
-
-        process (nextstate, send_enable) begin
-            en_buf <= '0';
-            rw_buf <= '0';
-            busy_buf <= '1';
-            case nextstate is
-                when start =>
+        if (rising_edge(clk)) then
+            case state is
                 when power =>
-						rs_buf <= '0';
-                when init1 =>
-                    en_buf <= '1';
-						  rs_buf <= '0';
-                when init2 =>
-						  rs_buf <= '0';
-                when init3 =>
-                    en_buf <= '1';
-                when init4 =>
-						rs_buf <= '0';
-                when init5 =>
-                    en_buf <= '1';
-						rs_buf <= '0';
-                when init6 =>
-						rs_buf <= '0';
-                when init7 =>
-                    en_buf <= '1';
-						rs_buf <= '0';
-                when init8 =>
-						rs_buf <= '0';
-                when init9 => 
-						rs_buf <= '0';
-                when ready =>
-                    if (send_enable = '1') then
-                        rs_buf <= data_write(9); -- it doesn't recognize rs
-                        rw_buf <= data_write(8); -- should check with simulation
+                    busy <= '1';
+                    if(count < (50000 * freq)) then
+                        count := count + 1;
+                        state <= power;
                     else
-								rs_buf <= '1';
-                        busy_buf <= '0';
+                        count := 0;
+                        lcd_rs <= '0';
+                        lcd_rw <= '0';
+                        lcd_data <= "00111000";
+                        state <= init;
                     end if;
-                when send1 =>
-                when send2 =>
-                    en_buf <= '1';
-                when send3 =>
-                when send4 =>
-                    busy_buf <= '0';
+                when init =>
+                    busy <= '1';
+                    count := count + 1;
+                    if(count < (10 * freq)) then
+                        lcd_data <= "00111100";
+                        lcd_en <= '1';
+                        state <= init;
+                    elsif (count < (60 * freq)) then
+                        lcd_data <= "00000000";
+                        lcd_en <= '0';
+                        state <= init;
+                    elsif (count < (70 * freq)) then
+                        lcd_data <= "00001101";
+                        lcd_en <= '1';
+                        state <= init;
+                    elsif (count < (120 * freq)) then
+                        lcd_data <= "00000000";
+                        lcd_en <= '0';
+                        state <= init;
+                    elsif (count < (130 * freq)) then
+                        lcd_data <= "00000001";
+                        lcd_en <= '1';
+                        state <= init;
+                    elsif (count < (2130 * freq)) then
+                        lcd_data <= "00000000";
+                        lcd_en <= '0';
+                        state <= init;
+                    elsif (count < (2140 * freq)) then
+                        lcd_data <= "00000110";
+                        lcd_en <= '1';
+                        state <= init;
+                    elsif (count < (2200 * freq)) then
+                        lcd_data <= "00000000";
+                        lcd_en <= '0';
+                        state <= init;
+                    else
+                        count := 0;
+                        busy <= '0';
+                        state <= ready;
+                    end if;
+                when ready =>
+                    if (lcd_enable = '1') then
+                        busy <= '1';
+                        lcd_rs <= lcd_bus(9);
+                        lcd_rw <= lcd_bus(8);
+                        lcd_data <= lcd_bus(7 downto 0);
+                        count := 0;
+                        state <= send;
+                    else
+                        busy <= '0';
+                        lcd_rs <= '0';
+                        lcd_rw <= '0';
+                        lcd_data <= "00000000";
+                        count := 0;
+                        state <= ready;
+                    end if;
+                when send =>
+                    busy <= '1';
+                    if (count < (50 * freq)) then
+                        busy <= '1';
+                        if (count < freq) then
+                            lcd_en <= '0';
+                        elsif (count < (14 * freq)) then
+                            lcd_en <= '1';
+                        elsif (count < (27 * freq)) then
+                            lcd_en <= '0';
+                        end if;
+                        count := count + 1;
+                        state <= send;
+                    else
+                        count := 0;
+                        state <= ready;
+                    end if;
             end case;
-        end process;
-
-		pon_l <= '1';
-		blon_l <= '1';
-        en_l <= en_reg;
-        rw_l <= rw_reg;
-        rs_l <= rs_reg;
-        busy <= busy_reg;
-		dio <= data_write_reg when (rw_l = '0') else (others => 'Z');
-		data_read <= data_read_reg;
-    end;
-
+            
+            if (reset_n = '0') then
+                state <= power;
+            end if;
+        end if;
+    end process;
+end;

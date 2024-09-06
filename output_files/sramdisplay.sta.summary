@@ -2,136 +2,64 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -8.692
-TNS   : -233.336
-
-Type  : Slow 1200mV 85C Model Setup 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : -4.213
-TNS   : -4.213
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -1.863
-TNS   : -41.232
-
-Type  : Slow 1200mV 85C Model Hold 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : 0.389
-TNS   : 0.000
+Slack : -8.760
+TNS   : -557.214
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.404
+Slack : 0.385
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : 2.802
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Recovery 'clk'
+Slack : -1.487
+TNS   : -1.487
 
-Type  : Slow 1200mV 85C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -1.888
-TNS   : -1.888
-
-Type  : Slow 1200mV 85C Model Removal 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : 2.197
+Type  : Slow 1200mV 85C Model Removal 'clk'
+Slack : 2.020
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -71.105
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -1.285
-TNS   : -87.380
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : 0.405
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -7.849
-TNS   : -207.078
-
-Type  : Slow 1200mV 0C Model Setup 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : -3.715
-TNS   : -3.715
+TNS   : -158.485
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -1.554
-TNS   : -32.518
-
-Type  : Slow 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : 0.341
-TNS   : 0.000
+Slack : -7.956
+TNS   : -495.718
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.356
+Slack : 0.339
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : 2.607
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Recovery 'clk'
+Slack : -1.264
+TNS   : -1.264
 
-Type  : Slow 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -1.553
-TNS   : -1.553
-
-Type  : Slow 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : 1.891
+Type  : Slow 1200mV 0C Model Removal 'clk'
+Slack : 1.835
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -71.105
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -1.285
-TNS   : -87.380
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : 0.438
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -3.702
-TNS   : -84.584
-
-Type  : Fast 1200mV 0C Model Setup 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : -1.665
-TNS   : -1.665
+TNS   : -158.485
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.738
-TNS   : -2.085
+Slack : -3.771
+TNS   : -217.257
 
-Type  : Fast 1200mV 0C Model Hold 'sub_module_lcd:A|mod5:ck1|q[20]'
+Type  : Fast 1200mV 0C Model Hold 'clk'
 Slack : 0.175
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.184
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Recovery 'clk'
+Slack : -0.269
+TNS   : -0.269
 
-Type  : Fast 1200mV 0C Model Hold 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : 1.409
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Recovery 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -0.502
-TNS   : -0.502
-
-Type  : Fast 1200mV 0C Model Removal 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : 1.169
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 0.951
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -59.384
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|mod5:ck1|q[20]'
-Slack : -1.000
-TNS   : -68.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sub_module_lcd:A|lcdcontrollerslow:lc1|state.init2'
-Slack : 0.399
-TNS   : 0.000
+TNS   : -131.641
 
 ------------------------------------------------------------

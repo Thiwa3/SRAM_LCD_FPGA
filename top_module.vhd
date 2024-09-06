@@ -47,11 +47,11 @@ architecture synth of top_module is
             -- SRAM
             ad: out STD_LOGIC_VECTOR(19 downto 0);
             dio: inout STD_LOGIC_VECTOR(15 downto 0);
-            we_n, oe_n, ce_n: out STD_LOGIC;
+            we_n, oe_n, ce_n, lb_n, ub_n: out STD_LOGIC;
 
-			  -- SEGMENTS
-			  segoutL, segoutM: out STD_LOGIC_VECTOR(7*2-1 downto 0);
-			  segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
+            -- SEGMENT
+            segoutL, segoutM: out STD_LOGIC_VECTOR(7*2-1 downto 0);
+            segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
         );
     end component;
 
@@ -62,10 +62,10 @@ architecture synth of top_module is
 
     -- SUB MODULE RAM
     signal data_read_r, data_read : std_logic_vector(7 downto 0);
-    signal ready : std_logic;
+    signal ready, lb_n, ub_n : std_logic;
 
     -- SUB MODULE LCD
-	 signal ext : std_logic;
+    signal ext : std_logic;
 
 
 begin
@@ -74,11 +74,8 @@ begin
     rw <= psw(3);
     addr <= tsw(7 downto 0);
     data_write <= tsw(15 downto 8);
-	 ext <= tsw(17);
+    ext <= tsw(17);
 
     A: sub_module_lcd port map(clk, rw, addr, data_write, ext, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
-    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, segoutL, segoutM, segoutR);
-
-	 lb_n_sram <= '0';
-	 ub_n_sram <= '0';
+    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, lb_n_sram, ub_n_sram, segoutL, segoutM, segoutR);
 end;

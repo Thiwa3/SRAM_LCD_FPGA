@@ -7,21 +7,9 @@ state.r2 0 0 1 0 1
 state.w1 0 1 0 0 1 
 state.w2 1 0 0 0 1 
 
-State Machine - |top_module|sub_module_lcd:A|lcdcontrollerslow:lc1|state
-Name state.send4 state.send3 state.send2 state.send1 state.ready state.init9 state.init8 state.init7 state.init6 state.init5 state.init4 state.init3 state.init2 state.init1 state.start state.power 
-state.power 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.start 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.init1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.init2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.init3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.init4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.init5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.init6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.init7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.init8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.init9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.ready 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.send1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.send2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.send3 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.send4 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State Machine - |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|state
+Name state.send state.ready state.init state.power 
+state.power 0 0 0 0 
+state.init 0 0 1 1 
+state.ready 0 1 0 1 
+state.send 1 0 0 1 
