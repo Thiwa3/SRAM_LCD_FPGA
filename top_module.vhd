@@ -24,11 +24,20 @@ end;
 
 architecture synth of top_module is  
 
+    component pll is
+        port
+        (
+            inclk0		: in std_logic  := '0';
+            c0		: out std_logic ;
+            locked		: out std_logic 
+        );
+    end component;
+
     component sub_module_lcd is
         port(clk, reset_n: in std_logic;
             -- IO
             addr_in, data_in : in std_logic_vector(7 downto 0);
-				ext : in std_logic;
+            ext, rw : in std_logic;
 				
             -- LCD
             dio : inout std_logic_vector(7 downto 0);
@@ -61,9 +70,12 @@ architecture synth of top_module is
     signal addr, data_write : std_logic_vector(7 downto 0);
     signal mem, rw : std_logic;
 
+    -- PLL Clock
+    signal clk_pll : std_logic;
+
     -- SUB MODULE RAM
     signal data_read_r, data_read : std_logic_vector(7 downto 0);
-    signal ready, lb_n, ub_n : std_logic;
+    signal ready: std_logic;
 
     -- SUB MODULE LCD
     signal ext : std_logic;
@@ -76,6 +88,11 @@ begin
     data_write <= tsw(15 downto 8);
     ext <= tsw(17);
 
-    A: sub_module_lcd port map(clk, reset_n, addr, data_write, ext, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
-    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ext, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, lb_n_sram, ub_n_sram, segoutL, segoutM, segoutR);
+    pll1: pll port map(
+        inclk0 => clk, 
+        c0 => clk_pll
+    );
+
+    A: sub_module_lcd port map(clk, reset_n, addr, data_write, ext, rw, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
+    B: sub_module_ram port map(clk_pll, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ext, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, lb_n_sram, ub_n_sram, segoutL, segoutM, segoutR);
 end;

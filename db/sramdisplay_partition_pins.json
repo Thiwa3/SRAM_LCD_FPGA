@@ -352,15 +352,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
-					"strict" : false
-				},
-				{
 					"name" : "psw[0]",
 					"strict" : false
 				},
 				{
 					"name" : "psw[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				}
 			]
