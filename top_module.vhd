@@ -43,6 +43,7 @@ architecture synth of top_module is
             data_read_r, data_read: out STD_LOGIC_VECTOR(7 downto 0);
             mem, rw: in STD_LOGIC;
             ready: out STD_LOGIC;
+				ext : in STD_LOGIC;
             
             -- SRAM
             ad: out STD_LOGIC_VECTOR(19 downto 0);
@@ -66,6 +67,7 @@ architecture synth of top_module is
 
     -- SUB MODULE LCD
     signal ext : std_logic;
+	 
 begin
     reset_n <= psw(0);
     mem <= psw(2);
@@ -75,5 +77,5 @@ begin
     ext <= tsw(17);
 
     A: sub_module_lcd port map(clk, reset_n, addr, data_write, ext, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
-    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, lb_n_sram, ub_n_sram, segoutL, segoutM, segoutR);
+    B: sub_module_ram port map(clk, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ext, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, lb_n_sram, ub_n_sram, segoutL, segoutM, segoutR);
 end;

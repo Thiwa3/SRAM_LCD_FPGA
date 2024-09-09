@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sramdisplay
-Sat Sep  7 00:21:39 2024
+Mon Sep  9 21:37:17 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -13,18 +13,22 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |top_module|sub_module_ram:B|memorycontroller:ctl|state
-  9. State Machine - |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|state
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:df1
- 16. Port Connectivity Checks: "sub_module_ram:B"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |top_module|sub_module_ram:B|memorycontroller:ctl|state
+ 10. State Machine - |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated
+ 17. Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:df1
+ 18. Parameter Settings for User Entity Instance: sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "sub_module_ram:B"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -51,18 +55,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep  7 00:21:39 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep  9 21:37:17 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; sramdisplay                                    ;
 ; Top-level Entity Name              ; top_module                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 445                                            ;
-;     Total combinational functions  ; 418                                            ;
+; Total logic elements               ; 457                                            ;
+;     Total combinational functions  ; 430                                            ;
 ;     Dedicated logic registers      ; 143                                            ;
 ; Total registers                    ; 143                                            ;
 ; Total pins                         ; 133                                            ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
+; Total memory bits                  ; 2,048                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -172,20 +176,31 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; seg7.vhd                         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/seg7.vhd           ;         ;
-; memcontroller.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd  ;         ;
-; top_module.vhd                   ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd     ;         ;
-; lcdcontroller.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd  ;         ;
-; mod5.vhd                         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd           ;         ;
-; sub_module_lcd.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd ;         ;
-; sub_module_ram.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd ;         ;
-; userlogic_addr.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                         ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------+---------+
+; seg7.vhd                         ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/seg7.vhd                             ;         ;
+; memcontroller.vhd                ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd                    ;         ;
+; top_module.vhd                   ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd                       ;         ;
+; lcdcontroller.vhd                ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/lcdcontroller.vhd                    ;         ;
+; mod5.vhd                         ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/mod5.vhd                             ;         ;
+; sub_module_lcd.vhd               ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd                   ;         ;
+; sub_module_ram.vhd               ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd                   ;         ;
+; userlogic_addr.vhd               ; yes             ; User VHDL File                    ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd                   ;         ;
+; ram1.vhd                         ; yes             ; Auto-Found Wizard-Generated File  ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd                             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_0vp3.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/altsyncram_0vp3.tdf               ;         ;
++----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -193,16 +208,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 445       ;
+; Estimated Total logic elements              ; 457       ;
 ;                                             ;           ;
-; Total combinational functions               ; 418       ;
+; Total combinational functions               ; 430       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 235       ;
-;     -- 3 input functions                    ; 48        ;
-;     -- <=2 input functions                  ; 135       ;
+;     -- 4 input functions                    ; 240       ;
+;     -- 3 input functions                    ; 53        ;
+;     -- <=2 input functions                  ; 137       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 336       ;
+;     -- normal mode                          ; 348       ;
 ;     -- arithmetic mode                      ; 82        ;
 ;                                             ;           ;
 ; Total registers                             ; 143       ;
@@ -210,36 +225,49 @@ https://fpgasoftware.intel.com/eula.
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 133       ;
+; Total memory bits                           ; 2048      ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 143       ;
-; Total fan-out                               ; 2043      ;
-; Average fan-out                             ; 2.40      ;
+; Maximum fan-out                             ; 144       ;
+; Total fan-out                               ; 2170      ;
+; Average fan-out                             ; 2.49      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
-; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name       ; Library Name ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
-; |top_module                   ; 418 (0)             ; 143 (0)                   ; 0           ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                        ; top_module        ; work         ;
-;    |sub_module_lcd:A|         ; 370 (0)             ; 111 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                       ; sub_module_lcd    ; work         ;
-;       |lcdcontrollerfast:lc1| ; 176 (176)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1 ; lcdcontrollerfast ; work         ;
-;       |mod5:df1|              ; 22 (22)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:df1              ; mod5              ; work         ;
-;       |userlogic_ad_wr:ul1|   ; 172 (172)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1   ; userlogic_ad_wr   ; work         ;
-;    |sub_module_ram:B|         ; 48 (0)              ; 32 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                       ; sub_module_ram    ; work         ;
-;       |memorycontroller:ctl|  ; 6 (6)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl  ; memorycontroller  ; work         ;
-;       |seg7:dp11|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp11             ; seg7              ; work         ;
-;       |seg7:dp12|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp12             ; seg7              ; work         ;
-;       |seg7:dp13|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp13             ; seg7              ; work         ;
-;       |seg7:dp21|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp21             ; seg7              ; work         ;
-;       |seg7:dp22|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp22             ; seg7              ; work         ;
-;       |seg7:dp23|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp23             ; seg7              ; work         ;
-+-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |top_module                                  ; 430 (0)             ; 143 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                                                                             ; top_module        ; work         ;
+;    |sub_module_lcd:A|                        ; 373 (0)             ; 111 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                                                                            ; sub_module_lcd    ; work         ;
+;       |lcdcontrollerfast:lc1|                ; 177 (177)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1                                                      ; lcdcontrollerfast ; work         ;
+;       |mod5:df1|                             ; 22 (22)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:df1                                                                   ; mod5              ; work         ;
+;       |userlogic_ad_wr:ul1|                  ; 174 (174)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1                                                        ; userlogic_ad_wr   ; work         ;
+;    |sub_module_ram:B|                        ; 57 (9)              ; 32 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                                                                            ; sub_module_ram    ; work         ;
+;       |memorycontroller:ctl|                 ; 6 (6)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl                                                       ; memorycontroller  ; work         ;
+;       |ram1:itnram|                          ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram                                                                ; ram1              ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
+;             |altsyncram_0vp3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated ; altsyncram_0vp3   ; work         ;
+;       |seg7:dp11|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp11                                                                  ; seg7              ; work         ;
+;       |seg7:dp12|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp12                                                                  ; seg7              ; work         ;
+;       |seg7:dp13|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp13                                                                  ; seg7              ; work         ;
+;       |seg7:dp21|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp21                                                                  ; seg7              ; work         ;
+;       |seg7:dp22|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp22                                                                  ; seg7              ; work         ;
+;       |seg7:dp23|                            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|seg7:dp23                                                                  ; seg7              ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
++--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 
 
 Encoding Type:  One-Hot
@@ -322,10 +350,19 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|count[29]   ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[3] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_module|sub_module_ram:B|memorycontroller:ctl|nextstate.w1 ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|count[24]   ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[2] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top_module|sub_module_ram:B|memorycontroller:ctl|nextstate.r1 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source assignments for sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                   ;
++---------------------------------+--------------------+------+------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                    ;
++---------------------------------+--------------------+------+------------------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -336,6 +373,87 @@ Encoding Type:  One-Hot
 ; n              ; 22    ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                          ;
++------------------------------------+----------------------+-----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                       ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                       ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                                ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                                ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                       ;
+; WIDTH_B                            ; 1                    ; Signed Integer                                ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                                ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                                ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                                ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                       ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                                ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                       ;
+; CBXI_PARAMETER                     ; altsyncram_0vp3      ; Untyped                                       ;
++------------------------------------+----------------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                         ;
++-------------------------------------------+--------------------------------------------------------------+
+; Name                                      ; Value                                                        ;
++-------------------------------------------+--------------------------------------------------------------+
+; Number of entity instances                ; 1                                                            ;
+; Entity Instance                           ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                  ;
+;     -- WIDTH_A                            ; 8                                                            ;
+;     -- NUMWORDS_A                         ; 256                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
+;     -- WIDTH_B                            ; 1                                                            ;
+;     -- NUMWORDS_B                         ; 0                                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                    ;
++-------------------------------------------+--------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -362,19 +480,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 3                           ;
 ;     plain             ; 36                          ;
 ; cycloneiii_io_obuf    ; 24                          ;
-; cycloneiii_lcell_comb ; 428                         ;
+; cycloneiii_lcell_comb ; 440                         ;
 ;     arith             ; 82                          ;
 ;         2 data inputs ; 81                          ;
 ;         3 data inputs ; 1                           ;
-;     normal            ; 346                         ;
+;     normal            ; 358                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 12                          ;
-;         2 data inputs ; 50                          ;
-;         3 data inputs ; 47                          ;
-;         4 data inputs ; 235                         ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 52                          ;
+;         4 data inputs ; 240                         ;
+; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 14.00                       ;
-; Average LUT depth     ; 8.23                        ;
+; Average LUT depth     ; 8.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -383,7 +502,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -393,7 +512,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sat Sep  7 00:21:31 2024
+    Info: Processing started: Mon Sep  9 21:37:09 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SRAM_LCD_FPGA -c sramdisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -419,22 +538,82 @@ Info (12021): Found 2 design units, including 1 entities, in source file sub_mod
     Info (12022): Found design unit 1: sub_module_lcd-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 17
     Info (12023): Found entity 1: sub_module_lcd File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_ram.vhd
-    Info (12022): Found design unit 1: sub_module_ram-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 22
+    Info (12022): Found design unit 1: sub_module_ram-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 23
     Info (12023): Found entity 1: sub_module_ram File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file userlogic_addr.vhd
     Info (12022): Found design unit 1: userlogic_ad_wr-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 19
     Info (12023): Found entity 1: userlogic_ad_wr File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 5
 Info (12127): Elaborating entity "top_module" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(64): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 64
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(65): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 65
-Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 77
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(65): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 65
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(65): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 65
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(66): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 66
+Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 79
 Info (12128): Elaborating entity "mod5" for hierarchy "sub_module_lcd:A|mod5:df1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 60
 Info (12128): Elaborating entity "userlogic_ad_wr" for hierarchy "sub_module_lcd:A|userlogic_ad_wr:ul1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 61
 Info (12128): Elaborating entity "lcdcontrollerfast" for hierarchy "sub_module_lcd:A|lcdcontrollerfast:lc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 73
-Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 78
-Info (12128): Elaborating entity "memorycontroller" for hierarchy "sub_module_ram:B|memorycontroller:ctl" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 64
-Info (12128): Elaborating entity "seg7" for hierarchy "sub_module_ram:B|seg7:dp11" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 65
+Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 80
+Warning (12125): Using design file ram1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: ram1-SYN File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 55
+    Info (12023): Found entity 1: ram1 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 43
+Info (12128): Elaborating entity "ram1" for hierarchy "sub_module_ram:B|ram1:itnram" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 71
+Info (12128): Elaborating entity "altsyncram" for hierarchy "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 62
+Info (12133): Instantiated megafunction "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component" with the following parameter: File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 62
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "UNUSED"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0vp3.tdf
+    Info (12023): Found entity 1: altsyncram_0vp3 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/altsyncram_0vp3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_0vp3" for hierarchy "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "memorycontroller" for hierarchy "sub_module_ram:B|memorycontroller:ctl" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 74
+Info (12128): Elaborating entity "seg7" for hierarchy "sub_module_ram:B|seg7:dp11" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 75
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[0]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[1]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
@@ -508,18 +687,20 @@ Warning (20013): Ignored 19 assignments for entity "sram1" -- entity does not ex
     Warning (20014): Assignment for entity set_global_assignment -name SLD_INFO "QSYS_NAME sram1 HAS_SOPCINFO 1 GENERATION_ID 1724651355" -entity sram1 -library sram1 was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "tsw[16]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 7
     Warning (15610): No output dependent on input pin "psw[1]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 8
-Info (21057): Implemented 611 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "psw[2]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 8
+Info (21057): Implemented 631 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 86 output pins
     Info (21060): Implemented 24 bidirectional pins
-    Info (21061): Implemented 478 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Sat Sep  7 00:21:39 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:18
+    Info (21061): Implemented 490 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
+    Info: Peak virtual memory: 4814 megabytes
+    Info: Processing ended: Mon Sep  9 21:37:18 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 

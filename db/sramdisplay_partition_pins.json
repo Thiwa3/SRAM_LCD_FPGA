@@ -348,6 +348,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "tsw[17]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -356,15 +360,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "psw[2]",
-					"strict" : false
-				},
-				{
 					"name" : "psw[3]",
-					"strict" : false
-				},
-				{
-					"name" : "tsw[17]",
 					"strict" : false
 				}
 			]

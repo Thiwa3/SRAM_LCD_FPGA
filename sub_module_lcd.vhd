@@ -57,7 +57,7 @@ architecture synth of sub_module_lcd is
 	 signal clk_slow : std_logic;
 
 begin
-			df1: mod5 generic map(22) port map(clk, reset_n, clk_slow);
+        df1: mod5 generic map(22) port map(clk, reset_n, clk_slow);
         ul1: userlogic_ad_wr port map (
             clk => clk, 
             reset_n => clk_slow,

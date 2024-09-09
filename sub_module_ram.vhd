@@ -7,6 +7,7 @@ entity sub_module_ram is
           data_read_r, data_read: out STD_LOGIC_VECTOR(7 downto 0);
           mem, rw: in STD_LOGIC;
           ready: out STD_LOGIC;
+			 ext : in STD_LOGIC;
           
           -- SRAM
           ad: out STD_LOGIC_VECTOR(19 downto 0);
@@ -15,23 +16,23 @@ entity sub_module_ram is
 
           -- SEGMENT
           segoutL, segoutM: out STD_LOGIC_VECTOR(7*2-1 downto 0);
-			 segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
+            segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
     );
 end;
 
 architecture synth of sub_module_ram is   
-    component sram1 is
-        port (
-            data       : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DQ
-            addr       : in   std_logic_vector(19 downto 0);                    -- ADDR
-            lb_n       : in   std_logic;                                        -- LB_N
-            ub_n       : in   std_logic;                                        -- UB_N
-            ce_n       : in   std_logic;                                        -- CE_N
-            oe_n       : in   std_logic;                                        -- OE_N
-            we_n       : in   std_logic                                        -- WE_N
+
+    component ram1 is
+        PORT
+        (
+            address	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            clock		: IN STD_LOGIC  := '1';
+            data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+            wren		: IN STD_LOGIC ;
+            q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
         );
     end component;
-
+	
 	component memorycontroller is
         port (clk, reset: in STD_LOGIC;
             -- SYSTEM
@@ -56,12 +57,21 @@ architecture synth of sub_module_ram is
     signal lb_n_r, ub_n_r, ce_n_r, oe_n_r, we_n_r : std_logic;
 	signal dio_r : std_logic_vector(15 downto 0);
 	signal ad_r : std_logic_vector(19 downto 0);
+	
+	signal mem_ext : std_logic;
+	signal data_read_EA : std_logic_vector(7 downto 0) := "11101010";
+	signal data_read_itnram : std_logic_vector(7 downto 0)  := (others => '0');
     
     begin
-        data_display <= data_read_r;
+        data_display <= data_read_r when ext = '1' else data_read_itnram;
 		  lb_n <= '0';
 		  ub_n <= '0';
-        ctl: memorycontroller port map(clk, reset, addr, data_write, data_read_r, data_read, mem, rw, ready, ad, dio, we_n, oe_n, ce_n);
+		  
+		  
+		  itnram: ram1 port map(addr, (not ext) and clk, data_write, not rw, data_read_itnram);
+		  
+		  mem_ext <= ext;
+        ctl: memorycontroller port map(clk, reset, addr, data_write, data_read_r, data_read, mem_ext, rw, ready, ad, dio, we_n, oe_n, ce_n);
 		  dp11:seg7 port map(addr(3 downto 0), segoutL(6 downto 0));
 		  dp12:seg7 port map(addr(7 downto 4), segoutL(13 downto 7));
 		  
