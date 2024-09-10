@@ -1,0 +1,35 @@
+-- vhdl-linter-disable type-resolved
+library IEEE; use IEEE.STD_LOGIC_1164.all;
+use ieee.numeric_std.all;
+
+entity sub_module_bist is
+    port (
+        clk, reset_n : in std_logic;
+        bist : in std_logic;
+        success : out std_logic
+    );
+end;
+
+architecture synth of sub_module_bist is   
+
+begin
+    process (clk, reset_n) is
+        variable count : integer := 0;
+    begin
+        if (reset_n = '0') then
+            success <= '0';
+            count := 0;
+        elsif (rising_edge(clk)) then
+            if (count < 10000000 * 100) then
+                count := count + 1;
+                success <= '0';
+            else
+                if (bist = '0') then
+                    success <= '1';
+                end if;
+            end if;
+        else
+            success <= '0';
+        end if;
+    end process;
+end;

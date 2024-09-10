@@ -37,7 +37,7 @@ architecture synth of top_module is
         port(clk, reset_n: in std_logic;
             -- IO
             addr_in, data_in : in std_logic_vector(7 downto 0);
-            ext, rw : in std_logic;
+            ext, rw, en_bist_n, sc_bist : in std_logic;
 				
             -- LCD
             dio : inout std_logic_vector(7 downto 0);
@@ -64,6 +64,14 @@ architecture synth of top_module is
             segoutR: out STD_LOGIC_VECTOR(7*4-1 downto 0)
         );
     end component;
+	 
+	 component sub_module_bist is
+		 port (
+			  clk, reset_n : in std_logic;
+			  en_bist_n, start_bist_n : in std_logic;
+			  success : out std_logic
+		 );
+	 end component;
 
     -- IO
     signal reset_n : std_logic;
@@ -79,20 +87,25 @@ architecture synth of top_module is
 
     -- SUB MODULE LCD
     signal ext : std_logic;
+	 signal en_bist_n, start_bist_n, sc_bist : std_logic;
 	 
 begin
     reset_n <= psw(0);
+	 start_bist_n <= psw(1);
     mem <= psw(2);
     rw <= psw(3);
     addr <= tsw(7 downto 0);
     data_write <= tsw(15 downto 8);
     ext <= tsw(17);
+	 en_bist_n <= tsw(16);
+	 
 
     pll1: pll port map(
         inclk0 => clk, 
         c0 => clk_pll
     );
 
-    A: sub_module_lcd port map(clk, reset_n, addr, data_write, ext, rw, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
+    A: sub_module_lcd port map(clk, reset_n, addr, data_write, ext, rw, en_bist_n, sc_bist, dio_lcd, en_lcd, rw_lcd, rs_lcd, pon_lcd, blon_lcd);
     B: sub_module_ram port map(clk_pll, reset_n, addr, data_write, data_read_r, data_read, mem, rw, ready, ext, ad_sram, dio_sram, we_n_sram, oe_n_sram, ce_n_sram, lb_n_sram, ub_n_sram, segoutL, segoutM, segoutR);
+	 C: sub_module_bist port map(clk_pll, reset_n, en_bist_n, start_bist_n, sc_bist);
 end;

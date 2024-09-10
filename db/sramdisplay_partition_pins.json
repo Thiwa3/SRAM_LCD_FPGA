@@ -362,6 +362,14 @@
 				{
 					"name" : "clk",
 					"strict" : false
+				},
+				{
+					"name" : "tsw[16]",
+					"strict" : false
+				},
+				{
+					"name" : "psw[1]",
+					"strict" : false
 				}
 			]
 		}
