@@ -1,5 +1,9 @@
 EDA Netlist Writer report for sramdisplay
+<<<<<<< HEAD
 Thu Sep 12 11:05:48 2024
+=======
+Thu Sep 12 10:06:46 2024
+>>>>>>> 9cea7b3c11b2e9ccfe0f368c8112d0e03173352b
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -37,7 +41,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
+<<<<<<< HEAD
 ; EDA Netlist Writer Status ; Successful - Thu Sep 12 11:05:48 2024 ;
+=======
+; EDA Netlist Writer Status ; Successful - Thu Sep 12 10:06:46 2024 ;
+>>>>>>> 9cea7b3c11b2e9ccfe0f368c8112d0e03173352b
 ; Revision Name             ; sramdisplay                           ;
 ; Top-level Entity Name     ; top_module                            ;
 ; Family                    ; Cyclone IV E                          ;
@@ -81,14 +89,23 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+<<<<<<< HEAD
     Info: Processing started: Thu Sep 12 11:05:47 2024
+=======
+    Info: Processing started: Thu Sep 12 10:06:45 2024
+>>>>>>> 9cea7b3c11b2e9ccfe0f368c8112d0e03173352b
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off SRAM_LCD_FPGA -c sramdisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file sramdisplay.vho in folder "C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+<<<<<<< HEAD
     Info: Peak virtual memory: 4645 megabytes
     Info: Processing ended: Thu Sep 12 11:05:48 2024
+=======
+    Info: Peak virtual memory: 4654 megabytes
+    Info: Processing ended: Thu Sep 12 10:06:46 2024
+>>>>>>> 9cea7b3c11b2e9ccfe0f368c8112d0e03173352b
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
