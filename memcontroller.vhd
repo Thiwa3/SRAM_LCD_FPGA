@@ -1,7 +1,8 @@
+-- vhdl-linter-disable type-resolved
 library IEEE; use IEEE.STD_LOGIC_1164.all;
 
 entity memorycontroller is
-    port (clk, reset: in STD_LOGIC;
+    port (clk, reset_n: in STD_LOGIC;
           -- SYSTEM
           addr, data_write: in STD_LOGIC_VECTOR(7 downto 0);
           data_read_r, data_read: out STD_LOGIC_VECTOR(7 downto 0);
@@ -24,8 +25,8 @@ architecture synth of memorycontroller is
     signal we_reg, oe_reg, tri_reg: std_logic;
 
     begin
-        process (clk, reset) begin
-            if (reset = '0') then
+        process (clk, reset_n) begin
+            if (reset_n = '0') then
                 state <= idle;
                 addr_reg <= (others => '0');
                 data_read_reg <= (others => '0');

@@ -1,4 +1,10 @@
 
+State Machine - |top_module|sub_module_bist:C|marchcontroller:mc1|state
+Name state.re state.wr state.idle 
+state.idle 0 0 0 
+state.wr 0 1 1 
+state.re 1 0 1 
+
 State Machine - |top_module|sub_module_ram:B|memorycontroller:ctl|state
 Name state.w2 state.w1 state.r2 state.r1 state.idle 
 state.idle 0 0 0 0 0 
