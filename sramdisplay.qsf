@@ -239,4 +239,6 @@ set_location_assignment PIN_L6 -to blon_lcd
 set_global_assignment -name SDC_FILE output_files/clock_constraint.sdc
 set_global_assignment -name QIP_FILE pll.qip
 set_global_assignment -name VHDL_FILE sub_module_bist.vhd
+set_global_assignment -name VHDL_FILE output_analyzer.vhd
+set_global_assignment -name VHDL_FILE march_controller.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
