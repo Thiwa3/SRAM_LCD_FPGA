@@ -9,6 +9,7 @@ entity sub_module_bist is
         en_bist : in std_logic;
         test_start : in std_logic;
         fail : out std_logic;
+        fin : out std_logic;
         -- SRAM
         data_read : in std_logic_vector(7 downto 0);
         addr: out std_logic_vector(7 downto 0);
@@ -23,7 +24,8 @@ architecture synth of sub_module_bist is
             addr: out std_logic_vector(7 downto 0);
             data_write: out std_logic_vector(7 downto 0);
             rw : out std_logic;
-            ready : out std_logic
+            ready : out std_logic;
+            fin : out std_logic
         ); 
     end component;
 
@@ -38,10 +40,9 @@ architecture synth of sub_module_bist is
         );
     end component;
 
-    signal ready_tmp : std_logic;
-    signal rw_tmp : std_logic;
+    signal rw_tmp, ready_tmp : std_logic;
 begin
     rw <= rw_tmp;
-    mc1: marchcontroller port map(clk, reset_n and (not en_bist) and (not test_start), addr, data_write, rw_tmp, ready_tmp);
-    oa1: output_analyzer port map(clk, reset_n and (not en_bist) and (not test_start), ready_tmp, rw_tmp, data_read, fail);
+    mc1: marchcontroller port map(clk, reset_n and en_bist and (not test_start), addr, data_write, rw_tmp, ready_tmp, fin);
+    oa1: output_analyzer port map(clk, reset_n and en_bist and (not test_start), ready_tmp, rw_tmp, data_read, fail);
 end;

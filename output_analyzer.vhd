@@ -61,7 +61,6 @@ begin
                 else
                     next_state <= one;
                 end if;
-
             when others =>
                 next_state <= zero;
         end case;

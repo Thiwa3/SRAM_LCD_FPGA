@@ -6,7 +6,7 @@ entity userlogic_ad_wr is
     port(clk, reset_n: in std_logic;
         -- SYSTEM
         addr, data : in std_logic_vector(7 downto 0);
-        ext, rw, en_bist, test_start, fail_bist : in std_logic;
+        ext, rw, en_bist, fail_bist, fin_bist : in std_logic;
 
         -- CONTROLLER
         data_write : out std_logic_vector(9 downto 0); -- 1/0 inst/data, read/write
@@ -100,72 +100,72 @@ architecture synth of userlogic_ad_wr is
 										  data_write <= "0011000000"; -- CR
                                 send_enable <= '1';
                             when 20 =>
-                                if (test_start = '1') then
-												data_write <= "10" & x"53"; -- S
-										  elsif (test_start = '0' and fail_bist = '0') then
+                                if (fin_bist = '0') then
+                                    data_write <= "10" & x"53"; -- S
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"53"; -- S
                                 else -- fail_bist = '1' 
                                     data_write <= "10" & x"46"; -- F
                                 end if;
-										  send_enable <= '1';
+                                    send_enable <= '1';
                             when 21 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"74"; -- (s)t(art)
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"75"; -- (s)u(ccess)
                                 else
                                     data_write <= "10" & x"61"; -- (f)a(il)
                                 end if;
                                 send_enable <= '1';
                             when 22 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"61"; -- a
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"63"; -- c
                                 else
                                     data_write <= "10" & x"69"; -- i
                                 end if;
                                 send_enable <= '1';
                             when 23 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"72"; -- r
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"63"; -- c
                                 else
-                                    data_write <= "10" & x"66"; -- l
+                                    data_write <= "10" & x"7C"; -- l
                                 end if;
                                 send_enable <= '1';
                             when 24 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"74"; -- t
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"65"; -- e
                                 else
                                     data_write <= "10" & x"20"; -- SPACE
                                 end if;
                                 send_enable <= '1';
                             when 25 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"20"; -- SPACE
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"73"; -- s
                                 else
                                     data_write <= "10" & x"20"; -- SPACE
                                 end if;
                                 send_enable <= '1';
                             when 26 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"20"; -- SPACE
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"73"; -- s
                                 else
                                     data_write <= "10" & x"20"; -- SPACE
                                 end if;
                                 send_enable <= '1';
                             when 27 =>
-                                if (test_start = '1') then
+                                if (fin_bist = '0') then
                                     data_write <= "10" & x"20"; -- SPACE
-                                elsif (test_start = '0' and fail_bist = '0') then
+                                elsif (fin_bist = '1' and fail_bist = '0') then
                                     data_write <= "10" & x"21"; -- !
                                 else
                                     data_write <= "10" & x"20"; -- SPACE

@@ -37,7 +37,7 @@ architecture synth of top_module is
         port(clk, reset_n: in std_logic;
             -- IO
             addr_in, data_in : in std_logic_vector(7 downto 0);
-            ext, rw, en_bist, test_start, fail_bist  : in std_logic;
+            ext, rw, en_bist, fail_bist, fin_bist : in std_logic;
 				
             -- LCD
             dio : inout std_logic_vector(7 downto 0);
@@ -69,6 +69,7 @@ architecture synth of top_module is
             en_bist : in std_logic;
             test_start : in std_logic;
             fail : out std_logic;
+            fin : out std_logic;
             -- SRAM
             data_read : in std_logic_vector(7 downto 0);
             addr: out std_logic_vector(7 downto 0);
@@ -96,7 +97,7 @@ architecture synth of top_module is
 
     -- SUB MODULE LCD
     signal ext : std_logic;
-    signal en_bist, fail_bist : std_logic;
+    signal en_bist, fail_bist, fin_bist : std_logic;
 
     -- SUB MODULE BIST
     signal addr_test, data_write_test : std_logic_vector(7 downto 0);
@@ -125,8 +126,8 @@ begin
         ext => ext, 
         rw => rw, 
         en_bist => en_bist,
-        test_start => test_start, 
         fail_bist => fail_bist, 
+        fin_bist => fin_bist,
         dio => dio_lcd, 
         en_l => en_lcd, 
         rw_l => rw_lcd, 
@@ -172,6 +173,7 @@ begin
         en_bist => en_bist,
         test_start => test_start, 
         fail => fail_bist,
+        fin => fin_bist,
         data_read => data_display,
         addr => addr_test,
         data_write => data_write_test,

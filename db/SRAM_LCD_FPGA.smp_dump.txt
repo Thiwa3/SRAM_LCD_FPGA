@@ -1,17 +1,24 @@
 
 State Machine - |top_module|sub_module_bist:C|marchcontroller:mc1|state
-Name state.re state.wr state.idle 
-state.idle 0 0 0 
-state.wr 0 1 1 
-state.re 1 0 1 
+Name state.finished state.r5 state.w5 state.r4 state.w4 state.r3 state.w3 state.r2 state.w2 state.r1 state.w1 state.idle 
+state.idle 0 0 0 0 0 0 0 0 0 0 0 0 
+state.w1 0 0 0 0 0 0 0 0 0 0 1 1 
+state.r1 0 0 0 0 0 0 0 0 0 1 0 1 
+state.w2 0 0 0 0 0 0 0 0 1 0 0 1 
+state.r2 0 0 0 0 0 0 0 1 0 0 0 1 
+state.w3 0 0 0 0 0 0 1 0 0 0 0 1 
+state.r3 0 0 0 0 0 1 0 0 0 0 0 1 
+state.w4 0 0 0 0 1 0 0 0 0 0 0 1 
+state.r4 0 0 0 1 0 0 0 0 0 0 0 1 
+state.w5 0 0 1 0 0 0 0 0 0 0 0 1 
+state.r5 0 1 0 0 0 0 0 0 0 0 0 1 
+state.finished 1 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |top_module|sub_module_ram:B|memorycontroller:ctl|state
-Name state.w2 state.w1 state.r2 state.r1 state.idle 
-state.idle 0 0 0 0 0 
-state.r1 0 0 0 1 1 
-state.r2 0 0 1 0 1 
-state.w1 0 1 0 0 1 
-state.w2 1 0 0 0 1 
+Name state.wt state.re state.idle 
+state.idle 0 0 0 
+state.re 0 1 1 
+state.wt 1 0 1 
 
 State Machine - |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|state
 Name state.send state.ready state.init state.power 

@@ -7,150 +7,212 @@ entity marchcontroller is
         addr: out std_logic_vector(7 downto 0);
         data_write: out std_logic_vector(7 downto 0);
         rw : out std_logic;
-        ready : out std_logic
+        ready : out std_logic;
+        fin : out std_logic
     ); 
 end;
 
 architecture synth of marchcontroller is
-    type statetype is (idle, wr, re);
+    type statetype is (idle, w1, r1, w2, r2, w3, r3, w4, r4, w5, r5, finished);
     constant ADDR_MAX : integer := 2 ** 8 - 1;
     signal state, nextstate: statetype;
     signal data_b_reg, data_b_next: std_logic;
     signal addr_reg, addr_next : std_logic_vector(7 downto 0);
-    signal rw_buf, ready_buf: std_logic;
-    signal rw_reg, ready_reg: std_logic;
+    signal rw_buf, ready_buf, fin_buf: std_logic;
+    signal rw_reg, ready_reg, fin_reg: std_logic;
 
     begin
         process (clk, reset_n) begin
             if (reset_n = '0') then
                 state <= idle;
                 data_b_reg <= '0';
-                rw_reg <= '1';
                 addr_reg <= (others => '0');
+                rw_reg <= '0';
                 ready_reg <= '0';
+                fin_reg <= '0';
             elsif (clk'event and clk = '1') then
                 state <= nextstate;
                 data_b_reg <= data_b_next;
-                rw_reg <= rw_buf;
                 addr_reg <= addr_next;
+                rw_reg <= rw_buf;
                 ready_reg <= ready_buf;
+                fin_reg <= fin_buf;
             end if;
         end process;
 
         -- state logic
         process (all) is
-            variable repeat_count : integer := 0;
-            variable count_up : boolean := true;
         begin
             nextstate <= state;
             data_b_next <= data_b_reg;
             addr_next <= addr_reg;
             rw_buf <= rw_reg;
             ready_buf <= '0';
+            fin_buf <= fin_reg;
 
             case state is 
                 when idle => 
-                   nextstate <= wr;
-                when wr =>
+                   nextstate <= w1;
+                when w1 =>
                     rw_buf <= '0';
-                    if (count_up) then
-                        if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then
-                            addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
-                            nextstate <= wr;
-                        else
-                            -- write + read : total 
-                            if (repeat_count < 5) then
-                                repeat_count := repeat_count + 1;
-                                count_up := true;
-                                -- next: count up
-                                addr_next <= (others => '0');
-                            else
-                                repeat_count := 0;
-                                count_up := false;
-                                -- next: count down
-                                addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
-                            end if;
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
+                        nextstate <= w1;
+                    else
+                        addr_next <= (others => '0');
 
-                            -- next: read
-                            nextstate <= re;
-                            rw_buf <= '1';
-                        end if;
-                    else -- count downs
-                        if (to_integer(unsigned(addr_reg)) > 0) then
-                            addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
-                            nextstate <= wr;
-                        else -- write end
-                            -- write + read : total 
-                            if (repeat_count < 5) then
-                                repeat_count := repeat_count + 1;
-                                count_up := false;
-                                -- next: count down
-                                addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
-                            else
-                                repeat_count := 0;
-                                count_up := true;
-                                -- next: count up
-                                addr_next <= (others => '0');
-                            end if;
-
-                            -- next: read
-                            nextstate <= re;
-                            rw_buf <= '1';
-                        end if;
+                        -- next: read
+                        nextstate <= r1;
+                        rw_buf <= '1';
                     end if;
-                when re => 
+                when r1 => 
                     rw_buf <= '1';
-                    if (count_up) then
-                        if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then -- reading
-                            addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
-                            nextstate <= re;
-                        else -- read end
-                            -- write + read : total 
-                            if (repeat_count < 5) then
-                                repeat_count := repeat_count + 1;
-                                count_up := true;
-                                -- next: count up
-                                addr_next <= (others => '0');
-                            else
-                                repeat_count := 0;
-                                count_up := false;
-                                -- next: count down
-                                addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
-                            end if;
-                            
-                            nextstate <= wr;
-                            rw_buf <= '0';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then -- reading
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
+                        nextstate <= r1;
+                    else -- read end
+                        addr_next <= (others => '0');
+                        
+                        -- next: write2
+                        nextstate <= w2;
+                        rw_buf <= '0';
 
-                            -- read end
-                            data_b_next <= not data_b_reg;
-                            ready_buf <= '1';
-                        end if;
-                    else -- count downs
-                        if (to_integer(unsigned(addr_reg)) > 0) then -- reading
-                            addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
-                            nextstate <= re;
-                        else -- read end
-                            -- write + read : total 
-                            if (repeat_count < 5) then
-                                repeat_count := repeat_count + 1;
-                                count_up := false;
-                                -- next: count down
-                                addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
-                            else
-                                repeat_count := 0;
-                                count_up := true;
-                                -- next: count up
-                                addr_next <= (others => '0');
-                            end if;
+                        -- next: w 1 0~F
+                        data_b_next <= '1';
 
-                            nextstate <= wr;
-                            rw_buf <= '0';
-
-                            -- read end
-                            data_b_next <= not data_b_reg;
-                            ready_buf <= '1';
-                        end if;
+                        -- for output_analyzer
+                        ready_buf <= '1';
                     end if;
+                when w2 =>
+                    rw_buf <= '0';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
+                        nextstate <= w2;
+                    else
+                        addr_next <= (others => '0');
+
+                        -- next: read
+                        nextstate <= r2;
+                        rw_buf <= '1';
+                    end if;
+                when r2 => 
+                    rw_buf <= '1';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then -- reading
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
+                        nextstate <= r2;
+                    else -- read end
+                        addr_next <= (others => '0');
+                        
+                        -- next: write3
+                        nextstate <= w3;
+                        rw_buf <= '0';
+
+                        -- next: w 0 0~F
+                        data_b_next <= '0';
+
+                        -- for output_analyzer
+                        ready_buf <= '1';
+                    end if;
+                when w3 =>
+                    rw_buf <= '0';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) < ADDR_MAX) then
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) + 1, addr_reg'length));
+                        nextstate <= w3;
+                    else
+                        -- next: r 0 F~0
+                        addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
+
+                        -- next: read
+                        nextstate <= r3;
+                        rw_buf <= '1';
+                    end if;
+                when r3 => 
+                    rw_buf <= '1';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) > 0) then -- reading
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
+                        nextstate <= r3;
+                    else  
+                        addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
+                        
+                        -- next: write4
+                        nextstate <= w4;
+                        rw_buf <= '0';
+
+                        -- next: w 1 F~0
+                        data_b_next <= '1';
+
+                        -- for output_analyzer
+                        ready_buf <= '1';
+                    end if;
+                when w4 =>
+                    rw_buf <= '0';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) > 0) then
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
+                        nextstate <= w4;
+                    else
+                        -- next: r 1 F~0
+                        addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
+
+                        -- next: read
+                        nextstate <= r4;
+                        rw_buf <= '1';
+                    end if;
+                when r4 => 
+                    rw_buf <= '1';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) > 0) then -- reading
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
+                        nextstate <= r4;
+                    else  
+                        addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
+                        
+                        -- next: write5
+                        nextstate <= w5;
+                        rw_buf <= '0';
+
+                        -- next: w 0 F~0
+                        data_b_next <= '0';
+
+                        -- for output_analyzer
+                        ready_buf <= '1';
+                    end if;
+                when w5 =>
+                    rw_buf <= '0';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) > 0) then
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
+                        nextstate <= w5;
+                    else
+                        -- next: r 0 F~0
+                        addr_next <= std_logic_vector(to_unsigned(ADDR_MAX, addr_reg'length));
+
+                        -- next: read
+                        nextstate <= r5;
+                        rw_buf <= '1';
+                    end if;
+                when r5 => 
+                    rw_buf <= '1';
+                    fin_buf <= '0';
+                    if (to_integer(unsigned(addr_reg)) > 0) then -- reading
+                        addr_next <= std_logic_vector(to_unsigned(to_integer(unsigned(addr_reg)) - 1, addr_reg'length));
+                        nextstate <= r5;
+                    else  
+                        addr_next <= (others => '0');
+                        
+                        -- next: write4
+                        nextstate <= finished;
+                    end if;
+                when finished =>
+                    nextstate <= finished;
+                    rw_buf <= '1';
+                    fin_buf <= '1';
                 when others =>
                     nextstate <= idle;
             end case;
@@ -158,6 +220,7 @@ architecture synth of marchcontroller is
 
         rw <= rw_reg;
         ready <= ready_reg;
+        fin <= fin_reg;
         data_write <= (others => data_b_reg);
         addr <= addr_reg;
     end;

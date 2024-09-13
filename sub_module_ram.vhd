@@ -50,7 +50,7 @@ architecture synth of sub_module_ram is
 	signal data_read_itnram : std_logic_vector(7 downto 0)  := (others => '0');
     
     begin
-        data_display <= data_read_r when ext = '1' else data_read_itnram; -- dio is useless
+        data_display <= data_read when ext = '1' else data_read_itnram;
         lb_n <= '0';
         ub_n <= '0';
         

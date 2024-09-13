@@ -17,7 +17,7 @@ entity memorycontroller is
 end;
 
 architecture synth of memorycontroller is    
-    type statetype is (idle, r1, r2, w1, w2);
+    type statetype is (idle, re, wt);
     signal state, nextstate: statetype;
     signal data_read_reg, data_write_reg, addr_reg: std_logic_vector(7 downto 0);
     signal data_read_next, data_write_next, addr_next: std_logic_vector(7 downto 0);
@@ -29,11 +29,11 @@ architecture synth of memorycontroller is
             if (reset_n = '0') then
                 state <= idle;
                 addr_reg <= (others => '0');
-                data_read_reg <= (others => '0');
                 data_write_reg <= (others => '0');
-                we_reg <= '1';
+                data_read_reg <= (others => '0');
+                we_reg <= '0';
                 oe_reg <= '1';
-                tri_reg <= '1';
+                tri_reg <= '0';
             elsif (clk'event and clk = '1') then
                 state <= nextstate;
                 addr_reg <= addr_next;
@@ -58,22 +58,37 @@ architecture synth of memorycontroller is
                     else
                         addr_next <= addr;
                         if (rw = '0') then -- write
-                            nextstate <= w1;
+                            nextstate <= wt;
                             data_write_next <= data_write;
                         else
-                            nextstate <= r1;
+                            nextstate <= re;
                         end if;
                     end if;
-                    ready <= '1';
-                when r1 =>
-                    nextstate <= r2;
-                when r2 =>
+                when re =>
                     data_read_next <= dio(7 downto 0);
-                    nextstate <= idle;
-                when w1 => 
-                    nextstate <= w2;
-                when w2 =>
-                    nextstate <= idle;
+                    if (mem = '0') then
+                        nextstate <= idle;
+                    else
+                        addr_next <= addr;
+                        if (rw = '0') then -- write
+                            nextstate <= wt;
+                            data_write_next <= data_write;
+                        else
+                            nextstate <= re;
+                        end if;
+                    end if;
+                when wt =>
+                    if (mem = '0') then
+                        nextstate <= idle;
+                    else
+                        addr_next <= addr;
+                        if (rw = '0') then -- write
+                            nextstate <= wt;
+                            data_write_next <= data_write;
+                        else
+                            nextstate <= re;
+                        end if;
+                    end if;
                 when others =>
                     nextstate <= idle;
             end case;
@@ -86,15 +101,13 @@ architecture synth of memorycontroller is
             tri_buf <= '1';
             case nextstate is
                 when idle =>
-                when r1 =>
-                    oe_buf <= '0';
-                when r2 =>
-                    oe_buf <= '0';
-                when w1 =>
                     tri_buf <= '0';
                     we_buf <= '0';
-                when w2 =>
+                when re =>
+                    oe_buf <= '0';
+                when wt =>
                     tri_buf <= '0';
+                    we_buf <= '0';
             end case;
         end process;
 

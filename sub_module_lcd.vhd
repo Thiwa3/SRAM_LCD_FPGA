@@ -6,7 +6,7 @@ entity sub_module_lcd is
     port(clk, reset_n: in std_logic;
         -- IO
         addr_in, data_in : in std_logic_vector(7 downto 0);
-        ext, rw, en_bist, test_start, fail_bist : in std_logic;
+        ext, rw, en_bist, fail_bist, fin_bist : in std_logic;
 		  
         -- LCD
         dio : inout std_logic_vector(7 downto 0);
@@ -19,7 +19,7 @@ architecture synth of sub_module_lcd is
         port(clk, reset_n: in std_logic;
             -- SYSTEM
             addr, data : in std_logic_vector(7 downto 0);
-            ext, rw, en_bist, test_start, fail_bist : in std_logic;
+            ext, rw, en_bist, fail_bist, fin_bist : in std_logic;
 
             -- CONTROLLER
             data_write : out std_logic_vector(9 downto 0); -- 1/0 inst/data, read/write
@@ -66,8 +66,8 @@ begin
             ext => ext,
             rw => rw,
             en_bist => en_bist, 
-				test_start => test_start,
             fail_bist => fail_bist,
+            fin_bist => fin_bist,
             data_write => data_write,
             send_enable => enable_tmp, 
             busy => busy_tmp, 
