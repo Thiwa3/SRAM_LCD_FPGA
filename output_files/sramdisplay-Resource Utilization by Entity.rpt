@@ -1,0 +1,66 @@
+Resource Utilization by Entity report for sramdisplay
+Fri Sep 13 16:17:43 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Resource Utilization by Entity
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name       ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
+; |top_module                                  ; 676 (30)            ; 188 (0)                   ; 4080        ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                                                                             ; top_module        ; work         ;
+;    |pll:pll1|                                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pll:pll1                                                                                    ; pll               ; work         ;
+;       |altpll:altpll_component|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pll:pll1|altpll:altpll_component                                                            ; altpll            ; work         ;
+;          |pll_altpll:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pll:pll1|altpll:altpll_component|pll_altpll:auto_generated                                  ; pll_altpll        ; work         ;
+;    |seg7:dp11|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp11                                                                                   ; seg7              ; work         ;
+;    |seg7:dp12|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp12                                                                                   ; seg7              ; work         ;
+;    |seg7:dp13|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp13                                                                                   ; seg7              ; work         ;
+;    |seg7:dp21|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp21                                                                                   ; seg7              ; work         ;
+;    |seg7:dp22|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp22                                                                                   ; seg7              ; work         ;
+;    |seg7:dp23|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp23                                                                                   ; seg7              ; work         ;
+;    |seg7:dp33|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp33                                                                                   ; seg7              ; work         ;
+;    |seg7:dp43|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp43                                                                                   ; seg7              ; work         ;
+;    |sub_module_bist:C|                       ; 120 (1)             ; 38 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C                                                                           ; sub_module_bist   ; work         ;
+;       |marchcontroller:mc1|                  ; 105 (105)           ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C|marchcontroller:mc1                                                       ; marchcontroller   ; work         ;
+;       |output_analyzer:oa1|                  ; 14 (14)             ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C|output_analyzer:oa1                                                       ; output_analyzer   ; work         ;
+;    |sub_module_lcd:A|                        ; 451 (0)             ; 111 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                                                                            ; sub_module_lcd    ; work         ;
+;       |lcdcontrollerfast:lc1|                ; 175 (175)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1                                                      ; lcdcontrollerfast ; work         ;
+;       |mod5:df1|                             ; 22 (22)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:df1                                                                   ; mod5              ; work         ;
+;       |userlogic_ad_wr:ul1|                  ; 254 (254)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1                                                        ; userlogic_ad_wr   ; work         ;
+;    |sub_module_ram:B|                        ; 19 (17)             ; 39 (0)                    ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                                                                            ; sub_module_ram    ; work         ;
+;       |memorycontroller:ctl|                 ; 2 (2)               ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl                                                       ; memorycontroller  ; work         ;
+;       |ram1:itnram|                          ; 0 (0)               ; 0 (0)                     ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram                                                                ; ram1              ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
+;             |altsyncram_e0q3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated ; altsyncram_e0q3   ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+

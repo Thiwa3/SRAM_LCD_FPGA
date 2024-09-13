@@ -1,5 +1,5 @@
 Fitter report for sramdisplay
-Fri Sep 13 13:55:13 2024
+Fri Sep 13 17:53:08 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -72,14 +72,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                      ;
 +------------------------------------+------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Sep 13 13:55:13 2024          ;
+; Fitter Status                      ; Successful - Fri Sep 13 17:53:08 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; sramdisplay                                    ;
 ; Top-level Entity Name              ; top_module                                     ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 695 / 114,480 ( < 1 % )                        ;
+; Total logic elements               ; 692 / 114,480 ( < 1 % )                        ;
 ;     Total combinational functions  ; 677 / 114,480 ( < 1 % )                        ;
 ;     Dedicated logic registers      ; 188 / 114,480 ( < 1 % )                        ;
 ; Total registers                    ; 188                                            ;
@@ -159,14 +159,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.1%      ;
-;     Processor 3            ;   1.0%      ;
-;     Processor 4            ;   1.0%      ;
+;     Processor 2            ;   0.8%      ;
+;     Processor 3            ;   0.7%      ;
+;     Processor 4            ;   0.7%      ;
 +----------------------------+-------------+
 
 
@@ -216,16 +216,16 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Total logic elements                        ; 695 / 114,480 ( < 1 % )     ;
-;     -- Combinational with no register       ; 507                         ;
-;     -- Register only                        ; 18                          ;
-;     -- Combinational with a register        ; 170                         ;
+; Total logic elements                        ; 692 / 114,480 ( < 1 % )     ;
+;     -- Combinational with no register       ; 504                         ;
+;     -- Register only                        ; 15                          ;
+;     -- Combinational with a register        ; 173                         ;
 ;                                             ;                             ;
 ; Logic element usage by number of LUT inputs ;                             ;
 ;     -- 4 input functions                    ; 364                         ;
 ;     -- 3 input functions                    ; 110                         ;
 ;     -- <=2 input functions                  ; 203                         ;
-;     -- Register only                        ; 18                          ;
+;     -- Register only                        ; 15                          ;
 ;                                             ;                             ;
 ; Logic elements by mode                      ;                             ;
 ;     -- normal mode                          ; 557                         ;
@@ -235,7 +235,7 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ;     -- Dedicated logic registers            ; 188 / 114,480 ( < 1 % )     ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )           ;
 ;                                             ;                             ;
-; Total LABs:  partially or completely used   ; 53 / 7,155 ( < 1 % )        ;
+; Total LABs:  partially or completely used   ; 50 / 7,155 ( < 1 % )        ;
 ; Virtual pins                                ; 0                           ;
 ; I/O pins                                    ; 133 / 529 ( 25 % )          ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )              ;
@@ -254,11 +254,11 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )               ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )               ;
 ; Average interconnect usage (total/H/V)      ; 0.6% / 0.7% / 0.5%          ;
-; Peak interconnect usage (total/H/V)         ; 5.0% / 5.4% / 4.8%          ;
+; Peak interconnect usage (total/H/V)         ; 6.8% / 6.7% / 6.9%          ;
 ; Maximum fan-out                             ; 111                         ;
 ; Highest non-global fan-out                  ; 66                          ;
-; Total fan-out                               ; 3178                        ;
-; Average fan-out                             ; 2.67                        ;
+; Total fan-out                               ; 3175                        ;
+; Average fan-out                             ; 2.68                        ;
 +---------------------------------------------+-----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -271,16 +271,16 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 695 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 507                    ; 0                              ;
-;     -- Register only                        ; 18                     ; 0                              ;
-;     -- Combinational with a register        ; 170                    ; 0                              ;
+; Total logic elements                        ; 692 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 504                    ; 0                              ;
+;     -- Register only                        ; 15                     ; 0                              ;
+;     -- Combinational with a register        ; 173                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
 ;     -- 4 input functions                    ; 364                    ; 0                              ;
 ;     -- 3 input functions                    ; 110                    ; 0                              ;
 ;     -- <=2 input functions                  ; 203                    ; 0                              ;
-;     -- Register only                        ; 18                     ; 0                              ;
+;     -- Register only                        ; 15                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
 ;     -- normal mode                          ; 557                    ; 0                              ;
@@ -290,7 +290,7 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ;     -- Dedicated logic registers            ; 188 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 53 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 50 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 133                    ; 0                              ;
@@ -308,7 +308,7 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 3178                   ; 86                             ;
+;     -- Total Connections                    ; 3175                   ; 86                             ;
 ;     -- Registered Connections               ; 708                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
@@ -344,8 +344,8 @@ The pin-out file can be found in C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/outp
 ; clk     ; Y2    ; 2        ; 0            ; 36           ; 14           ; 112                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; psw[0]  ; R24   ; 5        ; 115          ; 35           ; 21           ; 66                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; psw[1]  ; N21   ; 6        ; 115          ; 42           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; psw[2]  ; M21   ; 6        ; 115          ; 53           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; psw[3]  ; M23   ; 6        ; 115          ; 40           ; 7            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; psw[2]  ; M21   ; 6        ; 115          ; 53           ; 14           ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; psw[3]  ; M23   ; 6        ; 115          ; 40           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[10] ; AC24  ; 5        ; 115          ; 4            ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; tsw[11] ; AB24  ; 5        ; 115          ; 5            ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -1374,7 +1374,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------+-------------------------------+
 ; Pin Name     ; Reason                        ;
 +--------------+-------------------------------+
-; psw[2]       ; Incomplete set of assignments ;
+; psw[3]       ; Incomplete set of assignments ;
 ; ad_sram[0]   ; Incomplete set of assignments ;
 ; ad_sram[1]   ; Incomplete set of assignments ;
 ; ad_sram[2]   ; Incomplete set of assignments ;
@@ -1504,7 +1504,7 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; tsw[15]      ; Incomplete set of assignments ;
 ; tsw[17]      ; Incomplete set of assignments ;
 ; psw[0]       ; Incomplete set of assignments ;
-; psw[3]       ; Incomplete set of assignments ;
+; psw[2]       ; Incomplete set of assignments ;
 ; psw[1]       ; Incomplete set of assignments ;
 +--------------+-------------------------------+
 
@@ -1514,11 +1514,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                     ; Entity Name       ; Library Name ;
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; |top_module                                  ; 695 (18)    ; 188 (0)                   ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 133  ; 0            ; 507 (11)     ; 18 (0)            ; 170 (19)         ; |top_module                                                                                             ; top_module        ; work         ;
+; |top_module                                  ; 692 (13)    ; 188 (0)                   ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 133  ; 0            ; 504 (3)      ; 15 (0)            ; 173 (27)         ; |top_module                                                                                             ; top_module        ; work         ;
 ;    |pll:pll1|                                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top_module|pll:pll1                                                                                    ; pll               ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top_module|pll:pll1|altpll:altpll_component                                                            ; altpll            ; work         ;
 ;          |pll_altpll:auto_generated|         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top_module|pll:pll1|altpll:altpll_component|pll_altpll:auto_generated                                  ; pll_altpll        ; work         ;
-;    |seg7:dp11|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 4 (4)            ; |top_module|seg7:dp11                                                                                   ; seg7              ; work         ;
+;    |seg7:dp11|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 1 (1)            ; |top_module|seg7:dp11                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp12|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|seg7:dp12                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp13|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|seg7:dp13                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp21|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|seg7:dp21                                                                                   ; seg7              ; work         ;
@@ -1526,15 +1526,15 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;    |seg7:dp23|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|seg7:dp23                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp33|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|seg7:dp33                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp43|                               ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |top_module|seg7:dp43                                                                                   ; seg7              ; work         ;
-;    |sub_module_bist:C|                       ; 122 (1)     ; 38 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 84 (1)       ; 1 (0)             ; 37 (0)           ; |top_module|sub_module_bist:C                                                                           ; sub_module_bist   ; work         ;
-;       |marchcontroller:mc1|                  ; 107 (107)   ; 36 (36)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 71 (71)      ; 1 (1)             ; 35 (35)          ; |top_module|sub_module_bist:C|marchcontroller:mc1                                                       ; marchcontroller   ; work         ;
+;    |sub_module_bist:C|                       ; 124 (1)     ; 38 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 85 (0)       ; 3 (0)             ; 36 (1)           ; |top_module|sub_module_bist:C                                                                           ; sub_module_bist   ; work         ;
+;       |marchcontroller:mc1|                  ; 109 (109)   ; 36 (36)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 73 (73)      ; 3 (3)             ; 33 (33)          ; |top_module|sub_module_bist:C|marchcontroller:mc1                                                       ; marchcontroller   ; work         ;
 ;       |output_analyzer:oa1|                  ; 14 (14)     ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 2 (2)            ; |top_module|sub_module_bist:C|output_analyzer:oa1                                                       ; output_analyzer   ; work         ;
-;    |sub_module_lcd:A|                        ; 453 (0)     ; 111 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 342 (0)      ; 1 (0)             ; 110 (0)          ; |top_module|sub_module_lcd:A                                                                            ; sub_module_lcd    ; work         ;
+;    |sub_module_lcd:A|                        ; 454 (0)     ; 111 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 343 (0)      ; 3 (0)             ; 108 (0)          ; |top_module|sub_module_lcd:A                                                                            ; sub_module_lcd    ; work         ;
 ;       |lcdcontrollerfast:lc1|                ; 175 (175)   ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 128 (128)    ; 0 (0)             ; 47 (47)          ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1                                                      ; lcdcontrollerfast ; work         ;
 ;       |mod5:df1|                             ; 22 (22)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 22 (22)          ; |top_module|sub_module_lcd:A|mod5:df1                                                                   ; mod5              ; work         ;
-;       |userlogic_ad_wr:ul1|                  ; 256 (256)   ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 214 (214)    ; 1 (1)             ; 41 (41)          ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1                                                        ; userlogic_ad_wr   ; work         ;
-;    |sub_module_ram:B|                        ; 57 (17)     ; 39 (0)                    ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (17)      ; 16 (0)            ; 23 (0)           ; |top_module|sub_module_ram:B                                                                            ; sub_module_ram    ; work         ;
-;       |memorycontroller:ctl|                 ; 40 (40)     ; 39 (39)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 16 (16)           ; 23 (23)          ; |top_module|sub_module_ram:B|memorycontroller:ctl                                                       ; memorycontroller  ; work         ;
+;       |userlogic_ad_wr:ul1|                  ; 257 (257)   ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 215 (215)    ; 3 (3)             ; 39 (39)          ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1                                                        ; userlogic_ad_wr   ; work         ;
+;    |sub_module_ram:B|                        ; 57 (17)     ; 39 (0)                    ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (17)      ; 9 (0)             ; 30 (0)           ; |top_module|sub_module_ram:B                                                                            ; sub_module_ram    ; work         ;
+;       |memorycontroller:ctl|                 ; 40 (40)     ; 39 (39)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 9 (9)             ; 30 (30)          ; |top_module|sub_module_ram:B|memorycontroller:ctl                                                       ; memorycontroller  ; work         ;
 ;       |ram1:itnram|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|ram1:itnram                                                                ; ram1              ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
 ;             |altsyncram_e0q3:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 4080        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated ; altsyncram_e0q3   ; work         ;
@@ -1547,7 +1547,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
 ; Name         ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
-; psw[2]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; psw[3]       ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; ad_sram[0]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ad_sram[1]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ad_sram[2]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
@@ -1635,17 +1635,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; segoutR[26]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; segoutR[27]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; dio_sram[0]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; dio_sram[1]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; dio_sram[1]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[2]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; dio_sram[3]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; dio_sram[3]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[4]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[5]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[6]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; dio_sram[7]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; dio_sram[8]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; dio_sram[9]  ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; dio_sram[10] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; dio_sram[11] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dio_sram[7]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dio_sram[8]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dio_sram[9]  ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; dio_sram[10] ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; dio_sram[11] ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dio_sram[12] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; dio_sram[13] ; Bidir    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; dio_sram[14] ; Bidir    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -1659,25 +1659,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dio_lcd[6]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; dio_lcd[7]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; tsw[0]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[16]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[16]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[1]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[2]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; tsw[3]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; tsw[4]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[5]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[6]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[2]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; tsw[3]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; tsw[4]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[5]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[6]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[7]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; tsw[8]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[8]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[9]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[10]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; tsw[11]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; tsw[11]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; tsw[12]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[13]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; tsw[14]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; tsw[14]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[15]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; tsw[17]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; psw[0]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; psw[3]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; psw[2]       ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; clk          ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; psw[1]       ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +--------------+----------+---------------+---------------+-----------------------+-----+------+
@@ -1688,15 +1688,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+-------------------+---------+
 ; Source Pin / Fanout                                               ; Pad To Core Index ; Setting ;
 +-------------------------------------------------------------------+-------------------+---------+
-; psw[2]                                                            ;                   ;         ;
+; psw[3]                                                            ;                   ;         ;
 ; dio_sram[0]                                                       ;                   ;         ;
 ;      - sub_module_ram:B|data_display[0]~0                         ; 0                 ; 6       ;
 ; dio_sram[1]                                                       ;                   ;         ;
-;      - sub_module_ram:B|data_display[1]~1                         ; 1                 ; 6       ;
+;      - sub_module_ram:B|data_display[1]~1                         ; 0                 ; 6       ;
 ; dio_sram[2]                                                       ;                   ;         ;
 ;      - sub_module_ram:B|data_display[2]~2                         ; 0                 ; 6       ;
 ; dio_sram[3]                                                       ;                   ;         ;
-;      - sub_module_ram:B|data_display[3]~3                         ; 1                 ; 6       ;
+;      - sub_module_ram:B|data_display[3]~3                         ; 0                 ; 6       ;
 ; dio_sram[4]                                                       ;                   ;         ;
 ;      - sub_module_ram:B|data_display[4]~4                         ; 0                 ; 6       ;
 ; dio_sram[5]                                                       ;                   ;         ;
@@ -1704,16 +1704,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dio_sram[6]                                                       ;                   ;         ;
 ;      - sub_module_ram:B|data_display[6]~6                         ; 1                 ; 6       ;
 ; dio_sram[7]                                                       ;                   ;         ;
-;      - sub_module_ram:B|data_display[7]~7                         ; 1                 ; 6       ;
+;      - sub_module_ram:B|data_display[7]~7                         ; 0                 ; 6       ;
 ; dio_sram[8]                                                       ;                   ;         ;
-;      - sub_module_ram:B|data_display[8]~8                         ; 1                 ; 6       ;
-;      - sub_module_bist:C|output_analyzer:oa1|fail_buf~3           ; 1                 ; 6       ;
+;      - sub_module_ram:B|data_display[8]~8                         ; 0                 ; 6       ;
+;      - sub_module_bist:C|output_analyzer:oa1|fail_buf~3           ; 0                 ; 6       ;
 ; dio_sram[9]                                                       ;                   ;         ;
-;      - sub_module_ram:B|data_display[9]~9                         ; 1                 ; 6       ;
+;      - sub_module_ram:B|data_display[9]~9                         ; 0                 ; 6       ;
 ; dio_sram[10]                                                      ;                   ;         ;
-;      - sub_module_ram:B|data_display[10]~10                       ; 0                 ; 6       ;
+;      - sub_module_ram:B|data_display[10]~10                       ; 1                 ; 6       ;
 ; dio_sram[11]                                                      ;                   ;         ;
-;      - sub_module_ram:B|data_display[11]~11                       ; 0                 ; 6       ;
+;      - sub_module_ram:B|data_display[11]~11                       ; 1                 ; 6       ;
 ; dio_sram[12]                                                      ;                   ;         ;
 ;      - sub_module_ram:B|data_display[12]~12                       ; 0                 ; 6       ;
 ; dio_sram[13]                                                      ;                   ;         ;
@@ -1733,77 +1733,77 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; tsw[0]                                                            ;                   ;         ;
 ;      - addr[0]~0                                                  ; 0                 ; 6       ;
 ; tsw[16]                                                           ;                   ;         ;
-;      - addr[0]~0                                                  ; 1                 ; 6       ;
-;      - addr[1]~1                                                  ; 1                 ; 6       ;
-;      - addr[2]~2                                                  ; 1                 ; 6       ;
-;      - addr[3]~3                                                  ; 1                 ; 6       ;
-;      - addr[4]~4                                                  ; 1                 ; 6       ;
-;      - addr[5]~5                                                  ; 1                 ; 6       ;
-;      - addr[6]~6                                                  ; 1                 ; 6       ;
-;      - addr[7]~7                                                  ; 1                 ; 6       ;
-;      - data_write[0]~0                                            ; 1                 ; 6       ;
-;      - data_write[1]~1                                            ; 1                 ; 6       ;
-;      - data_write[2]~2                                            ; 1                 ; 6       ;
-;      - data_write[3]~3                                            ; 1                 ; 6       ;
-;      - data_write[4]~4                                            ; 1                 ; 6       ;
-;      - data_write[5]~5                                            ; 1                 ; 6       ;
-;      - data_write[6]~6                                            ; 1                 ; 6       ;
-;      - data_write[7]~7                                            ; 1                 ; 6       ;
-;      - addr[8]~8                                                  ; 1                 ; 6       ;
-;      - addr[9]~9                                                  ; 1                 ; 6       ;
-;      - addr[10]~10                                                ; 1                 ; 6       ;
-;      - addr[11]~11                                                ; 1                 ; 6       ;
-;      - addr[12]~12                                                ; 1                 ; 6       ;
-;      - addr[13]~13                                                ; 1                 ; 6       ;
-;      - addr[14]~14                                                ; 1                 ; 6       ;
-;      - addr[15]~15                                                ; 1                 ; 6       ;
-;      - addr[16]~16                                                ; 1                 ; 6       ;
-;      - addr[17]~17                                                ; 1                 ; 6       ;
-;      - addr[18]~18                                                ; 1                 ; 6       ;
-;      - addr[19]~19                                                ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|nextstate.re~0       ; 1                 ; 6       ;
-;      - sub_module_bist:C|comb~0                                   ; 1                 ; 6       ;
-;      - rw~0                                                       ; 1                 ; 6       ;
-;      - data_write[11]~8                                           ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~0         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~1         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~14         ; 1                 ; 6       ;
-;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[15]~0 ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0           ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~1           ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~19         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~20         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~21         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~22         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~23         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~26         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~32         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~33         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~35         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~36         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~38         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~42         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~43         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~47         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~48         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~49         ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~52         ; 1                 ; 6       ;
+;      - addr[0]~0                                                  ; 0                 ; 6       ;
+;      - addr[1]~1                                                  ; 0                 ; 6       ;
+;      - addr[2]~2                                                  ; 0                 ; 6       ;
+;      - addr[3]~3                                                  ; 0                 ; 6       ;
+;      - addr[4]~4                                                  ; 0                 ; 6       ;
+;      - addr[5]~5                                                  ; 0                 ; 6       ;
+;      - addr[6]~6                                                  ; 0                 ; 6       ;
+;      - addr[7]~7                                                  ; 0                 ; 6       ;
+;      - data_write[0]~0                                            ; 0                 ; 6       ;
+;      - data_write[1]~1                                            ; 0                 ; 6       ;
+;      - data_write[2]~2                                            ; 0                 ; 6       ;
+;      - data_write[3]~3                                            ; 0                 ; 6       ;
+;      - data_write[4]~4                                            ; 0                 ; 6       ;
+;      - data_write[5]~5                                            ; 0                 ; 6       ;
+;      - data_write[6]~6                                            ; 0                 ; 6       ;
+;      - data_write[7]~7                                            ; 0                 ; 6       ;
+;      - addr[8]~8                                                  ; 0                 ; 6       ;
+;      - addr[9]~9                                                  ; 0                 ; 6       ;
+;      - addr[10]~10                                                ; 0                 ; 6       ;
+;      - addr[11]~11                                                ; 0                 ; 6       ;
+;      - addr[12]~12                                                ; 0                 ; 6       ;
+;      - addr[13]~13                                                ; 0                 ; 6       ;
+;      - addr[14]~14                                                ; 0                 ; 6       ;
+;      - addr[15]~15                                                ; 0                 ; 6       ;
+;      - addr[16]~16                                                ; 0                 ; 6       ;
+;      - addr[17]~17                                                ; 0                 ; 6       ;
+;      - addr[18]~18                                                ; 0                 ; 6       ;
+;      - addr[19]~19                                                ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|nextstate.re~0       ; 0                 ; 6       ;
+;      - sub_module_bist:C|comb~0                                   ; 0                 ; 6       ;
+;      - rw~0                                                       ; 0                 ; 6       ;
+;      - data_write[11]~8                                           ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~0         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~1         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~14         ; 0                 ; 6       ;
+;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[15]~0 ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0           ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~1           ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~19         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~20         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~21         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~22         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~23         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~26         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~32         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~33         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~35         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~36         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~38         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~42         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~43         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~47         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~48         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~49         ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~52         ; 0                 ; 6       ;
 ; tsw[1]                                                            ;                   ;         ;
 ;      - addr[1]~1                                                  ; 0                 ; 6       ;
 ; tsw[2]                                                            ;                   ;         ;
-;      - addr[2]~2                                                  ; 1                 ; 6       ;
+;      - addr[2]~2                                                  ; 0                 ; 6       ;
 ; tsw[3]                                                            ;                   ;         ;
-;      - addr[3]~3                                                  ; 1                 ; 6       ;
+;      - addr[3]~3                                                  ; 0                 ; 6       ;
 ; tsw[4]                                                            ;                   ;         ;
-;      - addr[4]~4                                                  ; 0                 ; 6       ;
+;      - addr[4]~4                                                  ; 1                 ; 6       ;
 ; tsw[5]                                                            ;                   ;         ;
-;      - addr[5]~5                                                  ; 0                 ; 6       ;
+;      - addr[5]~5                                                  ; 1                 ; 6       ;
 ; tsw[6]                                                            ;                   ;         ;
-;      - addr[6]~6                                                  ; 1                 ; 6       ;
+;      - addr[6]~6                                                  ; 0                 ; 6       ;
 ; tsw[7]                                                            ;                   ;         ;
 ;      - addr[7]~7                                                  ; 0                 ; 6       ;
 ; tsw[8]                                                            ;                   ;         ;
-;      - data_write[0]~0                                            ; 1                 ; 6       ;
+;      - data_write[0]~0                                            ; 0                 ; 6       ;
 ; tsw[9]                                                            ;                   ;         ;
 ;      - data_write[1]~1                                            ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~28         ; 0                 ; 6       ;
@@ -1811,8 +1811,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - data_write[2]~2                                            ; 1                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~28         ; 1                 ; 6       ;
 ; tsw[11]                                                           ;                   ;         ;
-;      - data_write[3]~3                                            ; 0                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~28         ; 0                 ; 6       ;
+;      - data_write[3]~3                                            ; 1                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~28         ; 1                 ; 6       ;
 ; tsw[12]                                                           ;                   ;         ;
 ;      - data_write[4]~4                                            ; 0                 ; 6       ;
 ; tsw[13]                                                           ;                   ;         ;
@@ -1820,9 +1820,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0           ; 1                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~29         ; 1                 ; 6       ;
 ; tsw[14]                                                           ;                   ;         ;
-;      - data_write[6]~6                                            ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0           ; 1                 ; 6       ;
-;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~29         ; 1                 ; 6       ;
+;      - data_write[6]~6                                            ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~0           ; 0                 ; 6       ;
+;      - sub_module_lcd:A|userlogic_ad_wr:ul1|data_write~29         ; 0                 ; 6       ;
 ; tsw[15]                                                           ;                   ;         ;
 ;      - data_write[7]~7                                            ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|userlogic_ad_wr:ul1|LessThan3~1           ; 0                 ; 6       ;
@@ -1956,7 +1956,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[14]   ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[15]   ; 0                 ; 6       ;
 ;      - sub_module_lcd:A|mod5:df1|q[0]                             ; 0                 ; 6       ;
-; psw[3]                                                            ;                   ;         ;
+; psw[2]                                                            ;                   ;         ;
 ;      - sub_module_ram:B|memorycontroller:ctl|nextstate.re~0       ; 0                 ; 6       ;
 ;      - rw~0                                                       ; 0                 ; 6       ;
 ;      - sub_module_ram:B|memorycontroller:ctl|data_write_reg[15]~0 ; 0                 ; 6       ;
@@ -1976,34 +1976,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; clk                                                                         ; PIN_Y2             ; 111     ; Clock                     ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1              ; 78      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
 ; psw[0]                                                                      ; PIN_R24            ; 66      ; Async. clear, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; rw~0                                                                        ; LCCOMB_X74_Y8_N20  ; 9       ; Write enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_bist:C|comb~0                                                    ; LCCOMB_X114_Y34_N0 ; 38      ; Async. clear              ; yes    ; Global Clock         ; GCLK7            ; --                        ;
-; sub_module_bist:C|marchcontroller:mc1|LessThan0~9                           ; LCCOMB_X80_Y12_N0  ; 13      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_bist:C|marchcontroller:mc1|LessThan1~4                           ; LCCOMB_X80_Y12_N28 ; 18      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_bist:C|marchcontroller:mc1|addr_next~0                           ; LCCOMB_X80_Y12_N24 ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[0]~16                        ; LCCOMB_X80_Y12_N16 ; 20      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[19]~19                       ; LCCOMB_X80_Y12_N30 ; 12      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[0]~0                        ; LCCOMB_X80_Y18_N12 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|mod5:df1|q[21]                                             ; FF_X88_Y17_N21     ; 43      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[9]~15                       ; LCCOMB_X82_Y13_N16 ; 41      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~2                          ; LCCOMB_X82_Y13_N22 ; 1       ; Async. clear              ; no     ; --                   ; --               ; --                        ;
-; sub_module_ram:B|comb~0                                                     ; LCCOMB_X59_Y4_N28  ; 1       ; Clock                     ; yes    ; Global Clock         ; GCLK16           ; --                        ;
-; sub_module_ram:B|memorycontroller:ctl|data_write_reg[15]~0                  ; LCCOMB_X74_Y8_N2   ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; sub_module_ram:B|memorycontroller:ctl|tri_reg                               ; FF_X74_Y8_N7       ; 16      ; Output enable             ; no     ; --                   ; --               ; --                        ;
+; rw~0                                                                        ; LCCOMB_X79_Y7_N28  ; 9       ; Write enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_bist:C|comb~0                                                    ; LCCOMB_X79_Y7_N22  ; 38      ; Async. clear              ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; sub_module_bist:C|marchcontroller:mc1|LessThan0~9                           ; LCCOMB_X76_Y11_N0  ; 13      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_bist:C|marchcontroller:mc1|LessThan1~4                           ; LCCOMB_X75_Y11_N0  ; 18      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_bist:C|marchcontroller:mc1|addr_next~0                           ; LCCOMB_X74_Y12_N2  ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[0]~16                        ; LCCOMB_X75_Y12_N18 ; 20      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[19]~19                       ; LCCOMB_X75_Y12_N24 ; 12      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[0]~0                        ; LCCOMB_X79_Y14_N16 ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|mod5:df1|q[21]                                             ; FF_X84_Y13_N21     ; 43      ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[9]~15                       ; LCCOMB_X79_Y13_N16 ; 41      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|send_enable~2                          ; LCCOMB_X79_Y13_N30 ; 1       ; Async. clear              ; no     ; --                   ; --               ; --                        ;
+; sub_module_ram:B|comb~0                                                     ; LCCOMB_X59_Y3_N28  ; 1       ; Clock                     ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; sub_module_ram:B|memorycontroller:ctl|data_write_reg[15]~0                  ; LCCOMB_X79_Y7_N26  ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; sub_module_ram:B|memorycontroller:ctl|tri_reg                               ; FF_X79_Y7_N21      ; 16      ; Output enable             ; no     ; --                   ; --               ; --                        ;
 ; tsw[17]                                                                     ; PIN_Y23            ; 61      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                                                             ;
-+-----------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                                                        ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk                                                                         ; PIN_Y2             ; 111     ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
-; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1              ; 78      ; 1                                    ; Global Clock         ; GCLK3            ; --                        ;
-; sub_module_bist:C|comb~0                                                    ; LCCOMB_X114_Y34_N0 ; 38      ; 0                                    ; Global Clock         ; GCLK7            ; --                        ;
-; sub_module_ram:B|comb~0                                                     ; LCCOMB_X59_Y4_N28  ; 1       ; 0                                    ; Global Clock         ; GCLK16           ; --                        ;
-+-----------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                                        ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; clk                                                                         ; PIN_Y2            ; 111     ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
+; pll:pll1|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1             ; 78      ; 1                                    ; Global Clock         ; GCLK3            ; --                        ;
+; sub_module_bist:C|comb~0                                                    ; LCCOMB_X79_Y7_N22 ; 38      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; sub_module_ram:B|comb~0                                                     ; LCCOMB_X59_Y3_N28 ; 1       ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
++-----------------------------------------------------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2011,62 +2011,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                                   ; Type ; Mode        ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; Single Clock ; 255          ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4080 ; 255                         ; 16                          ; --                          ; --                          ; 4080                ; 1    ; None ; M9K_X78_Y14_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; Single Clock ; 255          ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 4080 ; 255                         ; 16                          ; --                          ; --                          ; 4080                ; 1    ; None ; M9K_X78_Y11_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
-+-------------------------------------------------+
-; Routing Usage Summary                           ;
-+-----------------------+-------------------------+
-; Routing Resource Type ; Usage                   ;
-+-----------------------+-------------------------+
-; Block interconnects   ; 987 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 117 / 10,120 ( 1 % )    ;
-; C4 interconnects      ; 712 / 209,544 ( < 1 % ) ;
-; Direct links          ; 203 / 342,891 ( < 1 % ) ;
-; Global clocks         ; 4 / 20 ( 20 % )         ;
-; Local interconnects   ; 317 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 304 / 9,963 ( 3 % )     ;
-; R4 interconnects      ; 794 / 289,782 ( < 1 % ) ;
-+-----------------------+-------------------------+
++---------------------------------------------------+
+; Routing Usage Summary                             ;
++-----------------------+---------------------------+
+; Routing Resource Type ; Usage                     ;
++-----------------------+---------------------------+
+; Block interconnects   ; 1,000 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 136 / 10,120 ( 1 % )      ;
+; C4 interconnects      ; 679 / 209,544 ( < 1 % )   ;
+; Direct links          ; 238 / 342,891 ( < 1 % )   ;
+; Global clocks         ; 4 / 20 ( 20 % )           ;
+; Local interconnects   ; 308 / 119,088 ( < 1 % )   ;
+; R24 interconnects     ; 300 / 9,963 ( 3 % )       ;
+; R4 interconnects      ; 792 / 289,782 ( < 1 % )   ;
++-----------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.11) ; Number of LABs  (Total = 53) ;
+; Number of Logic Elements  (Average = 13.84) ; Number of LABs  (Total = 50) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 2                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 3                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
 ; 5                                           ; 1                            ;
-; 6                                           ; 1                            ;
-; 7                                           ; 2                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 1                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 2                            ;
-; 12                                          ; 0                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 3                            ;
-; 15                                          ; 3                            ;
-; 16                                          ; 32                           ;
+; 12                                          ; 2                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 6                            ;
+; 16                                          ; 31                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.42) ; Number of LABs  (Total = 53) ;
+; LAB-wide Signals  (Average = 1.50) ; Number of LABs  (Total = 50) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 18                           ;
-; 1 Clock                            ; 29                           ;
-; 1 Clock enable                     ; 18                           ;
+; 1 Clock                            ; 28                           ;
+; 1 Clock enable                     ; 17                           ;
 ; 1 Sync. clear                      ; 4                            ;
 ; 1 Sync. load                       ; 3                            ;
-; 2 Async. clears                    ; 2                            ;
+; 2 Async. clears                    ; 3                            ;
+; 2 Clock enables                    ; 1                            ;
 ; 2 Clocks                           ; 1                            ;
 +------------------------------------+------------------------------+
 
@@ -2074,106 +2075,110 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 16.66) ; Number of LABs  (Total = 53) ;
+; Number of Signals Sourced  (Average = 17.60) ; Number of LABs  (Total = 50) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 2                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
 ; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 3                            ;
-; 7                                            ; 3                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 0                            ;
 ; 15                                           ; 2                            ;
-; 16                                           ; 13                           ;
+; 16                                           ; 10                           ;
 ; 17                                           ; 2                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 6                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 2                            ;
-; 23                                           ; 2                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 2                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 8                            ;
+; 21                                           ; 3                            ;
+; 22                                           ; 5                            ;
+; 23                                           ; 3                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 1                            ;
 ; 27                                           ; 0                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 2                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 1                            ;
+; 31                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.98) ; Number of LABs  (Total = 53) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 1                            ;
-; 1                                               ; 4                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 4                            ;
-; 7                                               ; 4                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 3                            ;
-; 10                                              ; 1                            ;
-; 11                                              ; 4                            ;
-; 12                                              ; 3                            ;
-; 13                                              ; 4                            ;
-; 14                                              ; 5                            ;
-; 15                                              ; 3                            ;
-; 16                                              ; 6                            ;
-; 17                                              ; 0                            ;
-; 18                                              ; 0                            ;
-; 19                                              ; 2                            ;
-; 20                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++--------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 10.62) ; Number of LABs  (Total = 50) ;
++--------------------------------------------------+------------------------------+
+; 0                                                ; 1                            ;
+; 1                                                ; 3                            ;
+; 2                                                ; 1                            ;
+; 3                                                ; 0                            ;
+; 4                                                ; 2                            ;
+; 5                                                ; 1                            ;
+; 6                                                ; 2                            ;
+; 7                                                ; 2                            ;
+; 8                                                ; 3                            ;
+; 9                                                ; 2                            ;
+; 10                                               ; 4                            ;
+; 11                                               ; 8                            ;
+; 12                                               ; 3                            ;
+; 13                                               ; 8                            ;
+; 14                                               ; 2                            ;
+; 15                                               ; 0                            ;
+; 16                                               ; 3                            ;
+; 17                                               ; 1                            ;
+; 18                                               ; 1                            ;
+; 19                                               ; 0                            ;
+; 20                                               ; 0                            ;
+; 21                                               ; 1                            ;
+; 22                                               ; 1                            ;
+; 23                                               ; 1                            ;
++--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 14.72) ; Number of LABs  (Total = 53) ;
+; Number of Distinct Inputs  (Average = 15.62) ; Number of LABs  (Total = 50) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 2                            ;
-; 3                                            ; 2                            ;
-; 4                                            ; 2                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 3                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 2                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 3                            ;
 ; 9                                            ; 1                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 4                            ;
+; 10                                           ; 2                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 2                            ;
-; 13                                           ; 4                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 5                            ;
-; 16                                           ; 6                            ;
-; 17                                           ; 4                            ;
-; 18                                           ; 3                            ;
-; 19                                           ; 2                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 3                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 4                            ;
+; 19                                           ; 3                            ;
 ; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
+; 21                                           ; 2                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 1                            ;
-; 25                                           ; 1                            ;
-; 26                                           ; 0                            ;
+; 23                                           ; 4                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 1                            ;
 ; 27                                           ; 0                            ;
-; 28                                           ; 3                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2238,7 +2243,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; Total Inapplicable ; 0         ; 133          ; 0         ; 133          ; 133          ; 0         ; 0         ; 133          ; 0         ; 0         ; 133          ; 23           ; 133          ; 133          ; 86           ; 133          ; 23           ; 86           ; 133          ; 133          ; 133          ; 23           ; 133          ; 133          ; 133          ; 133          ; 133          ; 0         ; 133          ; 133          ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; psw[2]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; psw[3]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ad_sram[0]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ad_sram[1]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ad_sram[2]         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -2368,7 +2373,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; tsw[15]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; tsw[17]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; psw[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; psw[3]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; psw[2]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; psw[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -2415,13 +2420,13 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------------------------------------+----------------------------------------------------------+-------------------+
 ; Source Clock(s)                                          ; Destination Clock(s)                                     ; Delay Added in ns ;
 +----------------------------------------------------------+----------------------------------------------------------+-------------------+
-; pll1|altpll_component|auto_generated|pll1|clk[0],I/O     ; pll1|altpll_component|auto_generated|pll1|clk[0]         ; 42.6              ;
-; clk,pll1|altpll_component|auto_generated|pll1|clk[0],I/O ; clk                                                      ; 14.0              ;
-; pll1|altpll_component|auto_generated|pll1|clk[0]         ; clk                                                      ; 11.3              ;
-; pll1|altpll_component|auto_generated|pll1|clk[0]         ; clk,pll1|altpll_component|auto_generated|pll1|clk[0],I/O ; 8.6               ;
-; clk,pll1|altpll_component|auto_generated|pll1|clk[0]     ; clk                                                      ; 5.2               ;
-; pll1|altpll_component|auto_generated|pll1|clk[0],I/O     ; clk                                                      ; 4.8               ;
-; pll1|altpll_component|auto_generated|pll1|clk[0]         ; pll1|altpll_component|auto_generated|pll1|clk[0]         ; 2.3               ;
+; pll1|altpll_component|auto_generated|pll1|clk[0],I/O     ; pll1|altpll_component|auto_generated|pll1|clk[0]         ; 40.5              ;
+; clk,pll1|altpll_component|auto_generated|pll1|clk[0],I/O ; clk                                                      ; 13.6              ;
+; pll1|altpll_component|auto_generated|pll1|clk[0]         ; clk                                                      ; 9.9               ;
+; pll1|altpll_component|auto_generated|pll1|clk[0]         ; clk,pll1|altpll_component|auto_generated|pll1|clk[0],I/O ; 8.2               ;
+; clk,pll1|altpll_component|auto_generated|pll1|clk[0]     ; clk                                                      ; 5.4               ;
+; pll1|altpll_component|auto_generated|pll1|clk[0],I/O     ; clk                                                      ; 5.1               ;
+; pll1|altpll_component|auto_generated|pll1|clk[0]         ; pll1|altpll_component|auto_generated|pll1|clk[0]         ; 2.1               ;
 +----------------------------------------------------------+----------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -2432,83 +2437,83 @@ This will disable optimization of problematic paths and expose them for further 
 +------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------+
 ; Source Register                                      ; Destination Register                                                                                                        ; Delay Added in ns ;
 +------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------+
-; sub_module_bist:C|marchcontroller:mc1|fin_reg        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 3.502             ;
-; sub_module_bist:C|output_analyzer:oa1|fail_reg       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 3.484             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[2]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.919             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[4]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.918             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[3]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.917             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[0]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.917             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[6]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.896             ;
-; sub_module_bist:C|marchcontroller:mc1|data_b_reg     ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]                                                                          ; 2.769             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[7]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.750             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[1]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.652             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[30]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[29]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[28]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[27]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[26]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[25]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[24]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[23]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[22]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[21]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[20]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[19]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[18]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[17]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[16]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[15]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[14]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[13]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[12]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[11]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[10]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[9]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[8]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[7]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[5]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[4]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[3]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[2]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[1]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[0]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[31]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|count[6]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; tsw[16]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 2.540             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[5]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.423             ;
-; tsw[3]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.324             ;
-; tsw[2]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.276             ;
-; tsw[1]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.229             ;
-; tsw[6]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.224             ;
-; tsw[4]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.213             ;
-; tsw[14]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.168             ;
-; tsw[13]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.168             ;
-; tsw[0]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.167             ;
-; tsw[15]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.090             ;
-; tsw[12]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]                                                                          ; 2.084             ;
-; tsw[7]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.029             ;
-; tsw[9]                                               ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]                                                                          ; 1.978             ;
-; tsw[11]                                              ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a3~porta_datain_reg0  ; 1.903             ;
-; tsw[5]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 1.902             ;
-; tsw[17]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[4]                                                                          ; 1.902             ;
-; tsw[10]                                              ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a2~porta_datain_reg0  ; 1.873             ;
-; tsw[8]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_datain_reg0  ; 1.815             ;
-; sub_module_bist:C|marchcontroller:mc1|rw_reg         ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 1.566             ;
-; psw[3]                                               ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 1.409             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 1.193             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]                                                                          ; 1.191             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 1.149             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[0]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[0]                                                                          ; 1.030             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 0.922             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[4]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[4]                                                                          ; 0.874             ;
-; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]                                                                          ; 0.333             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[5]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 3.419             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[0]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 3.410             ;
+; sub_module_bist:C|output_analyzer:oa1|fail_reg       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 3.178             ;
+; sub_module_bist:C|marchcontroller:mc1|data_b_reg     ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 3.046             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[6]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.828             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[4]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.707             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[2]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.706             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[1]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.706             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[7]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.702             ;
+; sub_module_bist:C|marchcontroller:mc1|addr_reg[3]    ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.700             ;
+; tsw[14]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.611             ;
+; tsw[13]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.611             ;
+; tsw[16]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.611             ;
+; sub_module_bist:C|marchcontroller:mc1|fin_reg        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.558             ;
+; tsw[0]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.480             ;
+; tsw[5]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.473             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[30]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[29]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[28]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[27]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[26]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[25]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[24]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[23]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[22]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[21]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[20]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[19]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[18]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[17]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[16]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[15]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[14]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[13]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[12]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[11]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[10]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[9]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[8]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[7]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[5]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[4]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[3]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[2]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[1]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[0]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[31]       ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|count[6]        ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 2.467             ;
+; tsw[15]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 2.379             ;
+; tsw[7]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.295             ;
+; tsw[1]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.283             ;
+; tsw[2]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.278             ;
+; tsw[6]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.177             ;
+; tsw[3]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.114             ;
+; tsw[4]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_address_reg0 ; 2.083             ;
+; sub_module_bist:C|marchcontroller:mc1|rw_reg         ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]                                                                          ; 2.017             ;
+; tsw[17]                                              ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 1.881             ;
+; tsw[11]                                              ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a3~porta_datain_reg0  ; 1.623             ;
+; tsw[10]                                              ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a2~porta_datain_reg0  ; 1.617             ;
+; tsw[9]                                               ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 1.600             ;
+; psw[2]                                               ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]                                                                          ; 1.546             ;
+; tsw[8]                                               ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a0~porta_datain_reg0  ; 1.497             ;
+; tsw[12]                                              ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ram_block1a4~porta_datain_reg0  ; 1.375             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[2]                                                                          ; 1.295             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[1]                                                                          ; 1.173             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[6]                                                                          ; 1.137             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[0]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[0]                                                                          ; 1.069             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[3]                                                                          ; 0.815             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[4]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[4]                                                                          ; 0.641             ;
+; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]   ; sub_module_lcd:A|userlogic_ad_wr:ul1|data_write[5]                                                                          ; 0.388             ;
 ; sub_module_bist:C|marchcontroller:mc1|state.finished ; sub_module_bist:C|marchcontroller:mc1|fin_reg                                                                               ; 0.192             ;
-; sub_module_bist:C|marchcontroller:mc1|state.idle     ; sub_module_bist:C|marchcontroller:mc1|rw_reg                                                                                ; 0.182             ;
-; sub_module_bist:C|marchcontroller:mc1|state.w3       ; sub_module_bist:C|marchcontroller:mc1|state.r3                                                                              ; 0.177             ;
-; sub_module_bist:C|marchcontroller:mc1|state.r5       ; sub_module_bist:C|marchcontroller:mc1|addr_reg[6]                                                                           ; 0.171             ;
-; sub_module_bist:C|marchcontroller:mc1|state.r2       ; sub_module_bist:C|marchcontroller:mc1|ready_reg                                                                             ; 0.164             ;
-; sub_module_bist:C|marchcontroller:mc1|ready_reg      ; sub_module_bist:C|output_analyzer:oa1|current_state                                                                         ; 0.070             ;
-; sub_module_bist:C|marchcontroller:mc1|addr_reg[8]    ; sub_module_ram:B|memorycontroller:ctl|addr_reg[8]                                                                           ; 0.042             ;
+; sub_module_bist:C|marchcontroller:mc1|state.idle     ; sub_module_bist:C|marchcontroller:mc1|rw_reg                                                                                ; 0.180             ;
+; sub_module_bist:C|marchcontroller:mc1|state.r5       ; sub_module_bist:C|marchcontroller:mc1|addr_reg[6]                                                                           ; 0.167             ;
+; sub_module_bist:C|marchcontroller:mc1|state.w3       ; sub_module_bist:C|marchcontroller:mc1|state.r3                                                                              ; 0.144             ;
+; sub_module_bist:C|marchcontroller:mc1|state.r2       ; sub_module_bist:C|marchcontroller:mc1|ready_reg                                                                             ; 0.130             ;
+; sub_module_bist:C|marchcontroller:mc1|state.w4       ; sub_module_bist:C|marchcontroller:mc1|state.r4                                                                              ; 0.040             ;
+; sub_module_bist:C|marchcontroller:mc1|state.r4       ; sub_module_bist:C|marchcontroller:mc1|state.w5                                                                              ; 0.040             ;
 +------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 77 path(s) that have the largest delay added for hold.
 
@@ -2571,20 +2576,20 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X69_Y0 to location X80_Y11
+    Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X69_Y0 to location X80_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.92 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169064): Following 8 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin dio_lcd[0] has a permanently enabled output enable File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
     Info (169065): Pin dio_lcd[1] has a permanently enabled output enable File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
@@ -2596,10 +2601,10 @@ Warning (169064): Following 8 pins have no output enable or a GND or VCC output 
     Info (169065): Pin dio_lcd[7] has a permanently enabled output enable File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
 Info (144001): Generated suppressed messages file C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/output_files/sramdisplay.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 5720 megabytes
-    Info: Processing ended: Fri Sep 13 13:55:14 2024
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:33
+    Info: Peak virtual memory: 5708 megabytes
+    Info: Processing ended: Fri Sep 13 17:53:08 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +----------------------------+
