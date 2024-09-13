@@ -36,6 +36,54 @@
 					"strict" : false
 				},
 				{
+					"name" : "ad_sram[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[16]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[17]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[18]",
+					"strict" : false
+				},
+				{
+					"name" : "ad_sram[19]",
+					"strict" : false
+				},
+				{
 					"name" : "we_n_sram",
 					"strict" : false
 				},
@@ -220,6 +268,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "segoutR[14]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[15]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[16]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[17]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[18]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[19]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[20]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[21]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[22]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[23]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[24]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[25]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[26]",
+					"strict" : false
+				},
+				{
+					"name" : "segoutR[27]",
+					"strict" : false
+				},
+				{
 					"name" : "dio_sram[0]",
 					"strict" : false
 				},
@@ -249,6 +353,38 @@
 				},
 				{
 					"name" : "dio_sram[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[8]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[9]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[10]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[11]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[12]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[13]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[14]",
+					"strict" : false
+				},
+				{
+					"name" : "dio_sram[15]",
 					"strict" : false
 				},
 				{

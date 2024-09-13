@@ -10,7 +10,7 @@ entity output_analyzer is
         reset_n    : in std_logic;
         ready      : in std_logic;
         rw         : in std_logic;
-        data_read  : in std_logic_vector(7 downto 0);
+        data_read  : in std_logic_vector(15 downto 0);
         fail       : out std_logic
     );
 end entity output_analyzer;
@@ -38,7 +38,7 @@ begin
         case current_state is
             when zero =>
                 if rw = '1' then
-                    if data_read /= "00000000" then
+                    if data_read /= "0000000000000000" then
                         fail_buf <= '1';
                     end if;
                 end if;
@@ -51,7 +51,7 @@ begin
 
             when one =>
                 if rw = '1' then
-                    if data_read /= "11111111" then
+                    if data_read /= "1111111111111111" then
                         fail_buf <= '1';
                     end if;
                 end if;

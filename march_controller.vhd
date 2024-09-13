@@ -4,8 +4,9 @@ use IEEE.NUMERIC_STD.all;
 
 entity marchcontroller is
     port (clk, reset_n: in std_logic;
-        addr: out std_logic_vector(7 downto 0);
-        data_write: out std_logic_vector(7 downto 0);
+        ext: in std_logic;
+        addr: out std_logic_vector(19 downto 0);
+        data_write: out std_logic_vector(15 downto 0);
         rw : out std_logic;
         ready : out std_logic;
         fin : out std_logic
@@ -14,14 +15,17 @@ end;
 
 architecture synth of marchcontroller is
     type statetype is (idle, w1, r1, w2, r2, w3, r3, w4, r4, w5, r5, finished);
-    constant ADDR_MAX : integer := 2 ** 8 - 1;
+    constant ADDR_INT_MAX : integer := 2 ** 8 - 1;
+    constant ADDR_EXT_MAX : integer := 2 ** 20 - 1;
     signal state, nextstate: statetype;
     signal data_b_reg, data_b_next: std_logic;
-    signal addr_reg, addr_next : std_logic_vector(7 downto 0);
+    signal addr_reg, addr_next : std_logic_vector(19 downto 0);
     signal rw_buf, ready_buf, fin_buf: std_logic;
     signal rw_reg, ready_reg, fin_reg: std_logic;
+    signal ADDR_MAX: integer;
 
     begin
+        ADDR_MAX <= ADDR_EXT_MAX when ext = '1' else ADDR_INT_MAX;
         process (clk, reset_n) begin
             if (reset_n = '0') then
                 state <= idle;

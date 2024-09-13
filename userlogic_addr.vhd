@@ -97,7 +97,7 @@ architecture synth of userlogic_ad_wr is
                                 data_write <= "10" & x"20"; -- SPACE
                                 send_enable <= '1';
                             when 19 =>
-										  data_write <= "0011000000"; -- CR
+                                data_write <= "0011000000"; -- CR
                                 send_enable <= '1';
                             when 20 =>
                                 if (fin_bist = '0') then

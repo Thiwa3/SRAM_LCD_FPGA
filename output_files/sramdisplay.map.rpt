@@ -1,5 +1,5 @@
 Analysis & Synthesis report for sramdisplay
-Fri Sep 13 11:30:13 2024
+Fri Sep 13 13:54:48 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -23,7 +23,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
  15. General Register Statistics
  16. Inverted Register Statistics
  17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated
+ 18. Source assignments for sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated
  19. Parameter Settings for User Entity Instance: pll:pll1|altpll:altpll_component
  20. Parameter Settings for User Entity Instance: sub_module_lcd:A|mod5:df1
  21. Parameter Settings for User Entity Instance: sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component
@@ -60,18 +60,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Sep 13 11:30:13 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 13 13:54:48 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; sramdisplay                                    ;
 ; Top-level Entity Name              ; top_module                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 591                                            ;
-;     Total combinational functions  ; 580                                            ;
-;     Dedicated logic registers      ; 156                                            ;
-; Total registers                    ; 156                                            ;
+; Total logic elements               ; 694                                            ;
+;     Total combinational functions  ; 676                                            ;
+;     Dedicated logic registers      ; 188                                            ;
+; Total registers                    ; 188                                            ;
 ; Total pins                         ; 133                                            ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 2,048                                          ;
+; Total memory bits                  ; 4,080                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 1                                              ;
 +------------------------------------+------------------------------------------------+
@@ -177,7 +177,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -213,7 +214,7 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                       ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                       ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                      ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_0vp3.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/altsyncram_0vp3.tdf               ;         ;
+; db/altsyncram_e0q3.tdf           ; yes             ; Auto-Generated Megafunction       ; C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/altsyncram_e0q3.tdf               ;         ;
 +----------------------------------+-----------------+-----------------------------------+---------------------------------------------------------------------------------+---------+
 
 
@@ -222,24 +223,24 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 591       ;
+; Estimated Total logic elements              ; 694       ;
 ;                                             ;           ;
-; Total combinational functions               ; 580       ;
+; Total combinational functions               ; 676       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 337       ;
-;     -- 3 input functions                    ; 87        ;
-;     -- <=2 input functions                  ; 156       ;
+;     -- 4 input functions                    ; 364       ;
+;     -- 3 input functions                    ; 110       ;
+;     -- <=2 input functions                  ; 202       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 491       ;
-;     -- arithmetic mode                      ; 89        ;
+;     -- normal mode                          ; 556       ;
+;     -- arithmetic mode                      ; 120       ;
 ;                                             ;           ;
-; Total registers                             ; 156       ;
-;     -- Dedicated logic registers            ; 156       ;
+; Total registers                             ; 188       ;
+;     -- Dedicated logic registers            ; 188       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 133       ;
-; Total memory bits                           ; 2048      ;
+; Total memory bits                           ; 4080      ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
@@ -248,8 +249,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 112       ;
-; Total fan-out                               ; 2746      ;
-; Average fan-out                             ; 2.65      ;
+; Total fan-out                               ; 3307      ;
+; Average fan-out                             ; 2.82      ;
 +---------------------------------------------+-----------+
 
 
@@ -258,7 +259,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Entity Name       ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
-; |top_module                                  ; 580 (17)            ; 156 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                                                                             ; top_module        ; work         ;
+; |top_module                                  ; 676 (30)            ; 188 (0)                   ; 4080        ; 0            ; 0       ; 0         ; 133  ; 0            ; |top_module                                                                                             ; top_module        ; work         ;
 ;    |pll:pll1|                                ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pll:pll1                                                                                    ; pll               ; work         ;
 ;       |altpll:altpll_component|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pll:pll1|altpll:altpll_component                                                            ; altpll            ; work         ;
 ;          |pll_altpll:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pll:pll1|altpll:altpll_component|pll_altpll:auto_generated                                  ; pll_altpll        ; work         ;
@@ -268,18 +269,20 @@ https://fpgasoftware.intel.com/eula.
 ;    |seg7:dp21|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp21                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp22|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp22                                                                                   ; seg7              ; work         ;
 ;    |seg7:dp23|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp23                                                                                   ; seg7              ; work         ;
-;    |sub_module_bist:C|                       ; 55 (1)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C                                                                           ; sub_module_bist   ; work         ;
-;       |marchcontroller:mc1|                  ; 46 (46)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C|marchcontroller:mc1                                                       ; marchcontroller   ; work         ;
-;       |output_analyzer:oa1|                  ; 8 (8)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C|output_analyzer:oa1                                                       ; output_analyzer   ; work         ;
-;    |sub_module_lcd:A|                        ; 455 (0)             ; 111 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                                                                            ; sub_module_lcd    ; work         ;
+;    |seg7:dp33|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp33                                                                                   ; seg7              ; work         ;
+;    |seg7:dp43|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seg7:dp43                                                                                   ; seg7              ; work         ;
+;    |sub_module_bist:C|                       ; 120 (1)             ; 38 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C                                                                           ; sub_module_bist   ; work         ;
+;       |marchcontroller:mc1|                  ; 105 (105)           ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C|marchcontroller:mc1                                                       ; marchcontroller   ; work         ;
+;       |output_analyzer:oa1|                  ; 14 (14)             ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_bist:C|output_analyzer:oa1                                                       ; output_analyzer   ; work         ;
+;    |sub_module_lcd:A|                        ; 451 (0)             ; 111 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A                                                                            ; sub_module_lcd    ; work         ;
 ;       |lcdcontrollerfast:lc1|                ; 175 (175)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1                                                      ; lcdcontrollerfast ; work         ;
 ;       |mod5:df1|                             ; 22 (22)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|mod5:df1                                                                   ; mod5              ; work         ;
-;       |userlogic_ad_wr:ul1|                  ; 258 (258)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1                                                        ; userlogic_ad_wr   ; work         ;
-;    |sub_module_ram:B|                        ; 11 (9)              ; 19 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                                                                            ; sub_module_ram    ; work         ;
-;       |memorycontroller:ctl|                 ; 2 (2)               ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl                                                       ; memorycontroller  ; work         ;
-;       |ram1:itnram|                          ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram                                                                ; ram1              ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
-;             |altsyncram_0vp3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated ; altsyncram_0vp3   ; work         ;
+;       |userlogic_ad_wr:ul1|                  ; 254 (254)           ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_lcd:A|userlogic_ad_wr:ul1                                                        ; userlogic_ad_wr   ; work         ;
+;    |sub_module_ram:B|                        ; 19 (17)             ; 39 (0)                    ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B                                                                            ; sub_module_ram    ; work         ;
+;       |memorycontroller:ctl|                 ; 2 (2)               ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|memorycontroller:ctl                                                       ; memorycontroller  ; work         ;
+;       |ram1:itnram|                          ; 0 (0)               ; 0 (0)                     ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram                                                                ; ram1              ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
+;             |altsyncram_e0q3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4080        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated ; altsyncram_e0q3   ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -289,7 +292,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 ; Name                                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
-; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
+; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 255          ; 16           ; --           ; --           ; 4080 ; None ;
 +--------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 
 
@@ -377,12 +380,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 156   ;
-; Number of registers using Synchronous Clear  ; 3     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 109   ;
+; Total registers                              ; 188   ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 141   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 81    ;
+; Number of registers using Clock Enable       ; 113   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -402,14 +405,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|count[0]    ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[7] ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|count[13]   ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |top_module|sub_module_lcd:A|lcdcontrollerfast:lc1|lcd_data[0] ;
 ; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |top_module|sub_module_bist:C|marchcontroller:mc1|addr_reg[0]  ;
+; 9:1                ; 12 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; Yes        ; |top_module|sub_module_bist:C|marchcontroller:mc1|addr_reg[19] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Source assignments for sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated ;
+; Source assignments for sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                   ;
 +---------------------------------+--------------------+------+------------------------------------------------------+
@@ -459,7 +463,7 @@ Encoding Type:  One-Hot
 ; CLK3_MULTIPLY_BY              ; 1                     ; Untyped               ;
 ; CLK2_MULTIPLY_BY              ; 1                     ; Untyped               ;
 ; CLK1_MULTIPLY_BY              ; 1                     ; Untyped               ;
-; CLK0_MULTIPLY_BY              ; 4                     ; Signed Integer        ;
+; CLK0_MULTIPLY_BY              ; 2                     ; Signed Integer        ;
 ; CLK9_DIVIDE_BY                ; 0                     ; Untyped               ;
 ; CLK8_DIVIDE_BY                ; 0                     ; Untyped               ;
 ; CLK7_DIVIDE_BY                ; 0                     ; Untyped               ;
@@ -813,9 +817,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                ;
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                                       ;
 ; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                       ;
-; WIDTH_A                            ; 8                    ; Signed Integer                                ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                ;
 ; WIDTHAD_A                          ; 8                    ; Signed Integer                                ;
-; NUMWORDS_A                         ; 256                  ; Signed Integer                                ;
+; NUMWORDS_A                         ; 255                  ; Signed Integer                                ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                       ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                       ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                       ;
@@ -857,7 +861,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                       ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                       ;
-; CBXI_PARAMETER                     ; altsyncram_0vp3      ; Untyped                                       ;
+; CBXI_PARAMETER                     ; altsyncram_e0q3      ; Untyped                                       ;
 +------------------------------------+----------------------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -887,8 +891,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances                ; 1                                                            ;
 ; Entity Instance                           ; sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                                  ;
-;     -- WIDTH_A                            ; 8                                                            ;
-;     -- NUMWORDS_A                         ; 256                                                          ;
+;     -- WIDTH_A                            ; 16                                                           ;
+;     -- NUMWORDS_A                         ; 255                                                          ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                 ;
 ;     -- WIDTH_B                            ; 1                                                            ;
 ;     -- NUMWORDS_B                         ; 0                                                            ;
@@ -925,28 +929,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 133                         ;
-; cycloneiii_ff         ; 156                         ;
+; cycloneiii_ff         ; 188                         ;
 ;     CLR               ; 36                          ;
 ;     ENA               ; 8                           ;
-;     ENA CLR           ; 73                          ;
+;     ENA CLR           ; 93                          ;
+;     ENA CLR SCLR SLD  ; 12                          ;
 ;     SCLR              ; 3                           ;
 ;     plain             ; 36                          ;
 ; cycloneiii_io_obuf    ; 24                          ;
-; cycloneiii_lcell_comb ; 589                         ;
-;     arith             ; 89                          ;
-;         2 data inputs ; 82                          ;
-;         3 data inputs ; 7                           ;
-;     normal            ; 500                         ;
+; cycloneiii_lcell_comb ; 687                         ;
+;     arith             ; 120                         ;
+;         2 data inputs ; 119                         ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 567                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 70                          ;
-;         3 data inputs ; 80                          ;
-;         4 data inputs ; 337                         ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 77                          ;
+;         3 data inputs ; 109                         ;
+;         4 data inputs ; 364                         ;
 ; cycloneiii_pll        ; 1                           ;
-; cycloneiii_ram_block  ; 8                           ;
+; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 16.10                       ;
-; Average LUT depth     ; 8.99                        ;
+; Max LUT depth         ; 16.30                       ;
+; Average LUT depth     ; 8.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -955,7 +960,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -965,7 +970,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Fri Sep 13 11:30:04 2024
+    Info: Processing started: Fri Sep 13 13:54:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SRAM_LCD_FPGA -c sramdisplay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -973,7 +978,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file seg7.vh
     Info (12022): Found design unit 1: seg7-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/seg7.vhd Line: 8
     Info (12023): Found entity 1: seg7 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/seg7.vhd Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file memcontroller.vhd
-    Info (12022): Found design unit 1: memorycontroller-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd Line: 19
+    Info (12022): Found design unit 1: memorycontroller-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd Line: 20
     Info (12023): Found entity 1: memorycontroller File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file top_module.vhd
     Info (12022): Found design unit 1: top_module-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 25
@@ -991,7 +996,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file sub_mod
     Info (12022): Found design unit 1: sub_module_lcd-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 17
     Info (12023): Found entity 1: sub_module_lcd File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_ram.vhd
-    Info (12022): Found design unit 1: sub_module_ram-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 21
+    Info (12022): Found design unit 1: sub_module_ram-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 22
     Info (12023): Found entity 1: sub_module_ram File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file userlogic_addr.vhd
     Info (12022): Found design unit 1: userlogic_ad_wr-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/userlogic_addr.vhd Line: 19
@@ -1000,26 +1005,26 @@ Info (12021): Found 2 design units, including 1 entities, in source file pll.vhd
     Info (12022): Found design unit 1: pll-SYN File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/pll.vhd Line: 53
     Info (12023): Found entity 1: pll File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/pll.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file sub_module_bist.vhd
-    Info (12022): Found design unit 1: sub_module_bist-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 21
+    Info (12022): Found design unit 1: sub_module_bist-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 22
     Info (12023): Found entity 1: sub_module_bist File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file output_analyzer.vhd
     Info (12022): Found design unit 1: output_analyzer-Behavioral File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/output_analyzer.vhd Line: 18
     Info (12023): Found entity 1: output_analyzer File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/output_analyzer.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file march_controller.vhd
-    Info (12022): Found design unit 1: marchcontroller-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/march_controller.vhd Line: 15
+    Info (12022): Found design unit 1: marchcontroller-synth File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/march_controller.vhd Line: 16
     Info (12023): Found entity 1: marchcontroller File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/march_controller.vhd Line: 5
 Info (12127): Elaborating entity "top_module" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(95): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 95
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(95): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 95
-Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(96): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 96
-Info (12128): Elaborating entity "pll" for hierarchy "pll:pll1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 116
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(98): object "data_read_r" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 98
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(98): object "data_read" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 98
+Warning (10036): Verilog HDL or VHDL warning at top_module.vhd(99): object "ready" assigned a value but never read File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 99
+Info (12128): Elaborating entity "pll" for hierarchy "pll:pll1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 122
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:pll1|altpll:altpll_component" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/pll.vhd Line: 139
 Info (12130): Elaborated megafunction instantiation "pll:pll1|altpll:altpll_component" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/pll.vhd Line: 139
 Info (12133): Instantiated megafunction "pll:pll1|altpll:altpll_component" with the following parameter: File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/pll.vhd Line: 139
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "4"
+    Info (12134): Parameter "clk0_multiply_by" = "2"
     Info (12134): Parameter "clk0_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
@@ -1074,15 +1079,15 @@ Info (12133): Instantiated megafunction "pll:pll1|altpll:altpll_component" with 
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_altpll.v
     Info (12023): Found entity 1: pll_altpll File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/pll_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_altpll" for hierarchy "pll:pll1|altpll:altpll_component|pll_altpll:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 121
+Info (12128): Elaborating entity "sub_module_lcd" for hierarchy "sub_module_lcd:A" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 127
 Info (12128): Elaborating entity "mod5" for hierarchy "sub_module_lcd:A|mod5:df1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 60
 Info (12128): Elaborating entity "userlogic_ad_wr" for hierarchy "sub_module_lcd:A|userlogic_ad_wr:ul1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 61
 Info (12128): Elaborating entity "lcdcontrollerfast" for hierarchy "sub_module_lcd:A|lcdcontrollerfast:lc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_lcd.vhd Line: 77
-Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 139
+Info (12128): Elaborating entity "sub_module_ram" for hierarchy "sub_module_ram:B" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 145
 Warning (12125): Using design file ram1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: ram1-SYN File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 55
     Info (12023): Found entity 1: ram1 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 43
-Info (12128): Elaborating entity "ram1" for hierarchy "sub_module_ram:B|ram1:itnram" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 57
+Info (12128): Elaborating entity "ram1" for hierarchy "sub_module_ram:B|ram1:itnram" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 58
 Info (12128): Elaborating entity "altsyncram" for hierarchy "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 62
 Info (12130): Elaborated megafunction instantiation "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 62
 Info (12133): Instantiated megafunction "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component" with the following parameter: File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/ram1.vhd Line: 62
@@ -1109,7 +1114,7 @@ Info (12133): Instantiated megafunction "sub_module_ram:B|ram1:itnram|altsyncram
     Info (12134): Parameter "init_file" = "UNUSED"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
-    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "numwords_a" = "255"
     Info (12134): Parameter "numwords_b" = "0"
     Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
@@ -1124,7 +1129,7 @@ Info (12133): Instantiated megafunction "sub_module_ram:B|ram1:itnram|altsyncram
     Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
     Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
     Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
-    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_b" = "1"
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
@@ -1136,14 +1141,14 @@ Info (12133): Instantiated megafunction "sub_module_ram:B|ram1:itnram|altsyncram
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0vp3.tdf
-    Info (12023): Found entity 1: altsyncram_0vp3 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/altsyncram_0vp3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_0vp3" for hierarchy "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_0vp3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_e0q3.tdf
+    Info (12023): Found entity 1: altsyncram_e0q3 File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/db/altsyncram_e0q3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_e0q3" for hierarchy "sub_module_ram:B|ram1:itnram|altsyncram:altsyncram_component|altsyncram_e0q3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "memorycontroller" for hierarchy "sub_module_ram:B|memorycontroller:ctl" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_ram.vhd Line: 60
-Info (12128): Elaborating entity "seg7" for hierarchy "seg7:dp11" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 160
-Info (12128): Elaborating entity "sub_module_bist" for hierarchy "sub_module_bist:C" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 170
-Info (12128): Elaborating entity "marchcontroller" for hierarchy "sub_module_bist:C|marchcontroller:mc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 46
-Info (12128): Elaborating entity "output_analyzer" for hierarchy "sub_module_bist:C|output_analyzer:oa1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 47
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:dp11" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 166
+Info (12128): Elaborating entity "sub_module_bist" for hierarchy "sub_module_bist:C" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 177
+Info (12128): Elaborating entity "marchcontroller" for hierarchy "sub_module_bist:C|marchcontroller:mc1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 48
+Info (12128): Elaborating entity "output_analyzer" for hierarchy "sub_module_bist:C|output_analyzer:oa1" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/sub_module_bist.vhd Line: 49
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[0]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[1]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
@@ -1153,16 +1158,7 @@ Warning (13034): The following nodes have both tri-state and non-tri-state drive
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[5]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[6]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
     Warning (13035): Inserted always-enabled tri-state buffer between "dio_lcd[7]" and its non-tri-state driver. File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
-Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "dio_sram[8]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[9]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[10]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[11]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[12]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[13]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[14]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-    Warning (13033): The pin "dio_sram[15]" is fed by GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 12
-Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd Line: 29
+Info (13000): Registers with preset signals will power-up high File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/memcontroller.vhd Line: 32
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "dio_lcd[0]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
@@ -1174,38 +1170,12 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "dio_lcd[6]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
     Warning (13010): Node "dio_lcd[7]~synth" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 16
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ad_sram[8]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[9]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[10]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[11]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[12]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[13]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[14]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[15]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[16]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[17]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[18]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
-    Warning (13410): Pin "ad_sram[19]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 11
     Warning (13410): Pin "ce_n_sram" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 13
     Warning (13410): Pin "lb_n_sram" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 13
     Warning (13410): Pin "ub_n_sram" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 13
     Warning (13410): Pin "rw_lcd" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 17
     Warning (13410): Pin "pon_lcd" is stuck at VCC File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 17
     Warning (13410): Pin "blon_lcd" is stuck at VCC File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 17
-    Warning (13410): Pin "segoutR[14]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[15]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[16]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[17]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[18]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[19]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[20]" is stuck at VCC File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[21]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[22]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[23]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[24]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[25]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[26]" is stuck at GND File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
-    Warning (13410): Pin "segoutR[27]" is stuck at VCC File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 21
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 19 assignments for entity "sram1" -- entity does not exist in design
@@ -1220,17 +1190,17 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "psw[2]" File: C:/intelFPGA_lite/Internship/SRAM_LCD_FPGA/top_module.vhd Line: 8
-Info (21057): Implemented 782 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 893 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 86 output pins
     Info (21060): Implemented 24 bidirectional pins
-    Info (21061): Implemented 640 logic cells
-    Info (21064): Implemented 8 RAM segments
+    Info (21061): Implemented 743 logic cells
+    Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 4822 megabytes
-    Info: Processing ended: Fri Sep 13 11:30:13 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:19
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Fri Sep 13 13:54:48 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 

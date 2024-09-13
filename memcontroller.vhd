@@ -4,8 +4,9 @@ library IEEE; use IEEE.STD_LOGIC_1164.all;
 entity memorycontroller is
     port (clk, reset_n: in STD_LOGIC;
           -- SYSTEM
-          addr, data_write: in STD_LOGIC_VECTOR(7 downto 0);
-          data_read_r, data_read: out STD_LOGIC_VECTOR(7 downto 0);
+          addr: in STD_LOGIC_VECTOR(19 downto 0);
+          data_write: in STD_LOGIC_VECTOR(15 downto 0);
+          data_read_r, data_read: out STD_LOGIC_VECTOR(15 downto 0);
           mem, rw: in STD_LOGIC;
           ready: out STD_LOGIC;
           
@@ -19,8 +20,10 @@ end;
 architecture synth of memorycontroller is    
     type statetype is (idle, re, wt);
     signal state, nextstate: statetype;
-    signal data_read_reg, data_write_reg, addr_reg: std_logic_vector(7 downto 0);
-    signal data_read_next, data_write_next, addr_next: std_logic_vector(7 downto 0);
+    signal addr_reg : std_logic_vector(19 downto 0);
+    signal addr_next : std_logic_vector(19 downto 0);
+    signal data_read_reg, data_write_reg: std_logic_vector(15 downto 0);
+    signal data_read_next, data_write_next: std_logic_vector(15 downto 0);
     signal we_buf, oe_buf, tri_buf: std_logic;
     signal we_reg, oe_reg, tri_reg: std_logic;
 
@@ -65,7 +68,7 @@ architecture synth of memorycontroller is
                         end if;
                     end if;
                 when re =>
-                    data_read_next <= dio(7 downto 0);
+                    data_read_next <= dio;
                     if (mem = '0') then
                         nextstate <= idle;
                     else
@@ -112,14 +115,12 @@ architecture synth of memorycontroller is
         end process;
 
         -- SYSTEM
-        data_read <= dio(7 downto 0);
+        data_read <= dio;
         data_read_r <= data_read_reg;
 
         -- SRAM
-        ad(7 downto 0) <= addr_reg;
-        ad(19 downto 8) <= (others => '0');
-        dio(7 downto 0) <= data_write_reg when tri_reg = '0' else (others => 'Z');
-        dio(15 downto 8) <= (others => '0');
+        ad <= addr_reg;
+        dio <= data_write_reg when tri_reg = '0' else (others => 'Z');
         we_n <= we_reg;
         oe_n <= oe_reg;
         ce_n <= '0';
