@@ -7,7 +7,7 @@ entity sub_module_ram is
           addr: in STD_LOGIC_VECTOR(19 downto 0);
           data_write: in STD_LOGIC_VECTOR(15 downto 0);
           data_read_r, data_read: out STD_LOGIC_VECTOR(15 downto 0);
-          mem, rw: in STD_LOGIC;
+          rw: in STD_LOGIC;
           ready: out STD_LOGIC;
           ext : in STD_LOGIC;
           

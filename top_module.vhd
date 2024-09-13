@@ -51,7 +51,7 @@ architecture synth of top_module is
             addr: in STD_LOGIC_VECTOR(19 downto 0);
             data_write: in STD_LOGIC_VECTOR(15 downto 0);
             data_read_r, data_read: out STD_LOGIC_VECTOR(15 downto 0);
-            mem, rw: in STD_LOGIC;
+            rw: in STD_LOGIC;
             ready: out STD_LOGIC;
             ext : in STD_LOGIC;
             
@@ -89,7 +89,7 @@ architecture synth of top_module is
     signal reset_n : std_logic;
     signal addr : std_logic_vector(19 downto 0);
     signal data_write : std_logic_vector(15 downto 0);
-    signal mem, rw, test_start : std_logic;
+    signal rw, test_start : std_logic;
 
     -- PLL Clock
     signal clk_pll : std_logic;
@@ -110,8 +110,7 @@ architecture synth of top_module is
 begin
     reset_n <= psw(0);
     test_start <= psw(1);
-    mem <= psw(2);
-    rw <= psw(3) when en_bist = '0' else rw_test;
+    rw <= psw(2) when en_bist = '0' else rw_test;
     addr(7 downto 0) <= addr_test(7 downto 0) when en_bist = '1' else tsw(7 downto 0);
     addr(19 downto 8) <= addr_test(19 downto 8) when en_bist = '1' else (others => '0');
     data_write(7 downto 0) <= data_write_test(7 downto 0) when en_bist = '1' else tsw(15 downto 8);
@@ -149,7 +148,6 @@ begin
         data_write => data_write, 
         data_read_r => data_read_r, 
         data_read => data_read, 
-        mem => mem, 
         rw => rw, 
         ready => ready, 
         ext => ext, 
