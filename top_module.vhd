@@ -80,9 +80,11 @@ architecture synth of top_module is
         );
     end component;
 
-    component seg7 is 
-        port (I: in STD_LOGIC_VECTOR(3 downto 0);
-            Seg: out STD_LOGIC_VECTOR(6 downto 0));
+    component seg8d_decoder is
+        port (
+            data_in : in std_logic_vector(4*8-1 downto 0);
+            seg_out : out std_logic_vector(7*8-1 downto 0)
+        );
     end component;
 
     -- IO
@@ -107,6 +109,9 @@ architecture synth of top_module is
     signal data_write_test : std_logic_vector(15 downto 0);
     signal rw_test : std_logic;
 	 
+    -- SEGMENT 8 DIGIT
+    signal seg_w : std_logic_vector(7*8-1 downto 0);
+	 
 begin
     reset_n <= psw(0);
     test_start <= psw(1);
@@ -117,12 +122,21 @@ begin
     data_write(15 downto 8) <= data_write_test(15 downto 8) when en_bist = '1' else (others => '0');
     ext <= tsw(17);
     en_bist <= tsw(16);
+	 
+    segoutL <= seg_w(7*8-1 downto 7*6);
+    segoutM <= seg_w(7*6-1 downto 7*4);
+    segoutR <= seg_w(7*4-1 downto 7*0);
 
     pll1: pll port map(
         inclk0 => clk, 
         c0 => clk_pll
     );
-
+	 
+    seg: seg8d_decoder port map(
+        data_in => addr(7 downto 0) & data_write(7 downto 0) & data_display,
+        seg_out => seg_w
+    );
+	 
     A: sub_module_lcd port map(
         clk => clk, 
         reset_n => reset_n, 
@@ -160,17 +174,6 @@ begin
         ub_n => ub_n_sram,
         data_display => data_display
     );
-
-    dp11:seg7 port map(addr(3 downto 0), segoutL(6 downto 0));
-    dp12:seg7 port map(addr(7 downto 4), segoutL(13 downto 7));
-    
-    dp21:seg7 port map(data_write(3 downto 0), segoutM(6 downto 0));
-    dp22:seg7 port map(data_write(7 downto 4), segoutM(13 downto 7));
-        
-    dp13:seg7 port map(data_display(3 downto 0), segoutR(6 downto 0));
-    dp23:seg7 port map(data_display(7 downto 4), segoutR(13 downto 7));
-    dp33:seg7 port map(data_display(11 downto 8), segoutR(20 downto 14));
-    dp43:seg7 port map(data_display(15 downto 12), segoutR(27 downto 21));
 
     C: sub_module_bist port map(
         clk => clk_pll, 
