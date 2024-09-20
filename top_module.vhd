@@ -50,7 +50,7 @@ architecture synth of top_module is
             -- SYSTEM
             addr: in STD_LOGIC_VECTOR(19 downto 0);
             data_write: in STD_LOGIC_VECTOR(15 downto 0);
-            data_read_r, data_read: out STD_LOGIC_VECTOR(15 downto 0);
+            data_display : out STD_LOGIC_VECTOR(15 downto 0);
             rw: in STD_LOGIC;
             ready: out STD_LOGIC;
             ext : in STD_LOGIC;
@@ -58,8 +58,7 @@ architecture synth of top_module is
             -- SRAM
             ad: out STD_LOGIC_VECTOR(19 downto 0);
             dio: inout STD_LOGIC_VECTOR(15 downto 0);
-            we_n, oe_n, ce_n, lb_n, ub_n: out STD_LOGIC;
-            data_display : out STD_LOGIC_VECTOR(15 downto 0)
+            we_n, oe_n, ce_n, lb_n, ub_n: out STD_LOGIC
         );
     end component;
 
@@ -97,7 +96,7 @@ architecture synth of top_module is
     signal clk_pll : std_logic;
 
     -- SUB MODULE RAM
-    signal data_read_r, data_read, data_display : std_logic_vector(15 downto 0);
+    signal data_display : std_logic_vector(15 downto 0);
     signal ready: std_logic;
 
     -- SUB MODULE LCD
@@ -141,7 +140,7 @@ begin
         clk => clk, 
         reset_n => reset_n, 
         addr_in => addr(7 downto 0), 
-        data_in => data_write(7 downto 0), 
+        data_in => data_display(7 downto 0), 
         ext => ext, 
         rw => rw, 
         en_bist => en_bist,
@@ -160,8 +159,7 @@ begin
         reset_n => reset_n, 
         addr => addr, 
         data_write => data_write, 
-        data_read_r => data_read_r, 
-        data_read => data_read, 
+        data_display => data_display,
         rw => rw, 
         ready => ready, 
         ext => ext, 
@@ -171,8 +169,7 @@ begin
         oe_n => oe_n_sram, 
         ce_n => ce_n_sram, 
         lb_n => lb_n_sram, 
-        ub_n => ub_n_sram,
-        data_display => data_display
+        ub_n => ub_n_sram
     );
 
     C: sub_module_bist port map(

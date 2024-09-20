@@ -15,8 +15,8 @@ end;
 
 architecture synth of marchcontroller is
     type statetype is (idle, w1, r1, w2, r2, w3, r3, w4, r4, w5, r5, finished);
-    constant ADDR_INT_MAX : integer := 2 ** 8 - 1;
-    constant ADDR_EXT_MAX : integer := 2 ** 20 - 1;
+    constant ADDR_INT_MAX : integer := 2 ** 8-1; -- 2 ** 8 - 1;
+    constant ADDR_EXT_MAX : integer := 2 ** 20-1; -- 2 ** 20 - 1;
     signal state, nextstate: statetype;
     signal data_b_reg, data_b_next: std_logic;
     signal addr_reg, addr_next : std_logic_vector(19 downto 0);

@@ -6,7 +6,7 @@ entity sub_module_ram is
 	          -- SYSTEM
           addr: in STD_LOGIC_VECTOR(19 downto 0);
           data_write: in STD_LOGIC_VECTOR(15 downto 0);
-          data_read_r, data_read: out STD_LOGIC_VECTOR(15 downto 0);
+          data_display : out STD_LOGIC_VECTOR(15 downto 0);
           rw: in STD_LOGIC;
           ready: out STD_LOGIC;
           ext : in STD_LOGIC;
@@ -14,8 +14,7 @@ entity sub_module_ram is
           -- SRAM
           ad: out STD_LOGIC_VECTOR(19 downto 0);
           dio: inout STD_LOGIC_VECTOR(15 downto 0);
-          we_n, oe_n, ce_n, lb_n, ub_n: out STD_LOGIC;
-          data_display : out STD_LOGIC_VECTOR(15 downto 0)
+          we_n, oe_n, ce_n, lb_n, ub_n: out STD_LOGIC
     );
 end;
 
@@ -49,6 +48,7 @@ architecture synth of sub_module_ram is
 	end component;
  
 	signal data_read_itnram : std_logic_vector(15 downto 0) := (others => '0');
+    signal data_read, data_read_r : std_logic_vector(15 downto 0) := (others => '0');
     
     begin
         data_display <= data_read when ext = '1' else data_read_itnram;
